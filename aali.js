@@ -12,17 +12,17 @@ style.innerHTML = `
 .store-header .mburger i {
     color: var(--header-text-color);
 }
-.cart .main-content form + div.cart-banners-after-items {
+.cart .container:not(.tempo-class-3945) .main-content form + div.cart-banners-after-items {
     display: none;
 }
-.cart .main-content form:first-of-type + div.cart-banners-after-items {
+.cart .container:not(.tempo-class-3945) .main-content form:first-of-type + div.cart-banners-after-items {
     display: block;
 }
 /* for before banners */
-.cart .main-content .cart-banners-before-items {
+.cart .container:not(.tempo-class-3945) .main-content .cart-banners-before-items {
     display: none;
 }
-.cart .main-content .cart-banners-before-items:first-of-type {
+.cart .container:not(.tempo-class-3945) .main-content .cart-banners-before-items:first-of-type {
     display: block;
 }
 `;
