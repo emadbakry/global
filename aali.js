@@ -19,17 +19,17 @@ document.getElementsByTagName("head")[0].appendChild(style);
 
 // fix header burger icon being hidden
 
-let b_icon = document.querySelector(`.store-header  .header-menu-icon`);
+let br_icon = document.querySelector(`.store-header  .header-menu-icon`);
 
 // remove ssssicon-menu class
-b_icon.classList.remove("ssssicon-menu");
+br_icon.classList.remove("ssssicon-menu");
 // if does not contain class starts with sicon
-if (!b_icon.classList.contains("sicon")) {
+if (![...br_icon.classList].some((cls) => "sicon" === cls.slice(0, 5))) {
 	// if has svg inside
-	if (b_icon.querySelector("svg")) {
+	if (br_icon.querySelector("svg")) {
 		// do nothing
 	} else {
 		// add sicon class
-		b_icon.classList.add("sicon-right");
+		br_icon.classList.add("sicon-right");
 	}
 }
