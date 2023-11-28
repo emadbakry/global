@@ -12,6 +12,19 @@ style.innerHTML = `
 .store-header .mburger i {
     color: var(--header-text-color);
 }
+.cart .main-content form + div.cart-banners-after-items {
+    display: none;
+}
+.cart .main-content form:first-of-type + div.cart-banners-after-items {
+    display: block;
+}
+/* for before banners */
+.cart .main-content .cart-banners-before-items {
+    display: none;
+}
+.cart .main-content .cart-banners-before-items:first-of-type {
+    display: block;
+}
 `;
 // append style element
 
