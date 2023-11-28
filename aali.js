@@ -16,3 +16,18 @@ style.innerHTML = `
 // append style element
 
 document.getElementsByTagName("head")[0].appendChild(style);
+
+// fix header burger icon being hidden
+
+let b_icon = document.querySelector(`.store-header  .header-menu-icon`);
+
+// if does not contain sicon class
+if (!b_icon.classList.contains("sicon")) {
+	// if has svg inside
+	if (b_icon.querySelector("svg")) {
+		// do nothing
+	} else {
+		// add sicon class
+		b_icon.classList.add("sicon-right");
+	}
+}
