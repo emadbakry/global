@@ -21,7 +21,9 @@ document.getElementsByTagName("head")[0].appendChild(style);
 
 let b_icon = document.querySelector(`.store-header  .header-menu-icon`);
 
-// if does not contain sicon class
+// remove ssssicon-menu class
+b_icon.classList.remove("ssssicon-menu");
+// if does not contain class starts with sicon
 if (!b_icon.classList.contains("sicon")) {
 	// if has svg inside
 	if (b_icon.querySelector("svg")) {
