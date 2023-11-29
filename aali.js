@@ -30,6 +30,17 @@ style.innerHTML = `
 
 document.getElementsByTagName("head")[0].appendChild(style);
 
+// fix mobile nav, tempo
+function ready() {
+	document.body.classList.add("mobile-nav-is-on");
+}
+if (document.readyState == "loading") {
+	document.addEventListener("DOMContentLoaded", ready);
+} else {
+	ready();
+}
+// fix mobile nav, tempo
+
 // fix header burger icon being hidden
 
 let br_icon = document.querySelector(`.store-header  .header-menu-icon`);
