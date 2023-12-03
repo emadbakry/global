@@ -25,6 +25,9 @@ style.innerHTML = `
 .cart .container:not(.tempo-class-3945) .main-content .cart-banners-before-items:first-of-type {
     display: block;
 }
+body:not(.footer-icons-merged):not(.footer-hide-social-title) .footer-social-outer {
+	align-content: flex-start;
+}
 `;
 // append style element
 
