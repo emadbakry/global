@@ -6,6 +6,11 @@ body.switch1_on .top-navbar {
 	padding-top: 0;
 }
 
-#mobile-nav {
-	padding-bottom: 1.2rem;
+body.switch2_on .mobile-nav-outer.small-shape .mobile-nav {
+	padding-top: 1.3rem;
+	padding-bottom: 1.3rem;
+}
+
+body.switch2_on .mobile-nav-outer.small-shape .mobile-nav i {
+	font-size: 1.25rem;
 }
