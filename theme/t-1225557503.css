@@ -1,0 +1,11 @@
+/* theme:Aali */
+/* store t 35 twenty store */
+/* handle switch one, merchant can edit this from theme settings: last dipartment, custom switch 1 */
+body.switch1_on .top-navbar {
+	padding-bottom: 0;
+	padding-top: 0;
+}
+
+#mobile-nav {
+	padding-bottom: 1.2rem;
+}
