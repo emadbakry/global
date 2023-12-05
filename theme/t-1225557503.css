@@ -1,5 +1,13 @@
 /* theme:Aali */
 /* store t 35 twenty store */
+/* deprecated **************** */
+/* deprecated **************** */
+/* deprecated **************** */
+/* deprecated **************** */
+/* deprecated **************** */
+/* deprecated **************** */
+/* deprecated **************** */
+/* deprecated **************** */
 /* handle switch one, merchant can edit this from theme settings: last dipartment, custom switch 1 */
 body.switch1_on .top-navbar {
 	padding-bottom: 0;
@@ -13,4 +21,16 @@ body.switch2_on .mobile-nav-outer.small-shape .mobile-nav {
 
 body.switch2_on .mobile-nav-outer.small-shape .mobile-nav i {
 	font-size: 1.25rem;
+}
+.page-single .content--single-page .s-comment-form-content textarea {
+	background-color: transparent;
+}
+.page-single .content--single-page {
+	background-color: transparent;
+}
+@media only screen and (max-width: 492px) {
+	body.switch3_on .store-header #s-cart-icon,
+	body.switch3_on .store-header .s-cart-summary-count {
+		display: none;
+	}
 }
