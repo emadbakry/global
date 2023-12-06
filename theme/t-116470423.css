@@ -8,6 +8,10 @@ body.switch2_on.index .s-block__title.section-main-title .right-side.custom-s {
 #app {
 	--color-primary: var(--custom-color2);
 }
+.product-single salla-add-product-button .s-button-primary,
+salla-comment-form .s-comment-form-action .s-button-element {
+	box-shadow: none;
+}
 @media only screen and (max-width: 492px) {
 	body.switch3_on .store-header .header-inner-wrapper {
 		position: relative;
