@@ -28,7 +28,7 @@ style.innerHTML = `
 body:not(.footer-icons-merged):not(.footer-hide-social-title) .footer-social-outer {
 	align-content: flex-start;
 }
-.pm-content {
+[class="preview__inner"] {
 	background-color: #fff;
 }
 `;
