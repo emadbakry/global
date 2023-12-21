@@ -31,7 +31,9 @@ body:not(.footer-icons-merged):not(.footer-hide-social-title) .footer-social-out
 [class="preview__inner"] {
 	background-color: #fff;
 }
-
+#mainnav .header-signInBtn i {
+		color: var(--signInBtn-text-color, #ffffff);
+	}
 @media only screen and (max-width: 492px) {
 	.preview-modal salla-slider {
 		min-height: unset;
