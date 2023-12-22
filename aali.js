@@ -9,9 +9,6 @@ style.setAttribute("type", "text/css");
 // add css content
 
 style.innerHTML = `
-.store-header .mburger i {
-    color: var(--header-text-color);
-}
 .cart .container:not(.tempo-class-3945) .main-content form + div.cart-banners-after-items {
     display: none;
 }
@@ -37,6 +34,11 @@ body:not(.footer-icons-merged):not(.footer-hide-social-title) .footer-social-out
 #app .s-block-division {
 	margin-top: 1rem;
 	margin-top: var(--mt-mob);
+}
+body .s-block--features__item .feature-icon i {
+	font-size: 2.5rem;
+	font-size: var(--f-width, 2rem);
+	font-size: calc(var(--f-width, 2rem) / 2 + var(--f-height, 2rem) / 2);
 }
 #mainnav .header-signInBtn i {
 		color: var(--signInBtn-text-color, #ffffff);
