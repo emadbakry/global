@@ -34,6 +34,10 @@ body:not(.footer-icons-merged):not(.footer-hide-social-title) .footer-social-out
 .enhanced-features.icons-floating {
 	overflow: unset;
 }
+#app .s-block-division {
+	margin-top: 1rem;
+	margin-top: var(--mt-mob);
+}
 #mainnav .header-signInBtn i {
 		color: var(--signInBtn-text-color, #ffffff);
 	}
