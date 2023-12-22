@@ -31,6 +31,9 @@ body:not(.footer-icons-merged):not(.footer-hide-social-title) .footer-social-out
 [class="preview__inner"] {
 	background-color: #fff;
 }
+.enhanced-features.icons-floating {
+	overflow: unset;
+}
 #mainnav .header-signInBtn i {
 		color: var(--signInBtn-text-color, #ffffff);
 	}
