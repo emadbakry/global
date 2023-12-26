@@ -9,37 +9,39 @@ style.setAttribute("type", "text/css");
 // add css content
 
 style.innerHTML = `
-// .cart .container:not(.tempo-class-3945) .main-content form + div.cart-banners-after-items {
-//     display: none;
-// }
-// .cart .container:not(.tempo-class-3945) .main-content form:first-of-type + div.cart-banners-after-items {
-//     display: block;
-// }
+/*
+.cart .container:not(.tempo-class-3945) .main-content form + div.cart-banners-after-items {
+    display: none;
+}
+.cart .container:not(.tempo-class-3945) .main-content form:first-of-type + div.cart-banners-after-items {
+    display: block;
+}
 
-// .cart .container:not(.tempo-class-3945) .main-content .cart-banners-before-items {
-//     display: none;
-// }
-// .cart .container:not(.tempo-class-3945) .main-content .cart-banners-before-items:first-of-type {
-//     display: block;
-// }
+.cart .container:not(.tempo-class-3945) .main-content .cart-banners-before-items {
+    display: none;
+}
+.cart .container:not(.tempo-class-3945) .main-content .cart-banners-before-items:first-of-type {
+    display: block;
+}
+*/
 
 
 [class="preview__inner"] {
 	background-color: #fff;
 }
-// @media only screen and (max-width: 492px) {
-// 	.preview-modal salla-slider {
-// 		min-height: unset;
-// 	}
-// }
+/*
+@media only screen and (max-width: 492px) {
+	.preview-modal salla-slider {
+		min-height: unset;
+	}
+}
+*/
 
-// fix menu being hidden in mobile
 @media only screen and (max-width: 1024px) {
 	.app-body .mm-ocd--open .mobile-menu {
 		display: block;
 	}
 }
-// fix menu being hidden in mobile
 
 `;
 // append style element
