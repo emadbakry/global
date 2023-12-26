@@ -48,6 +48,13 @@ style.innerHTML = `
 	color: var(--sidebar-text-color) !important;
 }
 
+@media only screen and (min-width: 1024px) {
+	#app .s-block-division {
+		margin-top: 2rem;
+		margin-top: var(--mt-desk);
+	}
+}
+
 `;
 // append style element
 
