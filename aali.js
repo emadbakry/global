@@ -43,6 +43,11 @@ style.innerHTML = `
 	}
 }
 
+#app .mm-ocd .mm-ocd__content #mobile-menu {
+	background-color: var(--sidebar-bg-color) !important;
+	color: var(--sidebar-text-color) !important;
+}
+
 `;
 // append style element
 
