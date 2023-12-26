@@ -9,45 +9,38 @@ style.setAttribute("type", "text/css");
 // add css content
 
 style.innerHTML = `
-.cart .container:not(.tempo-class-3945) .main-content form + div.cart-banners-after-items {
-    display: none;
-}
-.cart .container:not(.tempo-class-3945) .main-content form:first-of-type + div.cart-banners-after-items {
-    display: block;
-}
-/* for before banners */
-.cart .container:not(.tempo-class-3945) .main-content .cart-banners-before-items {
-    display: none;
-}
-.cart .container:not(.tempo-class-3945) .main-content .cart-banners-before-items:first-of-type {
-    display: block;
-}
-body:not(.footer-icons-merged):not(.footer-hide-social-title) .footer-social-outer {
-	align-content: flex-start;
-}
+// .cart .container:not(.tempo-class-3945) .main-content form + div.cart-banners-after-items {
+//     display: none;
+// }
+// .cart .container:not(.tempo-class-3945) .main-content form:first-of-type + div.cart-banners-after-items {
+//     display: block;
+// }
+
+// .cart .container:not(.tempo-class-3945) .main-content .cart-banners-before-items {
+//     display: none;
+// }
+// .cart .container:not(.tempo-class-3945) .main-content .cart-banners-before-items:first-of-type {
+//     display: block;
+// }
+
+
 [class="preview__inner"] {
 	background-color: #fff;
 }
-.enhanced-features.icons-floating {
-	overflow: unset;
-}
-#app .s-block-division {
-	margin-top: 1rem;
-	margin-top: var(--mt-mob);
-}
-body .s-block--features__item .feature-icon i {
-	font-size: 2.5rem;
-	font-size: var(--f-width, 2rem);
-	font-size: calc(var(--f-width, 2rem) / 2 + var(--f-height, 2rem) / 2);
-}
-#mainnav .header-signInBtn i {
-		color: var(--signInBtn-text-color, #ffffff);
-	}
-@media only screen and (max-width: 492px) {
-	.preview-modal salla-slider {
-		min-height: unset;
+// @media only screen and (max-width: 492px) {
+// 	.preview-modal salla-slider {
+// 		min-height: unset;
+// 	}
+// }
+
+// fix menu being hidden in mobile
+@media only screen and (max-width: 1024px) {
+	.app-body .mm-ocd--open .mobile-menu {
+		display: block;
 	}
 }
+// fix menu being hidden in mobile
+
 `;
 // append style element
 
