@@ -1,0 +1,6 @@
+/* theme aali: injaz-one.com */
+/* if u are the merchant of this store, go to theme settings: custom witch one to edit it */
+body.switch1_on#app .store-footer,
+body.switch1_on#app .store-footer .store-footer__inner {
+	background-color: transparent;
+}
