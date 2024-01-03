@@ -87,3 +87,34 @@ if (![...br_icon.classList].some((cls) => "sicon" === cls.slice(0, 5))) {
 		br_icon.classList.add("sicon-right");
 	}
 }
+
+function tempoFunction() {
+	let i = 1;
+	if (document.body.classList.contains("logo_centered")) {
+		let i = 0;
+	}
+	let menuToggler = document.querySelectorAll(".s-user-menu-toggler");
+	if (menuToggler[i] && menuToggler[i].classList.contains("opened")) {
+		// if menu is opened
+		let user_menu_close_btn = document.querySelectorAll(".s-user-menu-dropdown-header-close");
+		if (user_menu_close_btn.length > 0) {
+			user_menu_close_btn[i].click();
+		}
+	} else {
+		// if menu is closed
+		let userMenuTrigger = document.querySelectorAll(".s-user-menu-trigger");
+		if (userMenuTrigger.length > 0) {
+			setTimeout(() => {
+				userMenuTrigger[i].click();
+			}, 20);
+		}
+	}
+}
+window.tempoFunction = tempoFunction;
+
+// fix user menu when logo is not centered
+let menu_trigger = document.querySelector('.mobile-nav--item[onclick*="User"]');
+if (menu_trigger) {
+	menu_trigger.setAttribute("onclick", "window.tempoFunction();");
+}
+// fix user menu when logo is not centered
