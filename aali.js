@@ -55,6 +55,12 @@ style.innerHTML = `
 	}
 }
 
+/* tempo fix for fags container of login modal */
+
+
+.s-modal-container {
+  z-index:200;
+}
 `;
 // append style element
 
