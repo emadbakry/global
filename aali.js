@@ -62,7 +62,7 @@ body .s-modal-container {
   z-index:200;
 }
 .modal-is-open .mobile-nav-inner  {
-visibility: hidden;
+visibility: hidden !important;
 }
 `;
 // append style element
