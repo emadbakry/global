@@ -61,6 +61,9 @@ style.innerHTML = `
 body .s-modal-container {
   z-index:200;
 }
+.modal-is-open .mobile-nav-inner  {
+visibility: hidden;
+}
 `;
 // append style element
 
