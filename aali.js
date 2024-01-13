@@ -9,23 +9,6 @@ style.setAttribute("type", "text/css");
 // add css content
 
 style.innerHTML = `
-/*
-.cart .container:not(.tempo-class-3945) .main-content form + div.cart-banners-after-items {
-    display: none;
-}
-.cart .container:not(.tempo-class-3945) .main-content form:first-of-type + div.cart-banners-after-items {
-    display: block;
-}
-
-.cart .container:not(.tempo-class-3945) .main-content .cart-banners-before-items {
-    display: none;
-}
-.cart .container:not(.tempo-class-3945) .main-content .cart-banners-before-items:first-of-type {
-    display: block;
-}
-*/
-
-
 [class="preview__inner"] {
 	background-color: #fff;
 }
