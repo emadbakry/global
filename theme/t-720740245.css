@@ -1,0 +1,11 @@
+/* t 94 follo magic */
+/* theme: aali, fix slider with bg */
+
+/* fix slider with bg */
+#app .s-block--slider-with-bg {
+	background-color: var(--custom-color1, transparent);
+}
+body.switch1_on#app .s-block--slider-with-bg {
+	background-color: transparent;
+}
+/* fix slider with bg */
