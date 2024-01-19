@@ -4,4 +4,5 @@
 body.switch1_on .product-block .badge {
 	padding: 0.6rem;
 	font-size: 0.5rem;
+	border-top-left-radius: 0;
 }

@@ -1,0 +1,14 @@
+/* lara t 97 */
+
+/* fix product title color */
+.product-block__info .price-wrapper span:not(.color-danger),
+.product-block__info .price-wrapper .before-price {
+	color: var(--custom-color1, #000000);
+}
+.product-block__info .price-wrapper .color-danger {
+	color: var(--custom-color2, #000000);
+}
+.product-block__info .title {
+	color: var(--custom-color3, #000000);
+}
+/* fix product title color */
