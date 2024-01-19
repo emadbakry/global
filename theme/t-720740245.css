@@ -8,4 +8,37 @@
 body.switch1_on#app .s-block--slider-with-bg {
 	background-color: transparent;
 }
+
+#app [bb="bbb"] {
+	width: 100%;
+	height: 100%;
+	background-color: #fff;
+	background: #ffffff0f;
+	position: fixed;
+	z-index: 999999;
+	transform: scale(0);
+	animation-name: pupup;
+	animation-duration: 2s;
+	animation-duration: 2s;
+	-webkit-backdrop-filter: blur(20px);
+	backdrop-filter: blur(20px);
+}
+#app [bb="bbb"]:after {
+	content: "";
+	transition: all 0.5s ease;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	position: fixed;
+	z-index: 999999;
+	background: url(https://cdn.salla.sa/form-builder/XqnyZl4LxSUDRQxO1IELCxpEiXS7Q1iuF4ik3eKL.png);
+	left: 0;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 90px;
+	background-size: 8rem;
+	transform: scale(0);
+	animation-name: pupup_logo;
+	animation-duration: 2s;
+}
 /* fix slider with bg */
