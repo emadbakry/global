@@ -10,6 +10,7 @@ body.switch1_on custom-salla-product-card .product-block__info .title,
 body.switch1_on .price-wrapper.mb-4.px-3,
 body.switch1_on .product__description p,
 body.switch1_on.blog-index h2,
+body.switch1_on.product-single .product-category-name + div .total-price,
 body.switch1_on .s-block--testimonials .testimonial__icon.sicon-quote-open:before,
 body.switch1_on.product-index h1 {
 	color: var(--custom-color1);
