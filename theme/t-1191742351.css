@@ -1,0 +1,6 @@
+/* dm store */
+/* fix store features size */
+
+body#app .s-block--features__item .feature-icon i {
+	font-size: calc(var(--f-width, 2rem) / 3 + var(--f-height, 3rem) / 3);
+}
