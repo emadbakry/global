@@ -48,14 +48,14 @@ body .s-modal-container {
 visibility: hidden !important;
 }
 
-body .preview__inner {
+.dark body .preview__inner {
 	--preview-bg-color: var(--dm-menus-bg);
 	--preview-text-color: var(--dm-menus-text);
 	background-color: var(--preview-bg-color, #ffffff);
 	color: var(--preview-text-color, #ffffff);
 }
 
-body[class*="product-index"] .s-block--testimonials .testimonial {
+.dark body[class*="product-index"] .s-block--testimonials .testimonial {
 	background-color: var(--dm-bg-sec)!important;
 }
 
