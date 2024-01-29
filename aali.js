@@ -63,6 +63,10 @@ body[class*="product-index"] .s-block--testimonials .testimonial {
 .dark #btn-show-more {
 	color: var(--dm-text-main);
 }
+
+.small-atc custom-salla-product-card .before-price {
+	display: block;
+}
 `;
 // append style element
 
