@@ -79,6 +79,13 @@ visibility: hidden !important;
 	color: var(--dm-text-main) !important;
 }
 
+#app.index {
+	background-color: #ffffff !important;
+}
+			
+.dark #app .feature-icon[style*="transp"] {
+	background-color: transparent !important;
+}
 `;
 // append style element
 
