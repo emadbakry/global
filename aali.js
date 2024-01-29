@@ -58,6 +58,10 @@ body .preview__inner {
 body[class*="product-index"] .s-block--testimonials .testimonial {
 	background-color: var(--dm-bg-sec)!important;
 }
+
+.dark .sub-nav-header .categ-entry h3 {
+	color: var(--dm-text-main);
+}
 `;
 // append style element
 
