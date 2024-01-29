@@ -54,6 +54,10 @@ body .preview__inner {
 	background-color: var(--preview-bg-color, #ffffff);
 	color: var(--preview-text-color, #ffffff);
 }
+
+body[class*="product-index"] .s-block--testimonials .testimonial {
+	background-color: var(--dm-bg-sec)!important;
+}
 `;
 // append style element
 
