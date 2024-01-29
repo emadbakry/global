@@ -67,6 +67,18 @@ visibility: hidden !important;
 .small-atc custom-salla-product-card .before-price {
 	display: block;
 }
+
+.dark .product-single salla-slider.details-slider .swiper-slide {
+	background-color: var(--dm-bg-main) !important;
+}
+.dark .product-single .s-comments-product {
+	background-color: var(--dm-bg-sec) !important;
+}
+.dark .product-single .s-comments-product .flex span,
+.dark .product-single .s-comments-product .flex h2 {
+	color: var(--dm-text-main) !important;
+}
+
 `;
 // append style element
 
