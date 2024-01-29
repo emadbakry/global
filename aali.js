@@ -47,6 +47,13 @@ body .s-modal-container {
 .modal-is-open .mobile-nav-inner  {
 visibility: hidden !important;
 }
+
+body .preview__inner {
+	--preview-bg-color: var(--dm-menus-bg);
+	--preview-text-color: var(--dm-menus-text);
+	background-color: var(--preview-bg-color, #ffffff);
+	color: var(--preview-text-color, #ffffff);
+}
 `;
 // append style element
 
