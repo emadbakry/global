@@ -9,9 +9,6 @@ style.setAttribute("type", "text/css");
 // add css content
 
 style.innerHTML = `
-[class="preview__inner"] {
-	background-color: #fff;
-}
 /*
 @media only screen and (max-width: 492px) {
 	.preview-modal salla-slider {
@@ -72,6 +69,9 @@ visibility: hidden !important;
 	background-color: var(--dm-bg-main) !important;
 }
 .dark .product-single .s-comments-product {
+	background-color: var(--dm-bg-sec) !important;
+}
+.dark .index .testimonial {
 	background-color: var(--dm-bg-sec) !important;
 }
 .dark .product-single .s-comments-product .flex span,
