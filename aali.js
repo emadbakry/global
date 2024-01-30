@@ -45,20 +45,30 @@ body .s-modal-container {
 visibility: hidden !important;
 }
 
+.modal-is-open .scroll-progress-wrapper,
+.modal-is-open .wa-widget-outer {
+	visibility: hidden !important;
+	transition: all 0.3s 0.1s !important;
+}
+
+
 .dark body .preview__inner {
 	--preview-bg-color: var(--dm-menus-bg);
 	--preview-text-color: var(--dm-menus-text);
 	background-color: var(--preview-bg-color, #ffffff);
 	color: var(--preview-text-color, #ffffff);
 }
-
+.dark .s-login-modal-tab .iti__flag-container {
+	color: var(--dm-text-sec) !important;
+}
 .dark body[class*="product-index"] .s-block--testimonials .testimonial {
 	background-color: var(--dm-bg-sec)!important;
 }
 
 .dark .sub-nav-header .categ-entry h3,
 .dark #btn-show-more {
-	color: var(--dm-text-main);
+	color: var(--dm-text-main) !important;
+	background-color: var(--dm-bg-sec) !important;
 }
 
 .small-atc custom-salla-product-card .before-price {
@@ -79,11 +89,11 @@ visibility: hidden !important;
 	color: var(--dm-text-main) !important;
 }
 
-#app.index {
-	background-color: #ffffff !important;
-}
+// #app.index {
+// 	background-color: #ffffff !important;
+// }
 			
-.dark #app .feature-icon[style*="transp"] {
+.dark #app .enhanced-features .feature-icon[style*="transp"] {
 	background-color: transparent !important;
 }
 `;
