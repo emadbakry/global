@@ -96,6 +96,10 @@ visibility: hidden !important;
 .dark #app .enhanced-features .feature-icon[style*="transp"] {
 	background-color: transparent !important;
 }
+.dark body#app .dm-btn-in-bg-sec {
+    background: var(--dm-text-sec)!important;
+    color: var(--dm-bg-main)!important;
+}
 `;
 // append style element
 
