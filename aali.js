@@ -37,7 +37,9 @@ style.innerHTML = `
 
 /* tempo fix for fags container of login modal */
 
-
+.dark .s-block--categories a.dm-text-main {
+	background-color: var(--dm-bg-sec) !important;
+}
 body .s-modal-container {
   z-index:200;
 }
