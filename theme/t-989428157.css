@@ -11,4 +11,11 @@
 .product-block__info .title {
 	color: var(--custom-color3, #000000);
 }
+
+body.switch1_on#app .question-outer .sicon-add {
+	padding: 0.7rem;
+}
+body.switch1_on#app .question-outer {
+	padding: 0.8rem 1.2rem;
+}
 /* fix product title color */
