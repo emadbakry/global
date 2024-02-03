@@ -43,7 +43,7 @@ style.innerHTML = `
 body .s-modal-container {
   z-index:200;
 }
-html.dark .product-single .total-price {
+html.dark .product-single .preview__inner .total-price {
 	color: var(--preview-text-color) !important;
 }
 .modal-is-open .mobile-nav-inner  {
