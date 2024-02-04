@@ -16,7 +16,14 @@ style.innerHTML = `
 	}
 }
 */
-
+.dark #app custom-salla-product-card {
+				--product-card-text: var(--dm-p-text, #ffffff);
+			}
+ 			/* product card text color */
+			#app custom-salla-product-card {
+				background-color: var(--product-card-bg, transparent);
+				color: var(--product-card-text, transparent);
+			}
 @media only screen and (max-width: 1024px) {
 	.app-body .mm-ocd--open .mobile-menu {
 		display: block;
