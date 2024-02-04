@@ -17,7 +17,7 @@ style.innerHTML = `
 }
 */
 
-			.dark #app custom-salla-product-card {
+			.dark #app.product-card-bg-on custom-salla-product-card {
 				background-color: var(--dm-bg-sec);
 				background-color: var(--dm-p-bg);
 				color: var(--product-card-text, #eeeeee):
