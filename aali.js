@@ -41,6 +41,24 @@ style.innerHTML = `
 	}
 }
 
+.dark .s-block-count-down-2 .s-product-card-content .color-danger,
+ .dark .s-block-count-down-2 .s-product-card-content .product-title {
+	color: var(--dm-text-sec) !important;
+}
+.dark .s-count-down-item {
+	background-color: var(--dm-bg-sec);
+	color: var(--dm-text-sec);
+	border-radius: 4px;
+}
+.dark .s-block-count-down-2 .s-count-down-item-value,
+.dark .s-block-count-down-2 .s-count-down-item-label {
+	color: var(--dm-text-sec);
+}
+.dark .s-block-count-down-2 .s-count-down-item-label {
+	opacity: 0.7;
+}
+
+
 /* tempo fix for fags container of login modal */
 
 .dark .s-block--categories a.dm-text-main {
