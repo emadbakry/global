@@ -61,6 +61,10 @@ style.innerHTML = `
 	background-color: transparent !important;
 }
 
+.footer-social-item a {
+	border-color: var(--footer-text-color);
+}
+
 /* tempo fix for fags container of login modal */
 
 .dark .s-block--categories a.dm-text-main {
