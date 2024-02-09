@@ -57,7 +57,9 @@ style.innerHTML = `
 .dark .s-block-count-down .s-count-down-item-label {
 	opacity: 0.7;
 }
-
+.dark #app .enhanced-features .s-block--features__item[style*="transp"] {
+	background-color: transparent !important;
+}
 
 /* tempo fix for fags container of login modal */
 
