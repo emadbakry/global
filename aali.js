@@ -67,7 +67,8 @@ style.innerHTML = `
 
 /* tempo fix for fags container of login modal */
 
-html body#app {--lm-bg-sec:#ffffff;}
+
+html body#app .animated-ads-outer ul {color:#ffffff; background-color: #0000000;}
 
 .dark .s-block--categories a.dm-text-main {
 	background-color: var(--dm-bg-sec) !important;
