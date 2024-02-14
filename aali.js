@@ -78,6 +78,11 @@ html body#app .animated-ads-outer ul {
 	background-color: #ffffff;
 }
 
+html:not(.dark) #app .dm-bg-sec.faq-item {
+	color:#111111;
+	background-color: #ffffff;
+}
+
 .dark .s-block--categories a.dm-text-main {
 	background-color: var(--dm-bg-sec) !important;
 }
