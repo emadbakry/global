@@ -68,19 +68,24 @@ style.innerHTML = `
 /* tempo fix for fags container of login modal */
 
 
-html body#app .animated-ads-outer ul {
+html body#app:not(.update-19) .animated-ads-outer ul {
 	color:#ffffff;
 	background-color: #000000;
 }
 
-.special-testimonial {
+body:not(.update-19) .special-testimonial {
 	color:#111111;
 	background-color: #ffffff;
 }
 
-html:not(.dark) #app .dm-bg-sec.faq-item {
+html:not(.dark) #app:not(.update-19) .dm-bg-sec.faq-item {
 	color:#111111;
 	background-color: #ffffff;
+}
+
+html[lang] #app.app-body {
+	background-repeat: repeat-y;
+	background-size: cover;
 }
 
 .dark .s-block--categories a.dm-text-main {
