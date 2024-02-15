@@ -68,20 +68,20 @@ style.innerHTML = `
 /* tempo fix for fags container of login modal */
 
 
-html body#app:not(.update-19) .animated-ads-outer ul {
-	color:#ffffff;
-	background-color: #000000;
-}
+// html body#app:not(.update-19) .animated-ads-outer ul {
+// 	color:#ffffff;
+// 	background-color: #000000;
+// }
 
-body:not(.update-19) .special-testimonial {
-	color:#111111;
-	background-color: #ffffff;
-}
+// body:not(.update-19) .special-testimonial {
+// 	color:#111111;
+// 	background-color: #ffffff;
+// }
 
-html:not(.dark) #app:not(.update-19) .dm-bg-sec.faq-item {
-	color:#111111;
-	background-color: #ffffff;
-}
+// html:not(.dark) #app:not(.update-19) .dm-bg-sec.faq-item {
+// 	color:#111111;
+// 	background-color: #ffffff;
+// }
 
 html[lang] #app.app-body {
 	background-repeat: repeat-y;
