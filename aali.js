@@ -12,6 +12,10 @@ style.innerHTML = `
 
 
 /* hi */
+
+html:not(.dark) .product-single .total-price.t-red {
+	color: var(--red-color,#ef4444);
+}
 			
 `;
 // append style element
