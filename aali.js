@@ -40,6 +40,17 @@ html:not(.dark) .product-single .total-price.t-red {
         min-height: 20vh
     }
 }
+
+.dark #app .s-block--slider-with-bg {
+	background-color: transparent;
+}
+html:not(.dark) #app.product-card-bg-on .s-block--slider-with-bg {
+	background-color: transparent;
+	
+}
+.dark #app .s-block--slider-with-bg {
+	background-color: transparent;
+}
 			
 `;
 // append style element
