@@ -40,7 +40,21 @@ html:not(.dark) .product-single .total-price.t-red {
         min-height: 20vh
     }
 }
+.mob-n-li span {
+	text-align: center;
+}
 
+/* test */
+/*
+body img.lazy*[data^="data"] {
+    transform: scale(1.1);
+}
+body img.lazy.loaded {
+    opacity: 1;
+    transform: scale(1);
+}
+*/
+/* test */
 
 html:not(.dark) #app.product-card-bg-on .s-block--slider-with-bg {
 	background-color: transparent;
