@@ -56,6 +56,11 @@ body img.lazy.loaded {
 */
 /* test */
 
+
+.animated-ads--content li {
+	    animation-name: marquee !important;
+}
+
 html:not(.dark) #app.product-card-bg-on .s-block--slider-with-bg {
 	background-color: transparent;
 	
