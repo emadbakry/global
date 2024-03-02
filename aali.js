@@ -73,7 +73,14 @@ html:not(.dark) #app.product-card-bg-on .s-block--slider-with-bg {
 .dark #app .s-block--slider-with-bg {
 	background-color: transparent;
 }
-			
+#app.index .s-products-list-wrapper.s-products-list-horizontal-cards {
+	grid-template-columns: repeat(1,1fr);
+}
+@media only screen and (min-width: 992px) {
+	#app.index .s-products-list-wrapper.s-products-list-horizontal-cards {
+		grid-template-columns: repeat(2,1fr);
+	}
+}
 `;
 // append style element
 
