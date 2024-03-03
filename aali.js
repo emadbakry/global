@@ -7,10 +7,7 @@ var style = document.createElement("style");
 style.setAttribute("type", "text/css");
 
 // add css content
-
 style.innerHTML = `
-
-
 /* hi */
 
 html:not(.dark) .product-single .total-price.t-red {
@@ -58,7 +55,7 @@ body img.lazy.loaded {
 
 
 .animated-ads--content li {
-	    animation-name: marquee !important;
+	animation-name: marquee !important;
 }
 
 custom-salla-product-card .price-wrapper .t-red + .before-price.text-sm {
