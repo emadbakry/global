@@ -54,9 +54,9 @@ body img.lazy.loaded {
 /* test */
 
 
-.animated-ads--content li {
-	animation-name: marquee !important;
-}
+// .animated-ads--content li {
+// 	animation-name: marquee !important;
+// }
 
 custom-salla-product-card .price-wrapper .t-red + .before-price.text-sm {
 	font-size: 0.8rem;
