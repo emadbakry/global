@@ -1,6 +1,23 @@
 /* dm store */
 /* fix store features size */
+@import url(https://raw.githack.com/elwa2/cssres/main/freeraed.css);
+@font-face {
+	font-family: "GESSTextMedium";
+	src: url("https://alfont.com/wp-content/fonts/thulth-arabic-fonts//alfont_com_Cadillac-Sans-Arabic-Medium.ttf");
+}
+body,
+*:not(i) {
+	font-family: "GESSTextMedium" !important;
+}
 
 body#app .s-block--features__item .feature-icon i {
 	font-size: calc(var(--f-width, 2rem) / 3 + var(--f-height, 3rem) / 3);
+}
+
+.store-header .search-btn {
+	display: none;
+}
+
+.product-category-name {
+	display: none;
 }
