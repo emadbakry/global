@@ -58,6 +58,10 @@ body img.lazy.loaded {
 // 	animation-name: marquee !important;
 // }
 
+#app.app-body .s-block-fullscreen-banners.height-auto .bg__image video {
+	position: relative;
+}
+
 custom-salla-product-card .price-wrapper .t-red + .before-price.text-sm {
 	font-size: 0.8rem;
     margin-left: 0;
