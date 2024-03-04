@@ -61,6 +61,7 @@ body img.lazy.loaded {
 custom-salla-product-card .price-wrapper .t-red + .before-price.text-sm {
 	font-size: 0.8rem;
     margin-left: 0;
+	display: inline-block;
 }
 
 html:not(.dark) #app.product-card-bg-on .s-block--slider-with-bg {
