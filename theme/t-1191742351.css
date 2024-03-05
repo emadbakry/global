@@ -52,6 +52,11 @@ body.switch3_on .wa-btn {
 	display: flex;
 }
 
+.s-quantity-input-input,
+.salla-input-quantity-pp .s-quantity-input-input {
+	padding-top: 0;
+}
+
 @media only screen and (max-width: 767px) {
 	.grid-cols-2 .s-block--features__item:first-of-type {
 		grid-column: span 2 !important;
