@@ -14,10 +14,40 @@ body#app .s-block--features__item .feature-icon i {
 	font-size: calc(var(--f-width, 2rem) / 3 + var(--f-height, 3rem) / 3);
 }
 
-.store-header .search-btn {
+/* .store-header .search-btn {
 	display: none;
+} */
+
+/* .product-category-name {
+	display: none;
+} */
+
+.s-block-animated-text.txt-grad .aniated-text-inner {
+	background: linear-gradient(45deg, var(--gradient-second), var(--gradient-first)) !important;
+	border-width: 0 !important;
+	color: var(--gradient-text-color) !important;
+	padding: 0rem 0.5rem 0.2rem 0.5rem;
+	width: fit-content;
+	margin: auto;
+	border-radius: 1.7rem 0.5rem 0.5rem 1rem;
 }
 
-.product-category-name {
-	display: none;
+body.switch2_on .sold-times-wrapper,
+body.switch2_on custom-salla-product-card .price-wrapper {
+	font-weight: 700;
+}
+
+body.switch3_on .wa-btn:after {
+	content: var(--custom-title3);
+	padding: 0 0.7rem;
+	color: #ffffff;
+}
+
+body.switch3_on .wa-widget {
+	width: auto;
+}
+body.switch3_on .wa-btn {
+	width: auto;
+	padding-right: 0.5rem;
+	display: flex;
 }
