@@ -51,3 +51,9 @@ body.switch3_on .wa-btn {
 	padding-right: 0.5rem;
 	display: flex;
 }
+
+@media only screen and (max-width: 767px) {
+	.grid-cols-2 .s-block--features__item:first-of-type {
+		grid-column: span 2 !important;
+	}
+}
