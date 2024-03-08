@@ -13,34 +13,9 @@ style.innerHTML = `
 html:not(.dark) .product-single .total-price.t-red {
 	color: var(--red-color,#ef4444);
 }
-
-
-.index#app #fullscreen-banner-0 .bg__image {
-    height: 75vh;
-    height: 80vh;
-    height: var(--fs-desk-height,80vh);
-    min-height: 20vh
-}
-
-@media only screen and (min-width: 492px) and (max-width:1024px) {
-    .index#app #fullscreen-banner-0 .bg__image {
-        height:90vh;
-        height: var(--fs-tablet-height,90vh);
-        min-height: 20vh
-    }
-}
-
-@media only screen and (max-width: 492px) {
-    .index#app #fullscreen-banner-0 .bg__image {
-        height:90vh;
-        height: var(--fs-mob-height,90vh);
-        min-height: 20vh
-    }
-}
 .mob-n-li span {
 	text-align: center;
 }
-
 /* test */
 /*
 body img.lazy*[data^="data"] {
@@ -52,28 +27,16 @@ body img.lazy.loaded {
 }
 */
 /* test */
-
-
 // .animated-ads--content li {
 // 	animation-name: marquee !important;
 // }
-
 #app.app-body .s-block-fullscreen-banners.height-auto .bg__image video {
 	position: relative;
 }
-
 custom-salla-product-card .price-wrapper .t-red + .before-price.text-sm {
 	font-size: 0.8rem;
     margin-left: 0;
 	display: inline-block;
-}
-
-html:not(.dark) #app.product-card-bg-on .s-block--slider-with-bg {
-	background-color: transparent;
-	
-}
-.dark #app .s-block--slider-with-bg {
-	background-color: transparent;
 }
 #app.index .s-products-list-wrapper.s-products-list-horizontal-cards {
 	grid-template-columns: repeat(1,1fr);
@@ -85,7 +48,6 @@ html:not(.dark) #app.product-card-bg-on .s-block--slider-with-bg {
 }
 `;
 // append style element
-
 document.getElementsByTagName("head")[0].appendChild(style);
 
 // fix mobile nav, tempo
