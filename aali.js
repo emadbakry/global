@@ -10,6 +10,12 @@ style.setAttribute("type", "text/css");
 style.innerHTML = `
 /* hi */
 
+@media only screen and (max-width: 492px) {
+	.cntr .s-block--features__item:first-of-type {
+		grid-column: span 2 !important;
+	}
+}
+
 html:not(.dark) .product-single .total-price.t-red {
 	color: var(--red-color,#ef4444);
 }
