@@ -15,6 +15,12 @@ style.innerHTML = `
 		grid-column: span 2 !important;
 	}
 }
+#app .global-animated-ads + .store-header {
+	margin-top: 0;
+}
+.index#app .global-animated-ads + .store-header {
+	margin-top: 38px;
+}
 
 html:not(.dark) .product-single .total-price.t-red {
 	color: var(--red-color,#ef4444);
