@@ -22,6 +22,11 @@ style.innerHTML = `
 	margin-top: 38px;
 }
 
+#app .s-product-options-colors-wrapper .s-product-options-colors-item {
+	margin-left: 0.6rem; 
+	margin-right: 0.6rem; 
+}
+
 html:not(.dark) .product-single .total-price.t-red {
 	color: var(--red-color,#ef4444);
 }
