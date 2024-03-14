@@ -25,6 +25,7 @@ style.innerHTML = `
 #app .s-product-options-colors-wrapper .s-product-options-colors-item {
 	margin-left: 0.6rem; 
 	margin-right: 0.6rem; 
+ 	width: auto;
 }
 
 html:not(.dark) .product-single .total-price.t-red {
