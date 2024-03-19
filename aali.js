@@ -28,6 +28,22 @@ style.innerHTML = `
  	width: auto;
 }
 
+body:not(.fake-atc) .aaliicon-add-to-cart-outer .s-button-text:before {
+	margin-left: 0.4rem;
+}
+
+body:not(.fake-atc) .aaliicon-add-to-cart-outer .s-button-text:before {
+	transform: none;
+	position: static;
+	vertical-align: middle;
+	margin-left: 4px;
+	margin-top: -2px;
+}
+[dir="ltr"] body:not(.fake-atc) .aaliicon-add-to-cart-outer .s-button-text:before {
+	margin-right: 4px;
+}
+
+
 html:not(.dark) .product-single .total-price.t-red {
 	color: var(--red-color,#ef4444);
 }
