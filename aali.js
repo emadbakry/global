@@ -38,6 +38,7 @@ body:not(.fake-atc) .aaliicon-add-to-cart-outer .s-button-text:before {
 	vertical-align: middle;
 	margin-left: 4px;
 	margin-top: -2px;
+	display: inline-block;
 }
 [dir="ltr"] body:not(.fake-atc) .aaliicon-add-to-cart-outer .s-button-text:before {
 	margin-right: 4px;
