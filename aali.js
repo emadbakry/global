@@ -40,6 +40,12 @@ body:not(.fake-atc) .aaliicon-add-to-cart-outer .s-button-text:before {
 	margin-top: -2px;
 	display: inline-block;
 }
+
+
+.h-b .product-brand-wrapper {
+	display: none;
+}
+
 [dir="ltr"] body:not(.fake-atc) .aaliicon-add-to-cart-outer .s-button-text:before {
 	margin-right: 4px;
 }
