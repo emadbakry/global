@@ -110,6 +110,10 @@ custom-salla-product-card .price-wrapper .t-red + .before-price.text-sm {
     }
 }
 
+#app.prod_line_count_on.prod_vertical.p-line-count-mob-2.app-body.product-single .similar-products .s-products-slider-card  {
+    max-width: 50%;   
+}
+
 .store-header .sicon-search {
 	vertical-align: middle;
 }
