@@ -118,6 +118,7 @@ custom-salla-product-card .price-wrapper .t-red + .before-price.text-sm {
 
 .store-header .sicon-search {
 	vertical-align: middle;
+	display: flex;
 }
 `;
 // append style element
