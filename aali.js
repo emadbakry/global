@@ -87,6 +87,12 @@ custom-salla-product-card .price-wrapper .t-red + .before-price.text-sm {
 		grid-template-columns: repeat(2,1fr);
 	}
 }
+@media only screen and (min-width: 767px) {
+	.before-after-wrapper {
+		width: 66vmin;
+    	margin: auto;
+	}
+}
 
 
 .index#app #fullscreen-banner-0 .bg__image {
@@ -146,6 +152,8 @@ custom-salla-product-card .price-wrapper .t-red + .before-price.text-sm {
 	background-color: var(--color-primary-d) !important;
 }
 /* tempo: cuz of loyalti */
+
+
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
