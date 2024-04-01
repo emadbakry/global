@@ -120,6 +120,32 @@ custom-salla-product-card .price-wrapper .t-red + .before-price.text-sm {
 	vertical-align: middle;
 	display: flex;
 }
+
+
+
+/* tempo: cuz of loyalti */
+.dark .cart .shadow-default.mb-5.rounded-md.p-3.xs\:p-7 {
+	background-color: var(--dm-bg-sec) !important;
+	color: var(--dm-text-main) !important;
+}
+.dark .cart salla-modal .s-loyalty-prize-item,
+.dark .cart salla-modal salla-list-tile .s-list-tile-item,
+.dark .cart .shadow-default.mb-5.rounded-md.p-3.xs\:p-7 .s-list-tile-item {
+	background-color: transparent !important;
+	color: var(--dm-text-main) !important;
+}
+.dark .cart salla-modal .s-loyalty-prize-item .s-loyalty-prize-item-subtitle {
+	color: var(--dm-text-sec) !important;
+}
+
+.dark .s-loyalty-header-subtitle {
+	color: var(--dm-text-main) !important;
+}
+
+.dark .s-modal-wrapper .s-tabs-header-item:not(.s-tabs-active) {
+	background-color: var(--color-primary-d) !important;
+}
+/* tempo: cuz of loyalti */
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
