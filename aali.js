@@ -20,6 +20,7 @@ style.innerHTML = `
 }
 .index#app .global-animated-ads + .store-header {
 	margin-top: 38px;
+	margin-top: 0;
 }
 
 #app .s-product-options-colors-wrapper .s-product-options-colors-item {
