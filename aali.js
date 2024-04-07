@@ -127,6 +127,10 @@ custom-salla-product-card .price-wrapper .t-red + .before-price.text-sm {
 	display: flex;
 }
 
+html:not(.dark) .s-localization-modal-label {
+	color: inherit !important;
+}
+
 
 
 /* tempo: cuz of loyalti */
