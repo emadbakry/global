@@ -131,6 +131,11 @@ html:not(.dark) .s-localization-modal-label {
 	color: inherit !important;
 }
 
+.header-is-dark#app #mainnav .desktop-menu-item .sub-menu {
+	background-color: var(--header-bg-color) !important;
+    color: var(--header-text-color) !important;
+}
+
 
 
 /* tempo: cuz of loyalti */
