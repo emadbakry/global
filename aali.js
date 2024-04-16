@@ -137,6 +137,11 @@ html:not(.dark) .s-localization-modal-label {
 }
 
 
+body.p-thumbs-down.product-single .details-slider .s-slider-thumbs {
+	position: static;
+	top: unset;
+}
+
 
 /* tempo: cuz of loyalti */
 .dark .cart .shadow-default.mb-5.rounded-md.p-3.xs\:p-7 {
