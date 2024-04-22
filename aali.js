@@ -167,7 +167,10 @@ body.p-thumbs-down.product-single .details-slider .s-slider-thumbs {
 }
 /* tempo: cuz of loyalti */
 
-
+#app .s-block--slider-with-bg .s-slider-block__display-all {
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
