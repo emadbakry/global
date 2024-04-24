@@ -15,7 +15,7 @@ style.innerHTML = `
 		grid-column: span 2 !important;
 	}
 }
-#app .global-animated-ads + .store-header {
+#app.app-body .global-animated-ads + .store-header {
 	margin-top: 0;
 }
 #app.header-merged .global-animated-ads + .store-header {
