@@ -33,13 +33,12 @@ style.innerHTML = `
 	background-color: transparent !important;
 }
 
-.dark .product-single.product-des-force-light .product__description strong {
-	color: var(--dm-text-sec) !important;
-	background-color: transparent !important;
-}
-
 body:not(.fake-atc) .aaliicon-add-to-cart-outer .s-button-text:before {
 	margin-left: 0.4rem;
+}
+
+.dark .s-quantity-input-decrease-button {
+	fill: var(--dm-text-main, #ffffff);
 }
 
 body:not(.fake-atc) .aaliicon-add-to-cart-outer .s-button-text:before {
