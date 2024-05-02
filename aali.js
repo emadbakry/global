@@ -32,6 +32,18 @@ style.innerHTML = `
 	color: var(--dm-text-sec) !important;
 	background-color: transparent !important;
 }
+.dark .product-single.product-des-force-light .product__description span {
+	color: var(--dm-text-sec) !important;
+	background-color: transparent !important;
+}
+.dark .product-single.product-des-force-light .product__description strong {
+	color: var(--dm-text-sec) !important;
+	background-color: transparent !important;
+}
+.dark .product-single.product-des-force-light .product__description a {
+	color: var(--dm-text-sec) !important;
+	background-color: transparent !important;
+}
 
 body:not(.fake-atc) .aaliicon-add-to-cart-outer .s-button-text:before {
 	margin-left: 0.4rem;
