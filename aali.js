@@ -118,11 +118,15 @@ custom-salla-product-card .price-wrapper .t-red + .before-price.text-sm {
 }
 
 
-.s-product-options-colors-wrapper input[type=radio]+label span[style*="background-color: rgb(232, 232, 232)"]:after {
-	background-color: #000000;
-}
-.s-product-options-colors-wrapper input[type=radio]+label span[style*="background-color: rgb(256, 256, 256)"]:after {
-	background-color: #000000;
+// .s-product-options-colors-wrapper input[type=radio]+label span[style*="background-color: rgb(232, 232, 232)"]:after {
+// 	background-color: #000000;
+// }
+// .s-product-options-colors-wrapper input[type=radio]+label span[style*="background-color: rgb(256, 256, 256)"]:after {
+// 	background-color: #000000;
+// }
+#app .s-product-options-colors-wrapper input[type=radio]+label span:after {
+	// background: linear-gradient(45deg, black 0%, black 50%, #ffffff 50%) !important;
+	border: 2px solid #111111;
 }
 
 
