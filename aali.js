@@ -210,9 +210,11 @@ body.p-thumbs-down.product-single .details-slider .s-slider-thumbs {
 
 /* for stores with custom atc text came from custom title 1 */
  
+.custom-atc-text.atc-2#app .pm-content salla-add-product-button button[product-id].s-button-primary .s-button-text,
 .custom-atc-text.atc-2#app custom-salla-product-card salla-add-product-button button[product-id].s-button-primary .s-button-text {
 	font-size: 0;
 }
+.custom-atc-text.atc-2#app .pm-content salla-add-product-button button[product-id].s-button-primary .s-button-text:after,
 .custom-atc-text.atc-2#app custom-salla-product-card salla-add-product-button button[product-id].s-button-primary .s-button-text:after {
 	content: var(--custom-title1, "إضافة للسلة");
 	font-size: 0.875rem;
