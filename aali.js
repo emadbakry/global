@@ -117,13 +117,14 @@ custom-salla-product-card .price-wrapper .t-red + .before-price.text-sm {
 	}
 }
 
-
-// .s-product-options-colors-wrapper input[type=radio]+label span[style*="background-color: rgb(232, 232, 232)"]:after {
-// 	background-color: #000000;
-// }
-// .s-product-options-colors-wrapper input[type=radio]+label span[style*="background-color: rgb(256, 256, 256)"]:after {
-// 	background-color: #000000;
-// }
+/*
+.s-product-options-colors-wrapper input[type=radio]+label span[style*="background-color: rgb(232, 232, 232)"]:after {
+	background-color: #000000;
+}
+.s-product-options-colors-wrapper input[type=radio]+label span[style*="background-color: rgb(256, 256, 256)"]:after {
+	background-color: #000000;
+}
+*/
 #app .s-product-options-colors-wrapper input[type=radio]+label span:after {
 	// background: linear-gradient(45deg, black 0%, black 50%, #ffffff 50%) !important;
 	border: 2px solid #111111;
@@ -207,22 +208,24 @@ body.p-thumbs-down.product-single .details-slider .s-slider-thumbs {
 	padding-right: 1rem;
 }
 
-// for stores with custom atc text came from custom title 1
+/* for stores with custom atc text came from custom title 1 */
  
 .custom-atc-text.atc-2#app custom-salla-product-card salla-add-product-button button[product-id].s-button-primary .s-button-text {
-	// font-size: 0;
+	font-size: 0;
 }
 .custom-atc-text.atc-2#app custom-salla-product-card salla-add-product-button button[product-id].s-button-primary .s-button-text:after {
-	// content: var(--custom-title1, "إضافة للسلة");
-	// font-size: 0.875rem;
-	// vertical-align: middle;
+	content: var(--custom-title1, "إضافة للسلة");
+	font-size: 0.875rem;
+	vertical-align: middle;
 }
 
-// @media only screen and (max-width: 767px) {
-// 	#app.is-sticky-product-bar .sticky-product-bar salla-add-product-button button[product-id].s-button-primary .s-button-text:after {
-// 		display: none;
-// 	}
-// }
+/*
+@media only screen and (max-width: 767px) {
+	#app.is-sticky-product-bar .sticky-product-bar salla-add-product-button button[product-id].s-button-primary .s-button-text:after {
+		display: none;
+	}
+}
+*/
 
 // for stores with custom atc text came from custom title 1
 `;
