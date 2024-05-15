@@ -206,6 +206,25 @@ body.p-thumbs-down.product-single .details-slider .s-slider-thumbs {
 	padding-left: 1rem;
 	padding-right: 1rem;
 }
+
+// for stores with custom atc text came from custom title 1
+ 
+.custom-atc-text.atc-2#app custom-salla-product-card salla-add-product-button button[product-id].s-button-primary .s-button-text {
+	font-size: 0;
+}
+.custom-atc-text.atc-2#app custom-salla-product-card salla-add-product-button button[product-id].s-button-primary .s-button-text:after {
+	content: var(--custom-title1, "إضافة للسلة");
+	font-size: 0.875rem;
+	vertical-align: middle;
+}
+
+// @media only screen and (max-width: 767px) {
+// 	#app.is-sticky-product-bar .sticky-product-bar salla-add-product-button button[product-id].s-button-primary .s-button-text:after {
+// 		display: none;
+// 	}
+// }
+
+// for stores with custom atc text came from custom title 1
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
@@ -248,4 +267,28 @@ if (document.readyState == "complete") {
 	all();
 } else {
 	document.addEventListener("DOMContentLoaded", all);
+}
+
+function changeATC() {
+	// if client wants to change atc text
+	if (document.body.classList.contains("atc-2")) {
+		// if client has set atc text using custom-title1
+		// first get custom title 1
+		let computedStyleBody = window.getComputedStyle(document.getElementById("app"));
+		let atc_word = computedStyleBody.getPropertyValue("--custom-title1");
+		if (atc_word.length > 2) {
+			// if custome title exist and has more than 2 char
+			document.body.style.setProperty("--custom-title1", `${atc_word}`);
+			document.body.classList.add("custom-atc-text");
+			// let atc = atc_word.slice(1, -1);
+		} else {
+			//if not
+			console.log("could not find atc text using c-data or the one came from Aali theme, make sure to type a text in (custom-title1)");
+		}
+	}
+}
+if (document.readyState == "complete") {
+	changeATC();
+} else {
+	document.addEventListener("DOMContentLoaded", changeATC);
 }
