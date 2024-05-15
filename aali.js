@@ -220,3 +220,32 @@ if (document.readyState == "loading") {
 	ready();
 }
 // fix mobile nav, tempo
+
+function all() {
+	let video = document.querySelector(".bg__image video");
+	let video_wrapper = document.querySelector(".bg__image");
+	setTimeout(() => {
+		if (document.body.classList.contains("vid")) {
+			if (video) {
+				video.removeAttribute("muted");
+				video.play();
+			}
+			if (video_wrapper) {
+				video_wrapper.addEventListener("click", () => {
+					if (video.paused) {
+						video.play();
+					} else {
+						video.pause();
+					}
+				});
+			}
+		}
+	}, 2000);
+}
+
+// when loaded
+if (document.readyState == "complete") {
+	all();
+} else {
+	document.addEventListener("DOMContentLoaded", all);
+}
