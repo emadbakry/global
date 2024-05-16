@@ -229,7 +229,7 @@ body.p-thumbs-down.product-single .details-slider .s-slider-thumbs {
 }
 */
 
-// for stores with custom atc text came from custom title 1
+/* for stores with custom atc text came from custom title 1 */
 
 
 /* make product thumbs go down*/
