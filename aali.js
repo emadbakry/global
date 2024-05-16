@@ -230,6 +230,13 @@ body.p-thumbs-down.product-single .details-slider .s-slider-thumbs {
 */
 
 // for stores with custom atc text came from custom title 1
+
+
+/* make product thumbs go down*/
+.product-single.thumb-down .details-slider .s-slider-thumbs {
+	position: static;
+}
+/* make product thumbs go down*/
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
