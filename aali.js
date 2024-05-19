@@ -237,6 +237,11 @@ body.p-thumbs-down.product-single .details-slider .s-slider-thumbs {
 	position: static;
 }
 /* make product thumbs go down*/
+
+
+body#app .s-block--features__item .feature-icon i {
+	font-size: calc(var(--f-width,2rem)/3.5 + var(--f-height,2rem)/3.5);
+}
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
