@@ -242,6 +242,10 @@ body.p-thumbs-down.product-single .details-slider .s-slider-thumbs {
 body#app .s-block--features__item .feature-icon i {
 	font-size: calc(var(--f-width,2rem)/3.5 + var(--f-height,2rem)/3.5);
 }
+
+[dir="rtl"] .header-innerLeft salla-cart-summary {
+	margin-right: 0.7rem;
+}
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
