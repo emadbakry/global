@@ -246,6 +246,14 @@ body#app .s-block--features__item .feature-icon i {
 [dir="rtl"] .header-innerLeft salla-cart-summary {
 	margin-right: 0.7rem;
 }
+
+@media only screen and (min-width: 1024px) {
+.s-block--one-wide-banner .f {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+}
+
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
