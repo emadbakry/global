@@ -263,6 +263,10 @@ body#app .s-block--features__item .feature-icon i {
 	color: var(--dm-text-sec);
 }
 
+.s-block-awesome-btn button i {
+	vertical-align: middle;
+}
+
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
