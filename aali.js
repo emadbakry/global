@@ -254,6 +254,15 @@ body#app .s-block--features__item .feature-icon i {
 }
 }
 
+
+#app.btns-gradient .s-button-primary .s-button-text {
+	color: var(--gradient-text-color) !important;
+}
+
+.dark .s-rating-stars-reviews {
+	color: var(--dm-text-sec);
+}
+
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
