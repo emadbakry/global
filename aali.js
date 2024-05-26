@@ -267,6 +267,10 @@ body#app .s-block--features__item .feature-icon i {
 	vertical-align: middle;
 }
 
+.mob-user--left-only .header-signInBtn {
+	order: unset;
+}
+
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
