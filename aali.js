@@ -271,6 +271,9 @@ body#app .s-block--features__item .feature-icon i {
 	order: unset;
 }
 
+body.dm-icon-left .toggler-left {
+	display: flex !important;
+}
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
