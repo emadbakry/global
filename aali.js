@@ -255,7 +255,7 @@ body#app .s-block--features__item .feature-icon i {
 }
 
 
-#app.btns-gradient .s-button-primary .s-button-text {
+#app.btns-gradient .s-button-primary:not(.dm-btn-in-bg-sec) .s-button-text {
 	color: var(--gradient-text-color) !important;
 }
 
