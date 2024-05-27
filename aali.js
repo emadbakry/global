@@ -297,6 +297,9 @@ function all() {
 			if (video) {
 				video.removeAttribute("muted");
 				video.play();
+				setTimeout(() => {
+					video.play();
+				}, 2000);
 			}
 			if (video_wrapper) {
 				video_wrapper.addEventListener("click", () => {
