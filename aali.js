@@ -274,6 +274,16 @@ body#app .s-block--features__item .feature-icon i {
 body.dm-icon-left .toggler-left {
 	display: flex !important;
 }
+
+
+[dir="rtl"] .product__description ol,
+[dir="rtl"] .product__description ul {
+	margin-right: 22px;
+}
+[dir="ltr"] .product__description ol,
+[dir="ltr"] .product__description ul {
+	margin-left: 22px;
+}
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
