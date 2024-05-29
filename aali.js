@@ -284,6 +284,16 @@ body.dm-icon-left .toggler-left {
 [dir="ltr"] .product__description ul {
 	margin-left: 22px;
 }
+
+
+.s-add-product-button-main salla-mini-checkout-widget {
+	display: none;
+}
+
+#app.header-hidden.fixed-pinned-cls .store-header {
+	opacity: 0;
+	visibility: hidden;
+}
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
