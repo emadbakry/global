@@ -382,6 +382,7 @@ body .s-add-product-button-main salla-mini-checkout-widget {
 @media only screen and (min-width: 768px) {
 	body .sticky-product-bar salla-add-product-button {
 		flex-wrap: wrap;
+		row-gap: 1rem;
 	}
 }
 `;
