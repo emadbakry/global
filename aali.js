@@ -91,9 +91,7 @@ body img.lazy.loaded {
 }
 */
 /* test */
-// .animated-ads--content li {
-// 	animation-name: marquee !important;
-// }
+
 #app.app-body .s-block-fullscreen-banners.height-auto .bg__image video {
 	position: relative;
 }
@@ -126,7 +124,7 @@ custom-salla-product-card .price-wrapper .t-red + .before-price.text-sm {
 }
 */
 #app .s-product-options-colors-wrapper input[type=radio]+label span:after {
-	// background: linear-gradient(45deg, black 0%, black 50%, #ffffff 50%) !important;
+	/* background: linear-gradient(45deg, black 0%, black 50%, #ffffff 50%) !important;*/
 	border: 2px solid #111111;
 }
 
@@ -383,6 +381,14 @@ body .s-add-product-button-main salla-mini-checkout-widget {
 	body .sticky-product-bar salla-add-product-button {
 		flex-wrap: wrap;
 		row-gap: 1rem;
+	}
+}
+
+
+@media only screen and (max-width: 640px) {
+	body.product-single.is-sticky-product-bar .wa-widget,
+	body.product-single.is-sticky-product-bar .scroll-progress-wrapper {
+		bottom: calc(var(--mobile-nav-height) + 6.5rem);
 	}
 }
 `;
