@@ -286,13 +286,75 @@ body.dm-icon-left .toggler-left {
 }
 
 
-.s-add-product-button-main salla-mini-checkout-widget {
-	display: none;
-}
+
 
 #app.header-hidden.fixed-pinned-cls .store-header {
 	opacity: 0;
 	visibility: hidden;
+}
+
+
+
+.product-single .sticky-product-bar .p-quan-container {
+	display: flex;
+    flex-direction: row-reverse;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 0.6rem;
+}
+.is-sticky-product-bar .sticky-product-bar salla-add-product-button {
+	width: 100%;
+}
+.is-sticky-product-bar .sticky-product-bar {
+	flex-direction: column;
+}
+.is-sticky-product-bar .sticky-product-bar .sticky-product-bar__quantity salla-quantity-input,
+.is-sticky-product-bar .sticky-product-bar .sticky-product-bar__quantity .s-quantity-input-container,
+.is-sticky-product-bar .sticky-product-bar .sticky-product-bar__quantity {
+	width: 100%;
+}
+.is-sticky-product-bar .sticky-product-bar .sticky-product-bar__quantity .s-quantity-input-container {
+	justify-content: space-between;
+}
+
+.s-add-product-button-main .s-add-product-button-mini-checkout-content {
+	display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+}
+
+.s-add-product-button-main .s-add-product-button-mini-checkout-content svg {
+	height: 1.2rem;
+    width: 1.2rem;
+    fill: currentColor;
+	margin-right: 0.4rem;
+}
+
+[dir=rtl] .s-add-product-button-main .s-add-product-button-mini-checkout-content svg {
+	margin-right: 0;
+	margin-left: 0.4rem;
+}
+
+.sticky-product-bar salla-add-product-button .s-add-product-button-main {
+	width: 100%;
+    display: flex;
+    column-gap: 1rem;
+    justify-content: space-between;
+}
+.is-sticky-product-bar .sticky-product-bar salla-add-product-button .s-add-product-button-main salla-button {
+	width: auto;
+	flex-grow: 1;
+}
+body .s-add-product-button-main salla-mini-checkout-widget {
+	display: block;
+	flex-grow: 1;
+}
+.mobile-nav-is-on.show-mobile-nav.is-sticky-product-bar .sticky-product-bar {
+	padding-bottom: calc(2px + var(--mobile-nav-height))!important;
+}
+[dir="rtl"] .is-sticky-product-bar .sticky-product-bar salla-add-product-button {
+	margin-right: 0;
+	margin-left: 0;
 }
 `;
 // append style element
