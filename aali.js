@@ -298,6 +298,13 @@ body.dm-icon-left .toggler-left {
 	.product-single.is-sticky-product-bar .sticky-product-bar .p-quan-container {
 		display: flex;
 	}
+	.pm-content salla-add-product-button {
+	flex-wrap: wrap;
+	}
+	.pm-content salla-add-product-button salla-quick-buy {
+		margin-top: 0.8rem;
+	}
+
 }
 
 .product-single .sticky-product-bar .p-quan-container {
@@ -338,6 +345,7 @@ body.dm-icon-left .toggler-left {
 	margin-right: 0;
 	margin-left: 0.4rem;
 }
+
 
 .pm-content salla-add-product-button .s-add-product-button-main,
 .sticky-product-bar salla-add-product-button .s-add-product-button-main {
