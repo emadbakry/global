@@ -304,7 +304,6 @@ body.dm-icon-left .toggler-left {
 	.pm-content salla-add-product-button salla-quick-buy {
 		margin-top: 0.8rem;
 	}
-
 }
 
 .product-single .sticky-product-bar .p-quan-container {
@@ -377,6 +376,12 @@ body .s-add-product-button-main salla-mini-checkout-widget {
 @media only screen and (max-width: 380px) {
 	.product-single:not(.rev-quk-btn-h) salla-add-product-button salla-mini-checkout-widget {
 		--salla-fast-checkout-button-height: 34px;
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	body .sticky-product-bar salla-add-product-button {
+		flex-wrap: wrap;
 	}
 }
 `;
