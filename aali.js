@@ -286,9 +286,8 @@ body.dm-icon-left .toggler-left {
 
 
 
-#app.header-hidden.fixed-pinned-cls .store-header {
-	opacity: 0;
-	visibility: hidden;
+#app.header-hidden.fixed-pinned-cls .store-header .inner {
+	top: -250px;
 }
 
 
