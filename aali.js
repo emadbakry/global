@@ -390,6 +390,15 @@ body .s-add-product-button-main salla-mini-checkout-widget {
 		bottom: calc(var(--mobile-nav-height) + 6.5rem);
 	}
 }
+
+
+.dark .s-add-product-button-mini-checkout-content {
+	color: var(--dm-text-main, #fff);
+	border-color: var(--dm-text-main, #fff);
+}
+.dark body .s-add-product-button-main salla-mini-checkout-widget {
+	--color-primary: var(--dm-text-sec, #fff);
+}
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
