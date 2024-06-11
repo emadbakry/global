@@ -257,6 +257,16 @@ body#app .s-block--features__item .feature-icon i {
 	color: var(--gradient-text-color) !important;
 }
 
+
+#app.btns-gradient .btn-gradient,
+body#app.btns-gradient .s-button-primary {
+	background: linear-gradient(45deg, var(--gradient-second), var(--gradient-first)) !important;
+	border-width: 0 !important;
+	color: var(--gradient-text-color) !important;
+	fill: var(--gradient-text-color) !important ;
+	border-radius: 0;
+}
+
 .dark .s-rating-stars-reviews {
 	color: var(--dm-text-sec);
 }
@@ -389,8 +399,15 @@ body .s-add-product-button-main salla-mini-checkout-widget {
 	body.product-single.is-sticky-product-bar .scroll-progress-wrapper {
 		bottom: calc(var(--mobile-nav-height) + 6.5rem);
 	}
+	
 }
 
+@media only screen and (max-width: 767px) {
+	body#app.hide-mob-header-cart.mobile_nav_cart_on .store-header salla-cart-summary {
+		margin-right: 0;
+		margin-left: 0;
+	}
+}
 
 .dark .s-add-product-button-mini-checkout-content {
 	color: var(--dm-text-main, #fff);
@@ -399,6 +416,7 @@ body .s-add-product-button-main salla-mini-checkout-widget {
 .dark body .s-add-product-button-main salla-mini-checkout-widget {
 	--color-primary: var(--dm-text-sec, #fff);
 }
+
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
