@@ -416,7 +416,7 @@ body .s-add-product-button-main salla-mini-checkout-widget {
 .dark body .s-add-product-button-main salla-mini-checkout-widget {
 	--color-primary: var(--dm-text-sec, #fff);
 }
-
+ 
 custom-salla-product-card .showPreviewBtn {
 	border-radius: var(--add-to-cart-radius,4px);
 }
