@@ -264,7 +264,6 @@ body#app.btns-gradient .s-button-primary {
 	border-width: 0 !important;
 	color: var(--gradient-text-color) !important;
 	fill: var(--gradient-text-color) !important ;
-	border-radius: 0;
 }
 
 .dark .s-rating-stars-reviews {
