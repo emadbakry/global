@@ -258,6 +258,9 @@ body#app .s-block--features__item .feature-icon i {
 }
 
 
+#app.btns-gradient.cart .cart-submit-wrap .s-button-element {
+	border-radius: 0;
+}
 #app.btns-gradient .btn-gradient,
 body#app.btns-gradient .s-button-primary {
 	background: linear-gradient(45deg, var(--gradient-second), var(--gradient-first)) !important;
