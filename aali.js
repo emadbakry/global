@@ -422,6 +422,12 @@ body .s-add-product-button-main salla-mini-checkout-widget {
 custom-salla-product-card .showPreviewBtn {
 	border-radius: var(--add-to-cart-radius,4px);
 }
+
+
+.mobile-menu .close-mobile-menu {
+	display: block !important;
+}
+
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
