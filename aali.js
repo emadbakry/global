@@ -428,6 +428,10 @@ custom-salla-product-card .showPreviewBtn {
 	display: block !important;
 }
 
+body.footer-cls-1 .footer-contact a {
+	background-color: var(--footer-bg-color);
+}
+
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
