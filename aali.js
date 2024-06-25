@@ -392,6 +392,7 @@ body .s-add-product-button-main salla-mini-checkout-widget {
 	body .sticky-product-bar salla-add-product-button {
 		flex-wrap: wrap;
 		row-gap: 1rem;
+
 	}
 }
 
@@ -432,6 +433,10 @@ body.footer-cls-1 .footer-contact a {
 	background-color: var(--footer-bg-color);
 }
 
+[dir="rtl"] .sm-price custom-salla-product-card .price-wrapper .t-red + .before-price.text-sm {
+	font-size: 0.62em;
+	margin-right: 0.24em;
+}
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
