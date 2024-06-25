@@ -434,8 +434,11 @@ body.footer-cls-1 .footer-contact a {
 }
 
 [dir="rtl"] .sm-price custom-salla-product-card .price-wrapper .t-red + .before-price.text-sm {
-	font-size: 0.60em;
-	margin-right: 0.20em;
+	font-size: 0.60rem;
+	margin-right: 0.20rem;
+}
+[dir="rtl"] .sm-price custom-salla-product-card .price-wrapper .color-danger {
+	font-size: 1rem;
 }
 `;
 // append style element
