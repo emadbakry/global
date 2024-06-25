@@ -434,8 +434,8 @@ body.footer-cls-1 .footer-contact a {
 }
 
 [dir="rtl"] .sm-price custom-salla-product-card .price-wrapper .t-red + .before-price.text-sm {
-	font-size: 0.62em;
-	margin-right: 0.24em;
+	font-size: 0.60em;
+	margin-right: 0.20em;
 }
 `;
 // append style element
