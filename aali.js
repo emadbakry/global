@@ -440,6 +440,10 @@ body.footer-cls-1 .footer-contact a {
 [dir="rtl"] .sm-price custom-salla-product-card .price-wrapper .color-danger {
 	font-size: 1rem;
 }
+
+.hdr-small .top-navbar {
+		padding: 0;
+	}
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
