@@ -460,28 +460,30 @@ if (document.readyState == "loading") {
 // fix mobile nav, tempo
 
 function all() {
-	let video = document.querySelector(".bg__image video");
-	let video_wrapper = document.querySelector(".bg__image");
-	setTimeout(() => {
-		if (document.body.classList.contains("vid")) {
-			if (video) {
-				video.removeAttribute("muted");
-				video.play();
-				setTimeout(() => {
+	let all_videos = document.querySelectorAll(".bg__image video");
+	all_videos.forEach((video) => {
+		let video_wrapper = video.querySelector(".bg__image");
+		setTimeout(() => {
+			if (document.body.classList.contains("vid")) {
+				if (video) {
+					video.removeAttribute("muted");
 					video.play();
-				}, 2000);
-			}
-			if (video_wrapper) {
-				video_wrapper.addEventListener("click", () => {
-					if (video.paused) {
+					setTimeout(() => {
 						video.play();
-					} else {
-						video.pause();
-					}
-				});
+					}, 2000);
+				}
+				if (video_wrapper) {
+					video_wrapper.addEventListener("click", () => {
+						if (video.paused) {
+							video.play();
+						} else {
+							video.pause();
+						}
+					});
+				}
 			}
-		}
-	}, 2000);
+		}, 2000);
+	});
 }
 
 // when loaded
