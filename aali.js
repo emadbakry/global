@@ -444,6 +444,10 @@ body.footer-cls-1 .footer-contact a {
 .hdr-small .top-navbar {
 		padding: 0;
 	}
+
+	.dark .sq-awesome-banners.section-is-slider .s-slider-block__title {
+		color: var(--dm-text-main) !important;
+	}
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
