@@ -285,7 +285,15 @@ body.dm-icon-left .toggler-left {
 	display: flex !important;
 }
 
-
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
 [dir="rtl"] .product__description ol,
 [dir="rtl"] .product__description ul {
 	margin-right: 22px;
@@ -440,14 +448,16 @@ body.footer-cls-1 .footer-contact a {
 [dir="rtl"] .sm-price custom-salla-product-card .price-wrapper .color-danger {
 	font-size: 1rem;
 }
+/* the above is tranfered to theme */
+
+.dark .sq-awesome-banners.section-is-slider .s-slider-block__title {
+	color: var(--dm-text-main) !important;
+}
 
 .hdr-small .top-navbar {
 		padding: 0;
 	}
 
-	.dark .sq-awesome-banners.section-is-slider .s-slider-block__title {
-		color: var(--dm-text-main) !important;
-	}
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
