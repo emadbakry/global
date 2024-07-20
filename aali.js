@@ -458,6 +458,10 @@ body.footer-cls-1 .footer-contact a {
 		padding: 0;
 	}
 
+
+#wa-widget-send-button {
+	bottom: calc(var(--mobile-nav-height) + 1rem) !important;
+}
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
