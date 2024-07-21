@@ -455,8 +455,8 @@ body.footer-cls-1 .footer-contact a {
 }
 
 .hdr-small .top-navbar {
-		padding: 0;
-	}
+	padding: 0;
+}
 
 
 #wa-widget-send-button {
@@ -467,6 +467,15 @@ body.footer-cls-1 .footer-contact a {
         bottom:calc(var(--mobile-nav-height) + 7rem) !important;
     }
 }
+
+.sq-awesome-banners salla-slider[display-all-url] .s-slider-block__title {
+	justify-content: space-between;
+}
+
+body .product-block .sale-ratio {
+	font-weight: 600;
+}
+	
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
@@ -493,7 +502,7 @@ function all() {
 					video.play();
 					setTimeout(() => {
 						video.play();
-					}, 2000);
+					}, 3000);
 				}
 				if (video_wrapper) {
 					video_wrapper.addEventListener("click", () => {
