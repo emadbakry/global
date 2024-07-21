@@ -480,7 +480,7 @@ body .product-block .sale-ratio {
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
 
-// fix mobile nav, tempo
+// fix mobile nav, tempooo
 function ready() {
 	document.body.classList.add("mobile-nav-is-on");
 }
