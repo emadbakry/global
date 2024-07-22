@@ -475,7 +475,9 @@ body.footer-cls-1 .footer-contact a {
 body .product-block .sale-ratio {
 	font-weight: 600;
 }
-	
+.s-block--fixed-banner.no-bg img {
+	background-color: transparent;
+}
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
