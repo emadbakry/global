@@ -478,6 +478,9 @@ body .product-block .sale-ratio {
 .s-block--fixed-banner.no-bg img {
 	background-color: transparent;
 }
+	.s-block-special-testimonials .swiper-pagination {
+		display: none;
+	}
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
