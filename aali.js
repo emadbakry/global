@@ -481,6 +481,11 @@ body .product-block .sale-ratio {
 	.s-block-special-testimonials .swiper-pagination {
 		display: none;
 	}
+
+
+#app.pc-effect-zoom-shine:not(.product-ratio-unset) .product-block__thumb, #app.pc-effect-zoom:not(.product-ratio-unset) .product-block__thumb {
+	overflow: hidden;
+}
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
