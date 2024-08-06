@@ -493,6 +493,9 @@ body .product-block .sale-ratio {
 	height: 34px;
 }
 
+.aali-animation {
+	animation-direction: alternate;
+}
 
 `;
 // append style element
