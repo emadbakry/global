@@ -497,6 +497,9 @@ body .product-block .sale-ratio {
 	animation-direction: alternate;
 }
 
+
+
+
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
@@ -569,3 +572,18 @@ if (document.readyState == "complete") {
 } else {
 	document.addEventListener("DOMContentLoaded", changeATC);
 }
+
+document.querySelectorAll(".load-img-onclick").forEach((link) => {
+	link.addEventListener("click", (event) => {
+		event.preventDefault();
+		let modal = document.querySelector("#" + link.dataset.modalId),
+			img = modal.querySelector("img"),
+			imgSrc = img.dataset.src;
+		modal.open();
+
+		if (img.classList.contains("loaded")) return;
+
+		img.src = imgSrc;
+		img.classList.add("loaded");
+	});
+});
