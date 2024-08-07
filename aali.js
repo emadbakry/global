@@ -497,7 +497,9 @@ body .product-block .sale-ratio {
 	animation-direction: alternate;
 }
 
-
+.header-innerRight .close-mobile-menu {
+	display: none;
+}
 
 
 `;
