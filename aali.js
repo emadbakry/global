@@ -501,6 +501,9 @@ body .product-block .sale-ratio {
 	display: none;
 }
 
+section.sq-awesome-banners.section-is-slider:not(.auto-size) .banner-entry.lazy__bg.lazy[style*="background-image"] {
+	opacity: 1;
+}
 
 `;
 // append style element
