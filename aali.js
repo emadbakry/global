@@ -510,7 +510,7 @@ section.sq-awesome-banners.section-is-slider:not(.auto-size) .banner-entry.lazy_
 .dark #app .tamara-product-widget {
 	background: var(--dm-bg-main) !important;
     color: var(--dm-text-main) !important;
-    border-color: var(--dm-bg-sec) !important;
+    border-color: var(--dm-text-sec) !important;
 }
 
 `;
