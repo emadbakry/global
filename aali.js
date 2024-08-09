@@ -513,6 +513,22 @@ section.sq-awesome-banners.section-is-slider:not(.auto-size) .banner-entry.lazy_
     border-color: var(--dm-text-sec) !important;
 }
 
+
+/* tempo till update  released */
+.footer-social-outer li.rounded-sm ~ li {
+	border-radius:.125rem;
+}
+.footer-social-outer li.rounded-md ~ li {
+	border-radius:.375rem;
+}
+.footer-social-outer li.rounded-xl ~ li {
+	border-radius:.675rem;
+}
+.footer-social-outer li.rounded-full ~ li {
+	border-radius:50rem;
+}
+/* tempo till update  released */
+
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
