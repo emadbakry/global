@@ -541,6 +541,13 @@ section.sq-awesome-banners.section-is-slider:not(.auto-size) .banner-entry.lazy_
 			object-fit: contain;
 	}
 }
+
+#app.product-ratio-4\/3.pc-effect-zoom-shine:not(.product-ratio-unset) .product-block__thumb a:after,
+#app.product-ratio-5\/3.pc-effect-zoom-shine:not(.product-ratio-unset) .product-block__thumb a:after {
+	top: -20%;
+	width: 130%;
+	height: 130%;
+}
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
