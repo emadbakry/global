@@ -552,6 +552,10 @@ section.sq-awesome-banners.section-is-slider:not(.auto-size) .banner-entry.lazy_
 body.action-btns-small salla-add-product-button apple-pay-button {
 	--apple-pay-button-height: 34px;
 }
+
+.action-btns-small .s-add-product-button-main .s-add-product-button-mini-checkout {
+	--salla-fast-checkout-button-height: 2rem;
+}
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
