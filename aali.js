@@ -531,14 +531,14 @@ section.sq-awesome-banners.section-is-slider:not(.auto-size) .banner-entry.lazy_
 
 
 #app.product-single .details-slider .s-slider-container .swiper-wrapper img {
-	max-height: 65vh;
-	object-fit: contain;
+	max-height: unset;
+	object-fit: cover;
 }
-
+	
 @media only screen and (max-width: 640px) {
 	#app.product-single .details-slider .s-slider-container .swiper-wrapper img {
-		max-height: unset;
-		object-fit: cover;
+			max-height: 65vh;
+			object-fit: contain;
 	}
 }
 `;
