@@ -548,6 +548,10 @@ section.sq-awesome-banners.section-is-slider:not(.auto-size) .banner-entry.lazy_
 	width: 130%;
 	height: 130%;
 }
+
+body.action-btns-small salla-add-product-button apple-pay-button {
+	--apple-pay-button-height: 34px;
+}
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
