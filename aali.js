@@ -529,6 +529,18 @@ section.sq-awesome-banners.section-is-slider:not(.auto-size) .banner-entry.lazy_
 }
 /* tempo till update  released */
 
+
+#app.product-single .details-slider .s-slider-container .swiper-wrapper img {
+	max-height: 65vh;
+	object-fit: contain;
+}
+
+@media only screen and (max-width: 640px) {
+	#app.product-single .details-slider .s-slider-container .swiper-wrapper img {
+		max-height: unset;
+		object-fit: cover;
+	}
+}
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
