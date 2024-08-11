@@ -390,6 +390,13 @@ body .s-add-product-button-main salla-mini-checkout-widget {
 }
 
 
+/* all below codes is in the theme: 11 august 4 am */
+/* all below codes is in the theme: 11 august 4 am */
+/* all below codes is in the theme: 11 august 4 am */
+/* all below codes is in the theme: 11 august 4 am */
+/* all below codes is in the theme: 11 august 4 am */
+
+
 @media only screen and (max-width: 380px) {
 	.product-single:not(.rev-quk-btn-h) salla-add-product-button salla-mini-checkout-widget {
 		--salla-fast-checkout-button-height: 34px;
@@ -400,7 +407,6 @@ body .s-add-product-button-main salla-mini-checkout-widget {
 	body .sticky-product-bar salla-add-product-button {
 		flex-wrap: wrap;
 		row-gap: 1rem;
-
 	}
 }
 
@@ -440,7 +446,7 @@ custom-salla-product-card .showPreviewBtn {
 body.footer-cls-1 .footer-contact a {
 	background-color: var(--footer-bg-color);
 }
-
+/* later */
 [dir="rtl"] .sm-price custom-salla-product-card .price-wrapper .t-red + .before-price.text-sm {
 	font-size: 0.60rem;
 	margin-right: 0.20rem;
@@ -448,15 +454,18 @@ body.footer-cls-1 .footer-contact a {
 [dir="rtl"] .sm-price custom-salla-product-card .price-wrapper .color-danger {
 	font-size: 1rem;
 }
+/* later */
 /* the above is tranfered to theme */
 
 .dark .sq-awesome-banners.section-is-slider .s-slider-block__title {
 	color: var(--dm-text-main) !important;
 }
 
+/* later */
 .hdr-small .top-navbar {
 	padding: 0;
 }
+	/* later */
 
 
 #wa-widget-send-button {
@@ -468,22 +477,23 @@ body.footer-cls-1 .footer-contact a {
     }
 }
 
-.sq-awesome-banners salla-slider[display-all-url] .s-slider-block__title {
+body:not(.cls-85) .sq-awesome-banners salla-slider[display-all-url] .s-slider-block__title {
 	justify-content: space-between;
 }
 
-body .product-block .sale-ratio {
+body:not(.cls-83) .product-block .sale-ratio {
 	font-weight: 600;
 }
 .s-block--fixed-banner.no-bg img {
 	background-color: transparent;
 }
-	.s-block-special-testimonials .swiper-pagination {
-		display: none;
-	}
+.s-block-special-testimonials .swiper-pagination {
+	display: none;
+}
 
 
-#app.pc-effect-zoom-shine:not(.product-ratio-unset) .product-block__thumb, #app.pc-effect-zoom:not(.product-ratio-unset) .product-block__thumb {
+#app.pc-effect-zoom-shine:not(.product-ratio-unset):not(.cls-81) .product-block__thumb,
+#app.pc-effect-zoom:not(.product-ratio-unset):not(.cls-81) .product-block__thumb {
 	overflow: hidden;
 }
 
@@ -493,15 +503,16 @@ body .product-block .sale-ratio {
 	height: 34px;
 }
 
-.aali-animation {
+body:not(.cls-80) .aali-animation {
 	animation-direction: alternate;
 }
+
 
 .header-innerRight .close-mobile-menu {
 	display: none;
 }
 
-section.sq-awesome-banners.section-is-slider:not(.auto-size) .banner-entry.lazy__bg.lazy[style*="background-image"] {
+body:not(.cls-77) section.sq-awesome-banners.section-is-slider:not(.auto-size) .banner-entry.lazy__bg.lazy[style*="background-image"] {
 	opacity: 1;
 }
 
@@ -643,3 +654,78 @@ if (document.readyState == "complete") {
 // 		img.classList.add("loaded");
 // 	});
 // });
+
+// page visitors, works only foe stores that have noti moni app
+if (document.body.classList.contains("visits")) {
+	function getPageVisitors() {
+		const visitorsCounter = document.querySelector(
+			"body.product-single .products_visitors_counter .altumcode-products-visitors-counter-main .altumcode-products-visitors-counter-number"
+		);
+		if (visitorsCounter) {
+			const visitorsCount = visitorsCounter.textContent;
+			console.log(visitorsCount);
+
+			// Create a new div to hold the visitors count
+			const newDiv = document.createElement("div");
+			newDiv.classList.add("visitors-count");
+			newDiv.innerHTML = `
+			<div class="bg-white py-2.5 mb-5 rounded-md w-full inline-flex text-sm dm-bg-sec dm-text-main">
+				<div class="visitors-count-inner px-4 text-red-400 t-red w-full">
+      				<div class="page-visitors-wrapper flex justify-between w-full">
+        				<div class="right-wrapper">
+          					<i class="sicon-eye align-middle rtl:ml-1.5 ltr:mr-1.5 dm-text-main"></i>
+          					<span class="page-visitors-word mx-2 dm-text-main">
+            					يشاهد هذا المنتج الآن
+          					</span>
+        				</div>
+        				<span class="page-visitors-count">
+        				  ${visitorsCount}
+        				</span>
+     			 	</div>
+	  			</div>
+	  		</div>
+    `;
+
+			// Get the "salla-installment" element and append the new div
+			const salla_installment = document.querySelector(".product-single .main-content salla-installment");
+			if (salla_installment) {
+				salla_installment.insertAdjacentElement("beforebegin", newDiv);
+			}
+
+			// Hide the original visitors counter
+			const productsVisitorsCounter = document.querySelector(".products_visitors_counter");
+			if (productsVisitorsCounter) {
+				productsVisitorsCounter.style.display = "none !important";
+				productsVisitorsCounter.classList.add("hide-visits-aali");
+			}
+		}
+	}
+
+	// observe it
+	let second_step = false;
+	let page_visitors_interval = setInterval(() => {
+		let counter_of_visitors = document.querySelector(
+			"body.product-single .products_visitors_counter .altumcode-products-visitors-counter-main .altumcode-products-visitors-counter-number"
+		);
+		if (counter_of_visitors && !second_step) {
+			// clearInterval(page_visitors_interval);
+			getPageVisitors();
+			console.log("page visitors found");
+			second_step = true;
+		}
+		// if (second_step) {
+		// 	// continue getting new values
+		// 	// get new target counter
+		// 	let new_ele = document.querySelector("body.product-single .page-visitors-count");
+		// 	if (new_ele && counter_of_visitors) {
+		// 		console.log(counter_of_visitors);
+		// 		new_ele.innerHTML = counter_of_visitors.textContent;
+		// 	}
+		// }
+		if (!document.body.classList.contains("product-single")) {
+			clearInterval(page_visitors_interval);
+		}
+	}, 200);
+	// observe it
+}
+// page visitors, works only foe stores that have noti moni app
