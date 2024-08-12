@@ -502,6 +502,9 @@ body:not(.cls-83) .product-block .sale-ratio {
 	width: 34px;
 	height: 34px;
 }
+.action-btns-small custom-salla-product-card .showPreviewBtn.preview-btn-down {
+	height: 34px;
+}
 
 body:not(.cls-80) .aali-animation {
 	animation-direction: alternate;
