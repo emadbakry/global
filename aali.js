@@ -570,6 +570,12 @@ body.action-btns-small salla-add-product-button apple-pay-button {
 .action-btns-small .s-add-product-button-main .s-add-product-button-mini-checkout {
 	--salla-fast-checkout-button-height: 2rem;
 }
+
+
+html:not(.dark) .tamara-clr1 .tamara-product-widget span {
+	color: var(--custom-color1) !important;
+}
+
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
