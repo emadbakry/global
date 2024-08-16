@@ -576,6 +576,88 @@ html:not(.dark) .tamara-clr1 .tamara-product-widget span {
 	color: var(--custom-color1) !important;
 }
 
+
+
+
+
+
+/* tempo classes for digital card */
+
+.s-product-options-digital-card-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem
+}
+
+.s-product-options-digital-card-option {
+    display: flex;
+    height: -moz-fit-content;
+    height: fit-content;
+    min-height: 40px;
+    min-width: 100px;
+    max-width: calc((100% - 1rem) / 3);
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border-radius: 0.375rem;
+    padding: 0.5rem;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    outline-style: solid;
+    outline-width: 1px;
+    outline-color: #e5e7eb
+}
+
+.s-product-options-digital-card-option * {
+    pointer-events: none
+}
+
+.s-product-options-digital-card-option:has(input:checked) {
+    color: var(--color-primary-dark);
+    outline-style: solid;
+    outline-width: 1px;
+    outline-color: #414042;
+    outline-color: var(--color-primary)
+}
+
+.s-product-options-country-flag {
+    height: 24px;
+    width: 24px;
+    border-radius: 9999px
+}
+
+.s-product-options-digital-card-out-of-stock {
+    height: 2.5rem
+}
+
+.s-product-options-digital-card-option input {
+    all: unset
+}
+
+.s-product-options-digital-card-option input:checked {
+    all: unset
+}
+
+.s-product-options-digital-card-option input:invalid {
+    all: unset
+}
+
+@media (min-width: 640px) {
+    .s-product-options-option-booking .s-product-options-option-content {
+        margin-top:-2.5rem
+    }
+}
+
+.s-product-options-digital-card-option-stock-out {
+    opacity: 0.4
+}
+
+/* tempo classes for digital card */
+
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
