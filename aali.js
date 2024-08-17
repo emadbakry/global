@@ -658,6 +658,21 @@ html:not(.dark) .tamara-clr1 .tamara-product-widget span {
 
 /* tempo classes for digital card */
 
+
+
+/* tempo styles for ratings edit */
+.s-rating-modal-product-details-main {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+	
+#app .s-rating-modal-product {
+    display: flex;
+    flex-direction: column;
+}
+/* tempo styles for ratings edit */
+
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
