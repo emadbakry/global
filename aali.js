@@ -743,6 +743,10 @@ html:not(.dark) .tamara-clr1 .tamara-product-widget span {
     fill: #414042;
     fill: var(--color-primary);
 }
+
+html:not(.dark) .rating-header {
+    color: var(--color-primary, #444444);
+}
 /* tempo styles for ratings edit */
 
 `;
