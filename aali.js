@@ -671,6 +671,78 @@ html:not(.dark) .tamara-clr1 .tamara-product-widget span {
     display: flex;
     flex-direction: column;
 }
+
+.s-comments-item-like-btn .s-button-text {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 0.5rem;
+}
+
+.s-comments-item-like-btn {
+    margin-top: 0.5rem;
+}
+
+.s-rating-modal-product-details-main .s-comments-item-like-btn span svg {
+    height: 0.75rem;
+    width: 0.75rem;
+}
+.dark .s-rating-modal-product-details-main .s-comments-item-like-btn button {
+	color: var(--dm-text-sec);
+}
+.dark .s-file-upload-wrapper .filepond--drop-label {
+	background: var(--dm-bg-sec);
+    color: var(--dm-text-sec);
+}
+.dark .s-file-upload-wrapper .filepond--drop-label .s-rating-modal-filepond-placeholder-icon svg {
+	fill: var(--dm-text-sec);
+}
+
+.s-rating-modal-contact {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 0.375rem;
+    --tw-bg-opacity: 1;
+    background-color: rgba(243, 244, 246, 1);
+    background-color: rgba(243, 244, 246, var(--tw-bg-opacity));
+    padding: 0.5rem;
+}
+.s-rating-modal-contact p {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    --tw-text-opacity: 1;
+    color: rgba(31, 41, 55, 1);
+    color: rgba(31, 41, 55, var(--tw-text-opacity));
+}
+
+.s-rating-modal-contact-icons {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.s-rating-modal-contact-icons span {
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.375rem;
+    border-width: 1px;
+    --tw-border-opacity: 1;
+    border-color: rgba(229, 231, 235, 1);
+    border-color: rgba(229, 231, 235, var(--tw-border-opacity));
+    --tw-bg-opacity: 1;
+    background-color: rgba(255, 255, 255, 1);
+    background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+    padding: 0.375rem;
+}
+	.s-rating-modal-contact-icons span svg {
+    height: 1rem;
+    width: 1rem;
+    fill: #414042;
+    fill: var(--color-primary);
+}
 /* tempo styles for ratings edit */
 
 `;
