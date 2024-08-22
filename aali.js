@@ -749,6 +749,10 @@ html:not(.dark) .rating-header {
 }
 /* tempo styles for ratings edit */
 
+
+.sub-nav-header .categ-entry h3 {
+	line-height: normal;
+}
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
@@ -911,3 +915,14 @@ if (document.body.classList.contains("visits")) {
 	// observe it
 }
 // page visitors, works only foe stores that have noti moni app
+
+if (document.querySelector("#more-content")) {
+	const articleElement = document.querySelector("#more-content");
+	if (articleElement) {
+		const lastChild = articleElement.lastChild;
+		if (lastChild && lastChild.nodeType === Node.TEXT_NODE && lastChild.textContent.trim() === "قراءة المزيد") {
+			articleElement.removeChild(lastChild);
+			articleElement.style.maxHeight = "unset";
+		}
+	}
+}
