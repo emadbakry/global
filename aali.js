@@ -753,6 +753,13 @@ html:not(.dark) .rating-header {
 .sub-nav-header .categ-entry h3 {
 	line-height: normal;
 }
+
+#app .mobile-menu .close-mobile-menu {
+	display: none !important;
+}
+#app.mm-ocd-opened .mobile-menu .close-mobile-menu {
+	display: none !important;
+}
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
