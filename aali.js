@@ -760,6 +760,19 @@ html:not(.dark) .rating-header {
 #app.mm-ocd-opened .mobile-menu .close-mobile-menu {
 	display: none !important;
 }
+
+
+
+@media only screen and (min-width: 1024px) {
+    #app .footer-container{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .footer-container > div {
+        grid-column: span 1;
+    }
+}
+
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
