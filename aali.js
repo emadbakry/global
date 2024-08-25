@@ -773,6 +773,11 @@ html:not(.dark) .rating-header {
     }
 }
 
+
+.dark #app.red-sold-quan .sold-word, .dark #app.red-sold-quan .sold-times {
+	color: var(--red-color, red) !important;
+}
+
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
