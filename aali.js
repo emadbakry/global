@@ -14,7 +14,7 @@ style.innerHTML = `
 	.cntr .s-block--features__item:first-of-type {
 		grid-column: span 2 !important;
 	}
-}
+} 
 #app.app-body .global-animated-ads + .store-header {
 	margin-top: 0;
 }
