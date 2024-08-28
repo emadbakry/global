@@ -774,7 +774,9 @@ html:not(.dark) .rating-header {
 }
 
 
-.dark #app.red-sold-quan .sold-word, .dark #app.red-sold-quan .sold-times {
+.dark #app.red-sold-quan .sold-times-wrapper .sicon-fire,
+.dark #app.red-sold-quan .sold-word,
+.dark #app.red-sold-quan .sold-times .injaz_count {
 	color: var(--red-color, red) !important;
 }
 
@@ -941,13 +943,13 @@ if (document.body.classList.contains("visits")) {
 }
 // page visitors, works only foe stores that have noti moni app
 
-if (document.querySelector("#more-content")) {
-	const articleElement = document.querySelector("#more-content");
-	if (articleElement) {
-		const lastChild = articleElement.lastChild;
-		if (lastChild && lastChild.nodeType === Node.TEXT_NODE && lastChild.textContent.trim() === "قراءة المزيد") {
-			articleElement.removeChild(lastChild);
-			articleElement.style.maxHeight = "unset";
-		}
-	}
-}
+// if (document.querySelector("#more-content")) {
+// 	const articleElement = document.querySelector("#more-content");
+// 	if (articleElement) {
+// 		const lastChild = articleElement.lastChild;
+// 		if (lastChild && lastChild.nodeType === Node.TEXT_NODE && lastChild.textContent.trim() === "قراءة المزيد") {
+// 			articleElement.removeChild(lastChild);
+// 			articleElement.style.maxHeight = "unset";
+// 		}
+// 	}
+// }
