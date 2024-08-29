@@ -953,3 +953,40 @@ if (document.body.classList.contains("visits")) {
 // 		}
 // 	}
 // }
+
+document.addEventListener("DOMContentLoaded", function () {
+	const productDescription = document.querySelector(".product__description");
+
+	if (productDescription) {
+		const article = productDescription.querySelector("article");
+
+		// Set classes on the article
+		if (article) {
+			article.className = "article article--main relative overflow-hidden transition-all max-h-0 duration-300 p-4";
+			// Set initial max-height to 2.5rem
+			article.style.maxHeight = "2.5rem";
+
+			// Remove the first child if it's a text node
+			if (article.firstChild && article.firstChild.nodeType === Node.TEXT_NODE) {
+				article.removeChild(article.firstChild);
+			}
+		}
+
+		// Add click event for the "Show More" button
+		const btnShowMore = document.getElementById("btn-show-more");
+		if (btnShowMore) {
+			btnShowMore.addEventListener("click", function (e) {
+				if (article) {
+					// Add the class to the button
+					e.target.classList.add("is-expanded");
+
+					// Set the max-height to the scrollHeight to expand the content
+					article.style.maxHeight = article.scrollHeight + "px";
+				} else {
+					// Remove the button if no article is found
+					e.target.remove();
+				}
+			});
+		}
+	}
+});
