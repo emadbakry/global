@@ -780,6 +780,10 @@ html:not(.dark) .rating-header {
 	color: var(--red-color, red) !important;
 }
 
+.s-block-division + .s-block {
+	z-index: 2;
+}
+
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
