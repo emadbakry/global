@@ -784,6 +784,10 @@ html:not(.dark) .rating-header {
 	z-index: 2;
 }
 
+.prod-single-centered .ql-video {
+	text-align: center;
+}
+
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
