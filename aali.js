@@ -790,6 +790,15 @@ html:not(.dark) .rating-header {
 		margin: auto;
 	}
 }
+
+
+.dark #app .s-modal-body { 
+	--dm-bg-main: #0c6463 !important;
+  --dm-bg-sec: #0c6463 !important;
+  --dm-text-main: #ffffff !important;
+  --dm-text-sec: #ffffff !important;
+    
+}
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
