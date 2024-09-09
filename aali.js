@@ -791,6 +791,12 @@ html:not(.dark) .rating-header {
 	}
 }
 
+.mySlider .brand-item img.bg-contain {
+    object-fit: contain;
+}
+.mySlider .brand-item img:not(.bg-contain) {
+    object-fit: cover;
+}
 
 
 `;
