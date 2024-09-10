@@ -798,7 +798,10 @@ html:not(.dark) .rating-header {
     object-fit: cover;
 }
 
-
+body .question-outer {
+	font-family: inherit;
+}
+	
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
