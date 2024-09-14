@@ -805,6 +805,11 @@ body .question-outer {
 .-mt-8 {
 	margin-top: -2rem;
 }
+@media (max-width: 767px) {
+	.md\:-mt-8 {
+		margin-top: -2rem;
+	}
+}
 
 `;
 // append style element
