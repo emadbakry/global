@@ -817,6 +817,9 @@ body .question-outer {
     line-height: normal;
 }
 
+body:not(.cls7864) .store-header .sicon-shopping-basket {
+	transform: scale(0.88);
+}
 
 `;
 // append style element
