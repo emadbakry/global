@@ -818,9 +818,13 @@ body .question-outer {
 }
 
 body:not(.cls7864) .store-header .sicon-shopping-basket {
-	transform: scale(0.88);
+	transform: scale(0.92);
 }
 
+
+.sq-awesome-banners .banner-outer .banner-texts .banner__title {
+	line-height: normal;
+}
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
