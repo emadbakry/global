@@ -825,6 +825,12 @@ body:not(.cls7864) .store-header .sicon-shopping-basket {
 .sq-awesome-banners .banner-outer .banner-texts .banner__title {
 	line-height: normal;
 }
+
+.product-block salla-rating-stars {
+	display: flex;
+	margin: 0.3rem 0;
+}
+
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
