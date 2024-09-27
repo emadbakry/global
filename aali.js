@@ -831,6 +831,10 @@ body:not(.cls7864) .store-header .sicon-shopping-basket {
 	margin: 0.3rem 0;
 }
 
+.s-cart-summary-wrapper .cart-sum-icon {
+	transform: scale(0.9);
+}
+
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
