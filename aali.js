@@ -835,6 +835,12 @@ body:not(.cls7864) .store-header .sicon-shopping-basket {
 	transform: scale(0.9);
 }
 
+body:not(.cls-promotion1).product-single .sidebar .promotion-title {
+	background-color: var(--badge-bg-color, red);
+    color: #ffffff;
+    color: var(--badge-text-color, #ffffff);
+}
+
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
