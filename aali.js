@@ -830,15 +830,19 @@ body:not(.cls7864) .store-header .sicon-shopping-basket {
 	display: flex;
 	margin: 0.3rem 0;
 }
-
+q
 .s-cart-summary-wrapper .cart-sum-icon {
-	transform: scale(0.9);
+	transform: scale(0.85);
 }
 
 body:not(.cls-promotion1).product-single .sidebar .promotion-title {
 	background-color: var(--badge-bg-color, red);
     color: #ffffff;
     color: var(--badge-text-color, #ffffff);
+}
+
+.p-card-centered .product-block salla-rating-stars {
+	justify-content: center;
 }
 
 `;
