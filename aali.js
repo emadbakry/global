@@ -853,7 +853,19 @@ body:not(.cls-promotion1).product-single .sidebar .promotion-title {
 .pc-less-spaces custom-salla-product-card.product-block .title {
 	line-height: normal;
 }
- 
+
+
+.fire .sold-times-wrapper .sicon-fire:before {
+	display: none;
+}
+.fire .sold-times-wrapper .sicon-fire {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	background-image:url('https://raw.githubusercontent.com/theme-aali/videos/main/aali/fire.svg');
+	background-repeat: no-repeat;
+	background-position: center;
+}
 
 `;
 // append style element
