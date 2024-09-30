@@ -850,6 +850,10 @@ body:not(.cls-promotion1).product-single .sidebar .promotion-title {
 }
 
 
+.pc-less-spaces custom-salla-product-card.product-block .title {
+	line-height: normal;
+}
+
 
 `;
 // append style element
