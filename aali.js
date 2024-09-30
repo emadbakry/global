@@ -67,6 +67,10 @@ body:not(.fake-atc) .aaliicon-add-to-cart-outer .s-button-text:before {
 	margin-right: 4px;
 }
 
+[dir="rtl"] .header-innerLeft .text-xl + salla-cart-summary {
+	margin-right: 0.3rem;
+}
+
 [dir="rtl"] .product__description ul {
 	margin-right: 22px;
 }
@@ -844,6 +848,8 @@ body:not(.cls-promotion1).product-single .sidebar .promotion-title {
 .p-card-centered .product-block salla-rating-stars {
 	justify-content: center;
 }
+
+
 
 `;
 // append style element
