@@ -868,6 +868,10 @@ body:not(.cls-promotion1).product-single .sidebar .promotion-title {
 	background-position: center;
 }
 
+.hdr-srch-left .sicon-search {
+    margin-bottom: -3px
+}
+
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
