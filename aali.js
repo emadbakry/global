@@ -830,7 +830,7 @@ body:not(.cls7864) .store-header .sicon-shopping-basket {
 	display: flex;
 	margin: 0.3rem 0;
 }
-q
+
 .s-cart-summary-wrapper .cart-sum-icon {
 	transform: scale(0.85);
 }
