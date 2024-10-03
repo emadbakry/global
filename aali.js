@@ -528,7 +528,7 @@ body:not(.cls-77) section.sq-awesome-banners.section-is-slider:not(.auto-size) .
 .dark #app .tamara-product-widget {
 	background: var(--dm-bg-main) !important;
     color: var(--dm-text-main) !important;
-    border-color: var(--dm-text-sec) !important;
+    border:1px solid var(--dm-text-sec) !important;
 }
 
 
@@ -871,6 +871,19 @@ body:not(.cls-promotion1).product-single .sidebar .promotion-title {
 .hdr-srch-left .sicon-search {
     margin-bottom: -3px
 }
+
+
+.simple-brand-shape .product-brand-second-word,
+.simple-brand-shape .product-brand-first-word,
+.simple-brand-shape .product-brand-content h4 {
+	disply: none;
+}
+
+.product-brand-wrapper.simple-brand-shape {
+	    border: none;
+    background: transparent;
+}
+
 
 `;
 // append style element
