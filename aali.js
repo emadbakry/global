@@ -886,6 +886,22 @@ body:not(.cls-promotion1).product-single .sidebar .promotion-title {
 }
 
 
+#app.tab-1-on .next-tab2 + [id^="best-offers-"][id$="-slider"],
+#app.tab-1-on .next-tab2 + .s-block.s-block--best-offers {
+	display: none !important;
+}
+
+#app.tab-2-on .next-tab1 + [id^="best-offers-"][id$="-slider"],
+#app.tab-2-on .next-tab1 + .s-block.s-block--best-offers {
+	display: none !important;
+}
+
+#app.tab-2-on .next-tab2 + [id^="best-offers-"][id$="-slider"],
+#app.tab-2-on .next-tab2 + .s-block.s-block--best-offers {
+	display: block !important;
+}
+
+
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
