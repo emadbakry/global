@@ -1218,19 +1218,19 @@ window.showPreview = function (target) {
 					}
 				<div class="pm-content__price my-2">
 						 <h4 class="not-total-price ${product.is_on_sale ? "text-red-500 t-red" : ""} font-bold text-xl inline-block">
-                                    ${product.price.amount} ${salla.config.currency().symbol}
+                                    ${
+																			typeof product.price == "object"
+																				? `${product.price.amount} ${salla.config.currency().symbol}`
+																				: `
+                                    ${product.price} ${salla.config.currency().symbol}
+									`
+																		}
                                 </h4>
                                 ${
 																	product.is_on_sale
 																		? `
                                     <span class="not-before-price line-through">
-                                        ${
-																					typeof product.price == "object"
-																						? `${product.price.amount} ${salla.config.currency().symbol}`
-																						: `
-                                    ${product.price} ${salla.config.currency().symbol}
-									`
-																				}
+                                        ${product.regular_price}${salla.config.currency().symbol} 
 										</span>`
 																		: ""
 																}
