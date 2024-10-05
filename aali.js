@@ -1120,24 +1120,35 @@ window.initial_home_tabs = function (_this) {
 	window.set_home_tabs(`tab-${selected}`);
 };
 
-window.showPreview = function (target) {
-	target.classList.add("s-button-loader");
-	let productId = target.dataset.id;
-	let productImg = target.dataset.img; // you may need it later
-	let previewModal = document.getElementById("preview-modal");
-	previewModal.classList.add("showPreview");
-	salla.product
-		.getDetails(productId, ["images", "sold_quantity", "category", "options", "brand", "tags", "notify_availability", "rating", "donation"])
-		.then((response) => {
-			console.log(response.data);
-			console.log(response);
-			if (response.status == 200) {
-				let product = response.data;
-				document.body.classList.add("preview-is-on");
-				previewModal.classList.add("transitionPreview");
-				previewModal.classList.add("transitionPreview2");
-				// show preview modal
-				let content = `
+salla.onReady(() => {
+	window.showPreview = function (target) {
+		target.classList.add("s-button-loader");
+		let productId = target.dataset.id;
+		let productImg = target.dataset.img; // you may need it later
+		let previewModal = document.getElementById("preview-modal");
+		previewModal.classList.add("showPreview");
+		salla.product
+			.getDetails(productId, [
+				"images",
+				"sold_quantity",
+				"category",
+				"options",
+				"brand",
+				"tags",
+				"notify_availability",
+				"rating",
+				"donation",
+			])
+			.then((response) => {
+				console.log(response.data);
+				console.log(response);
+				if (response.status == 200) {
+					let product = response.data;
+					document.body.classList.add("preview-is-on");
+					previewModal.classList.add("transitionPreview");
+					previewModal.classList.add("transitionPreview2");
+					// show preview modal
+					let content = `
 			                <div onclick="hidePreview()" class="preview__close btn--close border border-2 border-gray-100 btn--close !hidden md:!flex">
 								<i class="text-lg align-text-bottom sicon-cancel"></i>
 							</div>
@@ -1164,8 +1175,8 @@ window.showPreview = function (target) {
 						<salla-button class="btn--wishlist mx-2 s-button-wrap hydrated ${
 							salla.storage.get("salla::wishlist", []).includes(product.id) ? "is-added" : "not-added"
 						}" id="popup-wishlist-btn-${product.id}" data-id="${product.id}" onclick="salla.wishlist.toggle(${
-					product.id
-				})" shape="icon" fill="outline" loader-position="center" color="light" size="medium" width="normal">
+						product.id
+					})" shape="icon" fill="outline" loader-position="center" color="light" size="medium" width="normal">
 
                     	    <i class="sicon-heart"></i>
 						</span>
@@ -1348,16 +1359,18 @@ window.showPreview = function (target) {
 			</div>
 
 			`;
-				// console.log(product.base_currency_price);
-				let previewInner = document.querySelector(".preview__inner");
-				previewInner.innerHTML = content;
+					// console.log(product.base_currency_price);
+					let previewInner = document.querySelector(".preview__inner");
+					previewInner.innerHTML = content;
 
-				target.classList.remove("s-button-loader");
+					target.classList.remove("s-button-loader");
 
-				// end if status 200
-			} else {
-				target.classList.remove("s-button-loader");
-				previewModal.classList.remove("showPreview");
-			}
-		}); // end fetch
-};
+					// end if status 200
+				} else {
+					target.classList.remove("s-button-loader");
+					previewModal.classList.remove("showPreview");
+				}
+			}); // end fetch
+	};
+	// end
+});
