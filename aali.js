@@ -1115,8 +1115,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 window.initial_home_tabs = function (_this) {
 	document.body.classList.add(`tabs-on`);
-	let selected = _this.getAttribute("selected");
-	// document.body.classList.add(`tab-${this.selected}-on`);
+	let selected = _this.getAttribute("selected") || 1;
+	document.body.classList.add(`tab-${selected}-on`);
 	window.set_home_tabs(`tab-${selected}`);
 };
 
