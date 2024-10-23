@@ -901,6 +901,11 @@ body:not(.cls-promotion1).product-single .sidebar .promotion-title {
 	display: block !important;
 }
 
+body#app.hide-img-btm-rad.p-border-on:not(.cls-8734gb) custom-salla-product-card.product-block .product-block__thumb:not(.s-product-card-image) {
+	border-bottom-right-radius: 0;
+	border-bottom-left-radius: 0;
+}
+
 
 `;
 // append style element
