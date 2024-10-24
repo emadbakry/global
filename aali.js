@@ -906,7 +906,9 @@ body#app.hide-img-btm-rad.p-border-on:not(.cls-8734gb) custom-salla-product-card
 	border-bottom-left-radius: 0;
 }
 
-
+.dark salla-products-slider .color-danger.t-red {
+	color: var(--red-color, #fff) !important;
+}
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
