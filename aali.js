@@ -10,181 +10,8 @@ style.setAttribute("type", "text/css");
 style.innerHTML = `
 /* hi */
 
-@media only screen and (max-width: 492px) {
-	.cntr .s-block--features__item:first-of-type {
-		grid-column: span 2 !important;
-	}
-} 
-#app.app-body .global-animated-ads + .store-header {
-	margin-top: 0;
-}
-#app.header-merged .global-animated-ads + .store-header {
-	margin-top: 38px;
-}
-
-#app .s-product-options-colors-wrapper .s-product-options-colors-item {
-	margin-left: 0.6rem; 
-	margin-right: 0.6rem; 
- 	width: auto;
-}
-
-.dark .product-single.product-des-force-light:not(.cls-1) .product__description span {
-	color: var(--dm-text-sec) !important;
-	background-color: transparent !important;
-}
-.dark .product-single.product-des-force-light:not(.cls-2) .product__description strong {
-	color: var(--dm-text-sec) !important;
-	background-color: transparent !important;
-}
-.dark .product-single.product-des-force-light:not(.cls-3) .product__description a {
-	color: var(--dm-text-sec) !important;
-	background-color: transparent !important;
-}
-
-body:not(.fake-atc) .aaliicon-add-to-cart-outer .s-button-text:before {
-	margin-left: 0.4rem;
-}
-
-.dark .s-quantity-input-decrease-button {
-	fill: var(--dm-text-main, #ffffff);
-}
-
-body:not(.fake-atc) .aaliicon-add-to-cart-outer .s-button-text:before {
-	transform: none;
-	position: static;
-	vertical-align: middle;
-	margin-left: 4px;
-	margin-top: -2px;
-	display: inline-block;
-}
-
-
-.h-b .product-brand-wrapper {
-	display: none;
-}
-
-[dir="ltr"] body:not(.fake-atc) .aaliicon-add-to-cart-outer .s-button-text:before {
-	margin-right: 4px;
-}
-
 [dir="rtl"] .header-innerLeft .text-xl + salla-cart-summary {
 	margin-right: 0.3rem;
-}
-
-[dir="rtl"] .product__description ul {
-	margin-right: 22px;
-}
-[dir="ltr"] .product__description ul {
-	margin-left: 22px;
-}
-
-html:not(.dark) .product-single .total-price.t-red {
-	color: var(--red-color,#ef4444);
-}
-.mob-n-li span {
-	text-align: center;
-}
-/* test */
-/*
-body img.lazy*[data^="data"] {
-    transform: scale(1.1);
-}
-body img.lazy.loaded {
-    opacity: 1;
-    transform: scale(1);
-}
-*/
-/* test */
-
-#app.app-body .s-block-fullscreen-banners.height-auto .bg__image video {
-	position: relative;
-}
-custom-salla-product-card .price-wrapper .t-red + .before-price.text-sm {
-	font-size: 0.8rem;
-    margin-left: 0;
-	display: inline-block;
-}
-#app.index .s-products-list-wrapper.s-products-list-horizontal-cards {
-	grid-template-columns: repeat(1,1fr);
-}
-@media only screen and (min-width: 992px) {
-	#app.index .s-products-list-wrapper.s-products-list-horizontal-cards {
-		grid-template-columns: repeat(2,1fr);
-	}
-}
-@media only screen and (min-width: 767px) {
-	.before-after-wrapper {
-		width: 66vmin;
-    	margin: auto;
-	}
-}
-
-/*
-.s-product-options-colors-wrapper input[type=radio]+label span[style*="background-color: rgb(232, 232, 232)"]:after {
-	background-color: #000000;
-}
-.s-product-options-colors-wrapper input[type=radio]+label span[style*="background-color: rgb(256, 256, 256)"]:after {
-	background-color: #000000;
-}
-*/
-#app .s-product-options-colors-wrapper input[type=radio]+label span:after {
-	/* background: linear-gradient(45deg, black 0%, black 50%, #ffffff 50%) !important;*/
-	border: 2px solid #111111;
-}
-
-
-.index#app #fullscreen-banner-0 .bg__image {
-    height: 75vh;
-    height: 80vh;
-    height: var(--fs-desk-height,80vh);
-    min-height: 10vh
-}
-@media only screen and (min-width: 492px) and (max-width:1024px) {
-    .index#app #fullscreen-banner-0 .bg__image {
-        height:90vh;
-        height: var(--fs-tablet-height,90vh);
-        min-height: 10vh
-    }
-}
-@media only screen and (max-width: 492px) {
-    .index#app #fullscreen-banner-0 .bg__image {
-        height:90vh;
-        height: var(--fs-mob-height,90vh);
-        min-height: 12vh
-    }
-}
-
-@media only screen and (max-width: 492px) {
-	#app.prod_line_count_on.prod_vertical.p-line-count-mob-2.app-body.product-single .similar-products .s-products-slider-card  {
-	    max-width: 50%;   
-	}
-}
-
-.store-header .sicon-search {
-	vertical-align: middle;
-	display: flex;
-}
-
-html:not(.dark) .s-localization-modal-label {
-	color: inherit !important;
-}
-
-.header-is-dark#app #mainnav .desktop-menu-item .sub-menu {
-	background-color: var(--header-bg-color) !important;
-    color: var(--header-text-color) !important;
-}
-
-
-body.p-thumbs-down.product-single .details-slider .s-slider-thumbs {
-	position: static;
-	top: unset;
-}
-
-
-/* tempo: cuz of loyalti */
-.dark .cart .shadow-default.mb-5.rounded-md.p-3.xs\:p-7 {
-	background-color: var(--dm-bg-sec) !important;
-	color: var(--dm-text-main) !important;
 }
 .dark .cart salla-modal .s-loyalty-prize-item,
 .dark .cart salla-modal salla-list-tile .s-list-tile-item,
@@ -192,289 +19,29 @@ body.p-thumbs-down.product-single .details-slider .s-slider-thumbs {
 	background-color: transparent !important;
 	color: var(--dm-text-main) !important;
 }
-.dark .cart salla-modal .s-loyalty-prize-item .s-loyalty-prize-item-subtitle {
-	color: var(--dm-text-sec) !important;
-}
-
-.dark .s-loyalty-header-subtitle {
-	color: var(--dm-text-main) !important;
-}
-
-.dark .s-modal-wrapper .s-tabs-header-item:not(.s-tabs-active) {
-	background-color: var(--color-primary-d) !important;
-}
-/* tempo: cuz of loyalti */
-
-#app .s-block--slider-with-bg .s-slider-block__display-all {
-	padding-left: 1rem;
-	padding-right: 1rem;
-}
-
-/* for stores with custom atc text came from custom title 1 */
- 
-.custom-atc-text.atc-2#app .pm-content salla-add-product-button button[product-id].s-button-primary .s-button-text,
-.custom-atc-text.atc-2#app custom-salla-product-card salla-add-product-button button[product-id].s-button-primary .s-button-text {
-	font-size: 0;
-}
-.custom-atc-text.atc-2#app .pm-content salla-add-product-button button[product-id].s-button-primary .s-button-text:after,
-.custom-atc-text.atc-2#app custom-salla-product-card salla-add-product-button button[product-id].s-button-primary .s-button-text:after {
-	content: var(--custom-title1, "إضافة للسلة");
-	font-size: 0.875rem;
-	vertical-align: middle;
-}
-
 /*
-@media only screen and (max-width: 767px) {
-	#app.is-sticky-product-bar .sticky-product-bar salla-add-product-button button[product-id].s-button-primary .s-button-text:after {
-		display: none;
-	}
+body:not(.cls-80b) img.lazy*[data^="data"] {
+    transform: scale(1.1);
+}
+body:not(.cls-80b) img.lazy.loaded {
+    opacity: 1;
+    transform: scale(1);
 }
 */
-
-/* for stores with custom atc text came from custom title 1 */
-
-
-/* make product thumbs go down*/
-.product-single.thumb-down .details-slider .s-slider-thumbs {
-	position: static;
-}
-/* make product thumbs go down*/
-
-
-body#app .s-block--features__item .feature-icon i {
-	font-size: calc(var(--f-width,2rem)/3.5 + var(--f-height,2rem)/3.5);
-}
-
-[dir="rtl"] .header-innerLeft salla-cart-summary {
-	margin-right: 0.7rem;
-}
-
-@media only screen and (min-width: 1024px) {
-.s-block--one-wide-banner .f {
-	padding-left: 10px;
-	padding-right: 10px;
-}
-}
-
-
-#app.btns-gradient .s-button-primary:not(.dm-btn-in-bg-sec) .s-button-text {
-	color: var(--gradient-text-color) !important;
-}
-
-
-#app.btns-gradient.cart .cart-submit-wrap .s-button-element {
-	border-radius: 0;
-}
-#app.btns-gradient .btn-gradient,
-body#app.btns-gradient .s-button-primary {
-	background: linear-gradient(45deg, var(--gradient-second), var(--gradient-first)) !important;
-	border-width: 0 !important;
-	color: var(--gradient-text-color) !important;
-	fill: var(--gradient-text-color) !important ;
-}
-
-.dark .s-rating-stars-reviews {
-	color: var(--dm-text-sec);
-}
-
-.s-block-awesome-btn button i {
-	vertical-align: middle;
-}
-
-.mob-user--left-only .header-signInBtn {
-	order: unset;
-}
-
-body.dm-icon-left .toggler-left {
-	display: flex !important;
-}
-
-/**/
-/**/
-/**/
-/**/
-/**/
-/**/
-/**/
-/**/
-/**/
-[dir="rtl"] .product__description ol,
-[dir="rtl"] .product__description ul {
-	margin-right: 22px;
-}
-[dir="ltr"] .product__description ol,
-[dir="ltr"] .product__description ul {
-	margin-left: 22px;
-}
-
-
-
 
 #app.header-hidden.fixed-pinned-cls .store-header .inner {
 	top: -250px;
 }
 
 
-@media only screen and (max-width: 640px) {
-	.product-single.is-sticky-product-bar .sticky-product-bar .p-quan-container {
-		display: flex;
-	}
-	.pm-content salla-add-product-button {
-	flex-wrap: wrap;
-	}
-	.pm-content salla-add-product-button salla-quick-buy {
-		margin-top: 0.8rem;
-	}
-}
-
-.product-single .sticky-product-bar .p-quan-container {
-    flex-direction: row-reverse;
-    width: 100%;
-    justify-content: space-between;
-    margin-bottom: 0.6rem;
-}
-.is-sticky-product-bar .sticky-product-bar salla-add-product-button {
-	width: 100%;
-}
-.is-sticky-product-bar .sticky-product-bar {
-	flex-direction: column;
-}
-.is-sticky-product-bar .sticky-product-bar .sticky-product-bar__quantity salla-quantity-input,
-.is-sticky-product-bar .sticky-product-bar .sticky-product-bar__quantity .s-quantity-input-container,
-.is-sticky-product-bar .sticky-product-bar .sticky-product-bar__quantity {
-	width: 100%;
-}
-.is-sticky-product-bar .sticky-product-bar .sticky-product-bar__quantity .s-quantity-input-container {
-	justify-content: space-between;
-}
-
-.s-add-product-button-main .s-add-product-button-mini-checkout-content {
-	display: flex;
-    align-items: center;
-    flex-direction: row-reverse;
-}
-
-.s-add-product-button-main .s-add-product-button-mini-checkout-content svg {
-	height: 1.2rem;
-    width: 1.2rem;
-    fill: currentColor;
-	margin-right: 0.4rem;
-}
-
-[dir=rtl] .s-add-product-button-main .s-add-product-button-mini-checkout-content svg {
-	margin-right: 0;
-	margin-left: 0.4rem;
-}
-
-
-.pm-content salla-add-product-button .s-add-product-button-main,
-.sticky-product-bar salla-add-product-button .s-add-product-button-main {
-	width: 100%;
-    display: flex;
-    column-gap: 1rem;
-    justify-content: space-between;
-}
-.is-sticky-product-bar .sticky-product-bar salla-add-product-button .s-add-product-button-main salla-button {
-	width: auto;
-	flex-grow: 1;
-}
-body .s-add-product-button-main salla-mini-checkout-widget {
-	display: block;
-	flex-grow: 1;
-	flex-shrink: 0;
-	--salla-fast-checkout-button-border-radius: var(--add-to-cart-radius, 4px);
-}
-.mobile-nav-is-on.show-mobile-nav.is-sticky-product-bar .sticky-product-bar {
-	padding-bottom: calc(2px + var(--mobile-nav-height))!important;
-}
-[dir="rtl"] body.is-sticky-product-bar .sticky-product-bar salla-add-product-button {
-	margin-right: 0;
-	margin-left: 0;
-	width: 100%;
-}
-
-
-/* all below codes is in the theme: 11 august 4 am */
-/* all below codes is in the theme: 11 august 4 am */
-/* all below codes is in the theme: 11 august 4 am */
 /* all below codes is in the theme: 11 august 4 am */
 /* all below codes is in the theme: 11 august 4 am */
 
 
-@media only screen and (max-width: 380px) {
-	.product-single:not(.rev-quk-btn-h) salla-add-product-button salla-mini-checkout-widget {
-		--salla-fast-checkout-button-height: 34px;
-	}
-}
-
-@media only screen and (min-width: 768px) {
-	body .sticky-product-bar salla-add-product-button {
-		flex-wrap: wrap;
-		row-gap: 1rem;
-	}
-}
 
 
-@media only screen and (max-width: 640px) {
-	body.product-single.is-sticky-product-bar .wa-widget,
-	body.product-single.is-sticky-product-bar .scroll-progress-wrapper {
-		bottom: calc(var(--mobile-nav-height) + 6.5rem);
-	}
-	
-}
-
-@media only screen and (max-width: 767px) {
-	body#app.hide-mob-header-cart.mobile_nav_cart_on .store-header salla-cart-summary {
-		margin-right: 0;
-		margin-left: 0;
-	}
-}
-
-.dark .s-add-product-button-mini-checkout-content {
-	color: var(--dm-text-main, #fff);
-	border-color: var(--dm-text-main, #fff);
-}
-.dark body .s-add-product-button-main salla-mini-checkout-widget {
-	--color-primary: var(--dm-text-sec, #fff);
-}
- 
-custom-salla-product-card .showPreviewBtn {
-	border-radius: var(--add-to-cart-radius,4px);
-}
-
-
-.mobile-menu .close-mobile-menu {
-	display: block !important;
-}
-
-body.footer-cls-1 .footer-contact a {
-	background-color: var(--footer-bg-color);
-}
-/* later */
-[dir="rtl"] .sm-price custom-salla-product-card .price-wrapper .t-red + .before-price.text-sm {
-	font-size: 0.60rem;
-	margin-right: 0.20rem;
-}
-[dir="rtl"] .sm-price custom-salla-product-card .price-wrapper .color-danger {
-	font-size: 1rem;
-}
-/* later */
-/* the above is tranfered to theme */
-
-.dark .sq-awesome-banners.section-is-slider .s-slider-block__title {
-	color: var(--dm-text-main) !important;
-}
-
-/* later */
-.hdr-small .top-navbar {
-	padding: 0;
-}
 	/* later */
 
-
-#wa-widget-send-button {
-	bottom: calc(var(--mobile-nav-height) + 1rem) !important;
-}
 @media only screen and (max-width: 640px) {
 	body#app #wa-widget-send-button  {
         bottom:calc(var(--mobile-nav-height) + 7rem) !important;
@@ -585,96 +152,10 @@ html:not(.dark) .tamara-clr1 .tamara-product-widget span {
 
 
 
-/* tempo classes for digital card */
-
-.s-product-options-digital-card-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem
-}
-
-.s-product-options-digital-card-option {
-    display: flex;
-    height: -moz-fit-content;
-    height: fit-content;
-    min-height: 40px;
-    min-width: 100px;
-    max-width: calc((100% - 1rem) / 3);
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    user-select: none;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    border-radius: 0.375rem;
-    padding: 0.5rem;
-    font-size: 0.75rem;
-    line-height: 1rem;
-    outline-style: solid;
-    outline-width: 1px;
-    outline-color: #e5e7eb
-}
-
-.s-product-options-digital-card-option * {
-    pointer-events: none
-}
-
-.s-product-options-digital-card-option:has(input:checked) {
-    color: var(--color-primary-dark);
-    outline-style: solid;
-    outline-width: 1px;
-    outline-color: #414042;
-    outline-color: var(--color-primary)
-}
-
-.s-product-options-country-flag {
-    height: 24px;
-    width: 24px;
-    border-radius: 9999px
-}
-
-.s-product-options-digital-card-out-of-stock {
-    height: 2.5rem
-}
-
-.s-product-options-digital-card-option input {
-    all: unset
-}
-
-.s-product-options-digital-card-option input:checked {
-    all: unset
-}
-
-.s-product-options-digital-card-option input:invalid {
-    all: unset
-}
-
-@media (min-width: 640px) {
-    .s-product-options-option-booking .s-product-options-option-content {
-        margin-top:-2.5rem
-    }
-}
-
-.s-product-options-digital-card-option-stock-out {
-    opacity: 0.4
-}
-
-/* tempo classes for digital card */
-
 
 
 /* tempo styles for ratings edit */
-.s-rating-modal-product-details-main {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-}
-	
-#app .s-rating-modal-product {
-    display: flex;
-    flex-direction: column;
-}
+
 
 .s-comments-item-like-btn .s-button-text {
     display: flex;
@@ -748,142 +229,8 @@ html:not(.dark) .tamara-clr1 .tamara-product-widget span {
     fill: var(--color-primary);
 }
 
-html:not(.dark) .rating-header {
-    color: var(--color-primary, #444444);
-}
+
 /* tempo styles for ratings edit */
-
-
-.sub-nav-header .categ-entry h3 {
-	line-height: normal;
-}
-
-#app .mobile-menu .close-mobile-menu {
-	display: none !important;
-}
-#app.mm-ocd-opened .mobile-menu .close-mobile-menu {
-	display: none !important;
-}
-
-
-
-@media only screen and (min-width: 1024px) {
-    #app .footer-container{
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-    }
-    .footer-container > div {
-        grid-column: span 1;
-    }
-}
-
-
-.dark #app.red-sold-quan .sold-times-wrapper .sicon-fire,
-.dark #app.red-sold-quan .sold-word,
-.dark #app.red-sold-quan .sold-times .injaz_count {
-	color: var(--red-color, red) !important;
-}
-
-.s-block-division + .s-block {
-	z-index: 2;
-}
-
-@media only screen and (max-width: 1024px) {
-	.prod-single-centered .ql-video {
-		text-align: center;
-		margin: auto;
-	}
-}
-
-.mySlider .brand-item img.bg-contain {
-    object-fit: contain;
-}
-.mySlider .brand-item img:not(.bg-contain) {
-    object-fit: cover;
-}
-
-body .question-outer {
-	font-family: inherit;
-}
-
-.-mt-8 {
-	margin-top: -2rem;
-}
-@media (max-width: 767px) {
-	.md\:-mt-8 {
-		margin-top: -2rem;
-	}
-}
-
-.small-p-title custom-salla-product-card .title {
-    margin-top: 0.2rem;
-    margin-bottom: 0.1rem;
-    line-height: normal;
-}
-
-body:not(.cls7864) .store-header .sicon-shopping-basket {
-	transform: scale(0.92);
-}
-
-
-.sq-awesome-banners .banner-outer .banner-texts .banner__title {
-	line-height: normal;
-}
-
-.product-block salla-rating-stars {
-	display: flex;
-	margin: 0.3rem 0;
-}
-
-.s-cart-summary-wrapper .cart-sum-icon {
-	transform: scale(0.85);
-}
-
-body:not(.cls-promotion1).product-single .sidebar .promotion-title {
-	background-color: var(--badge-bg-color, red);
-    color: #ffffff;
-    color: var(--badge-text-color, #ffffff);
-}
-
-.p-card-centered .product-block salla-rating-stars {
-	justify-content: center;
-}
-
-
-.pc-less-spaces custom-salla-product-card.product-block .title {
-	line-height: normal;
-}
-
-
-.fire .sold-times-wrapper .sicon-fire:before {
-	display: none;
-}
-.fire .sold-times-wrapper .sicon-fire {
-	margin-top: -6px;
-	display: inline-block;
-	width: 20px;
-	height: 20px;
-	background-image:url('https://raw.githubusercontent.com/theme-aali/videos/main/aali/fire.svg');
-	background-repeat: no-repeat;
-	background-position: center;
-}
-
-.hdr-srch-left .sicon-search {
-    margin-bottom: -3px
-}
-
-
-.simple-brand-shape .product-brand-second-word,
-.simple-brand-shape .product-brand-first-word,
-.simple-brand-shape .product-brand-content h4 {
-	display: none;
-}
-
-#app .product-brand-wrapper.simple-brand-shape {
-	border: none;
-    background: transparent !important;
-	padding: 0;
-}
 
 
 #app.tab-1-on .next-tab2 + [id^="best-offers-"][id$="-slider"],
@@ -909,54 +256,56 @@ body#app.hide-img-btm-rad.p-border-on:not(.cls-8734gb) custom-salla-product-card
 .dark salla-products-slider .color-danger.t-red {
 	color: var(--red-color, #fff) !important;
 }
+
+.dark .s-product-options-colors-item span + div p {
+	color: var(--dm-text-sec) !important;
+}
+
+body.modal-is-closed salla-button#cart-submit button,
+body.modal-is-closed salla-button#cart-submit {
+	pointer-events: auto;
+	}
+body.modal-is-closed salla-button#cart-submit button .s-button-text.s-button-hide {
+	opacity: 1;
+	}
+	
+body.modal-is-closed salla-button#cart-submit button .s-button-loader {
+	opacity: 0;
+}
+
+.mobile-nav-outer.no-titles .mobile-nav--item .s-cart-summary-count {
+    display: block;
+}
+
+
+.s-rating-modal-product-img-wrap {
+    width: 3.5rem;
+}
+
+.sq-awesome-banners .banner-outer .banner-texts .banner__title {
+  font-size: 80%;
+}
+.action-btns-small:not(.cls-btn46) salla-add-product-button button[product-id] {
+	height: 2rem;
+	font-size: 0.8rem;
+}
+
+
+
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
 
 // fix mobile nav, tempoo
-function ready() {
-	document.body.classList.add("mobile-nav-is-on");
-}
-if (document.readyState == "loading") {
-	document.addEventListener("DOMContentLoaded", ready);
-} else {
-	ready();
-}
+// function ready() {
+// 	document.body.classList.add("mobile-nav-is-on");
+// }
+// if (document.readyState == "loading") {
+// 	document.addEventListener("DOMContentLoaded", ready);
+// } else {
+// 	ready();
+// }
 // fix mobile nav, tempo
-
-function all() {
-	let all_videos = document.querySelectorAll(".bg__image video");
-	all_videos.forEach((video) => {
-		let video_wrapper = video.querySelector(".bg__image");
-		setTimeout(() => {
-			if (document.body.classList.contains("vid")) {
-				if (video) {
-					video.removeAttribute("muted");
-					video.play();
-					setTimeout(() => {
-						video.play();
-					}, 3000);
-				}
-				if (video_wrapper) {
-					video_wrapper.addEventListener("click", () => {
-						if (video.paused) {
-							video.play();
-						} else {
-							video.pause();
-						}
-					});
-				}
-			}
-		}, 2000);
-	});
-}
-
-// when loaded
-if (document.readyState == "complete") {
-	all();
-} else {
-	document.addEventListener("DOMContentLoaded", all);
-}
 
 function changeATC() {
 	// if client wants to change atc text
@@ -1083,42 +432,42 @@ if (document.body.classList.contains("visits")) {
 // 	}
 // }
 
-document.addEventListener("DOMContentLoaded", function () {
-	const productDescription = document.querySelector(".product__description");
+// document.addEventListener("DOMContentLoaded", function () {
+// 	const productDescription = document.querySelector(".product__description");
 
-	if (productDescription) {
-		const article = productDescription.querySelector("article");
+// 	if (productDescription) {
+// 		const article = productDescription.querySelector("article");
 
-		// Set classes on the article
-		if (article) {
-			article.className = "article article--main relative overflow-hidden transition-all max-h-0 duration-300 p-4";
-			// Set initial max-height to 2.5rem
-			article.style.maxHeight = "2.5rem";
+// 		// Set classes on the article
+// 		if (article) {
+// 			article.className = "article article--main relative overflow-hidden transition-all max-h-0 duration-300 p-4";
+// 			// Set initial max-height to 2.5rem
+// 			article.style.maxHeight = "2.5rem";
 
-			// Remove the first child if it's a text node
-			if (article.firstChild && article.firstChild.nodeType === Node.TEXT_NODE) {
-				article.removeChild(article.firstChild);
-			}
-		}
+// 			// Remove the first child if it's a text node
+// 			if (article.firstChild && article.firstChild.nodeType === Node.TEXT_NODE) {
+// 				article.removeChild(article.firstChild);
+// 			}
+// 		}
 
-		// Add click event for the "Show More" button
-		const btnShowMore = document.getElementById("btn-show-more");
-		if (btnShowMore) {
-			btnShowMore.addEventListener("click", function (e) {
-				if (article) {
-					// Add the class to the button
-					e.target.classList.add("is-expanded");
+// 		// Add click event for the "Show More" button
+// 		const btnShowMore = document.getElementById("btn-show-more");
+// 		if (btnShowMore) {
+// 			btnShowMore.addEventListener("click", function (e) {
+// 				if (article) {
+// 					// Add the class to the button
+// 					e.target.classList.add("is-expanded");
 
-					// Set the max-height to the scrollHeight to expand the content
-					article.style.maxHeight = article.scrollHeight + "px";
-				} else {
-					// Remove the button if no article is found
-					e.target.remove();
-				}
-			});
-		}
-	}
-});
+// 					// Set the max-height to the scrollHeight to expand the content
+// 					article.style.maxHeight = article.scrollHeight + "px";
+// 				} else {
+// 					// Remove the button if no article is found
+// 					e.target.remove();
+// 				}
+// 			});
+// 		}
+// 	}
+// });
 
 window.initial_home_tabs = function (_this) {
 	document.body.classList.add(`tabs-on`);
