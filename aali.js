@@ -290,6 +290,9 @@ body.modal-is-closed salla-button#cart-submit button .s-button-loader {
 	font-size: 0.8rem;
 }
 
+.banner__title {
+    line-height: normal;
+}
 
 `;
 // append style element
