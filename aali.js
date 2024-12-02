@@ -291,7 +291,6 @@ body.modal-is-closed salla-button#cart-submit button .s-button-loader {
 }
 
 
-
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
