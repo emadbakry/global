@@ -299,6 +299,10 @@ body.modal-is-closed salla-button#cart-submit button .s-button-loader {
 	background-color: transparent !important;
 }
 
+.dark #app.btns-gradient .cart-submit-wrap .s-button-primary .s-button-text {
+	color: var(--dm-main-text) !important;
+}
+
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
