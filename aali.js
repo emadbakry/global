@@ -303,6 +303,10 @@ body.modal-is-closed salla-button#cart-submit button .s-button-loader {
 	color: var(--dm-main-text) !important;
 }
 
+.banner_image_desktop {
+    width: 100%;
+}
+
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
