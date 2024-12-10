@@ -303,6 +303,9 @@ body.modal-is-closed salla-button#cart-submit button .s-button-loader {
 	color: var(--dm-main-text) !important;
 }
 
+.titles-line-underline .tabs__item .s-slider-block__title:after {
+	display: none;
+}
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
