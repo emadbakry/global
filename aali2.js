@@ -311,6 +311,14 @@ body.modal-is-closed salla-button#cart-submit button .s-button-loader {
 	display: none;
 }
 
+@media (min-width: 640px) {
+	.sticky-product-bar .sticky-product-bar__price {
+		display: none !important;
+	}
+	#app.is-sticky-product-bar .sticky-bar-price-on .sticky-product-bar__quantity {
+		width: 100%;
+	}
+}
 
 `;
 // append style element
