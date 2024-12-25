@@ -390,7 +390,7 @@ body.modal-is-closed salla-button#cart-submit button .s-button-loader {
 	fill: var(--dm-text-sec) !important;
 }
 
-div[data-show-when] {
+salla-product-options[config] div[data-show-when] {
 	display: block !important;
 }
 
