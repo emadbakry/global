@@ -574,3 +574,11 @@ if (document.body.classList.contains("visits")) {
 // 	document.body.classList.add(`tab-${selected}-on`);
 // 	window.set_home_tabs(`tab-${selected}`);
 // };
+
+let fixOptionsInterval = setInterval(() => {
+	let options = document.querySelector("salla-product-options");
+	if (options) {
+		options.removeAttribute("config");
+		clearInterval(fixOptionsInterval);
+	}
+}, 10);
