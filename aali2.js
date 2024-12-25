@@ -320,6 +320,77 @@ body.modal-is-closed salla-button#cart-submit button .s-button-loader {
 	}
 }
 
+
+
+
+.dark .s-comments-filter-label,
+.dark .s-reviews-summary-row-rate,
+.dark .s-reviews-summary-count,
+.dark .s-reviews-summary-average,
+.dark .s-comments-title,
+.dark .s-comments-item-timestamp,
+.dark .s-comments-item-content,
+.dark .s-comments-item-user-info-name {
+	color: var(--dm-text-main) !important;
+}
+.dark .s-reviews-summary-header .s-rating-stars-selected {
+	fill: #fbbf24;
+	color: #fbbf24;
+}
+.dark button.s-comments-item-like-btn {
+	background-color: transparent !important;
+	border-color: var(--dm-text-main) !important;
+	color: var(--dm-text-main) !important;
+}
+.dark button.s-comments-item-like-btn span {
+	fill: var(--dm-text-main) !important;
+	color: var(--dm-text-main) !important;
+}
+
+.dark salla-button.s-comments-item-like-btn.liked button.s-comments-item-like-btn {
+	background-color: var(--dm-text-main) !important;
+	border-color: var(--dm-text-main) !important;
+	color: var(--dm-bg-main) !important;
+}
+.dark salla-button.s-comments-item-like-btn.liked button.s-comments-item-like-btn span {
+	fill: var(--dm-bg-main) !important;
+	color: var(--dm-bg-main) !important;
+}
+.dark body.btns-gradient salla-button.s-comments-item-like-btn.liked button.s-comments-item-like-btn span {
+	fill: var(--gradient-text-color) !important;
+	color: var(--gradient-text-color) !important;
+}
+
+
+.dark .s-progress-bar-progress {
+	background-color: var(--dm-text-main) !important;
+}
+
+
+.dark .s-comments .s-infinite-scroll-btn.s-button-btn {
+	border-color: var(--dm-text-main) !important;
+}
+
+
+
+.dark .s-comments-count-label {
+	color: var(--dm-text-main) !important;
+}
+.dark .s-comments-item-has-order-check-text {
+	color: var(--dm-text-sec) !important;
+}
+
+
+
+.dark .s-booking-field-reservations-item {
+	color: var(--dm-text-sec) !important;
+	border-color: var(--dm-text-sec) !important;
+}
+.dark .s-booking-field-reservations-icon svg {
+	fill: var(--dm-text-sec) !important;
+}
+
+
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
