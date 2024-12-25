@@ -585,3 +585,14 @@ let fixOptionsInterval = setInterval(() => {
 		clearInterval(fixOptionsInterval);
 	}
 }, 10);
+
+let fixQuantity = setInterval(() => {
+	let form = document.querySelector(".product-form");
+	if (form) {
+		form.setAttribute("onchange", "salla.product.getPrice(new FormData(event.currentTarget))");
+		clearInterval(fixQuantity);
+	}
+	if (!document.body.classList.contains("product-single")) {
+		clearInterval(fixQuantity);
+	}
+}, 10);
