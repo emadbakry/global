@@ -390,6 +390,9 @@ body.modal-is-closed salla-button#cart-submit button .s-button-loader {
 	fill: var(--dm-text-sec) !important;
 }
 
+div[data-show-when] {
+	display: block !important;
+}
 
 `;
 // append style element
