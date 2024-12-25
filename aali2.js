@@ -397,7 +397,7 @@ salla-product-options[config] div[data-show-when] {
 body.remove-old-slider .s-block--hero-slider.s-block--full-bg:not(.come-back) {
 	display: none;
 }
-
+ 
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
