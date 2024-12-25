@@ -307,6 +307,9 @@ body.modal-is-closed salla-button#cart-submit button .s-button-loader {
     width: 100%;
 }
 
+body.remove-old-slider .s-block--hero-slider.s-block--full-bg:not(.come-back) {
+	display: none !important;
+}
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
