@@ -588,21 +588,23 @@ if (document.body.classList.contains("visits")) {
 // 	window.set_home_tabs(`tab-${selected}`);
 // };
 
-let fixOptionsInterval = setInterval(() => {
-	let options = document.querySelector("salla-product-options");
-	if (options) {
-		options.removeAttribute("config");
-		clearInterval(fixOptionsInterval);
-	}
-}, 10);
+if (!document.body.classList.contains("options-on")) {
+	let fixOptionsInterval = setInterval(() => {
+		let options = document.querySelector("salla-product-options");
+		if (options) {
+			options.removeAttribute("config");
+			clearInterval(fixOptionsInterval);
+		}
+	}, 10);
 
-let fixQuantity = setInterval(() => {
-	let form = document.querySelector(".product-form");
-	if (form) {
-		form.setAttribute("onchange", "salla.product.getPrice(new FormData(event.currentTarget))");
-		clearInterval(fixQuantity);
-	}
-	if (!document.body.classList.contains("product-single")) {
-		clearInterval(fixQuantity);
-	}
-}, 10);
+	let fixQuantity = setInterval(() => {
+		let form = document.querySelector(".product-form");
+		if (form) {
+			form.setAttribute("onchange", "salla.product.getPrice(new FormData(event.currentTarget))");
+			clearInterval(fixQuantity);
+		}
+		if (!document.body.classList.contains("product-single")) {
+			clearInterval(fixQuantity);
+		}
+	}, 10);
+}
