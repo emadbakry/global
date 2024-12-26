@@ -398,6 +398,12 @@ body.remove-old-slider .s-block--hero-slider.s-block--full-bg:not(.come-back) {
 	display: none !important;
 }
  
+body:not(.line-brk).app-body .product__description {
+	line-break: unset;
+}
+#app.line-brk .product__description {
+	line-break: anywhere;
+}
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
