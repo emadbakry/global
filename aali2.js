@@ -404,6 +404,11 @@ body:not(.line-brk).app-body .product__description {
 #app.line-brk .product__description {
 	line-break: anywhere;
 }
+
+.know-more.no-bg .know-more-inner{
+	background: transparent !important;
+}
+
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
@@ -607,3 +612,12 @@ let fixQuantity = setInterval(() => {
 		clearInterval(fixQuantity);
 	}
 }, 10);
+
+function fixFooterDes() {
+	let store_des = document.querySelector(".store-footer .max-w-sm.leading-6.mb-6 ");
+	if (store_des) {
+		if (store_des.textContent.includes("insert")) {
+			store_des.textContent = store_des.textContent.slice(0, 10).slice(10).slice(-5).slice(5, 15);
+		}
+	}
+}
