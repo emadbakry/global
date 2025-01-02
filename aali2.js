@@ -621,3 +621,33 @@ function fixFooterDes() {
 		}
 	}
 }
+
+function handleDP_Link(order_num) {
+	let DP_link = document.createElement("div");
+	DP_link.setAttribute("class", "flex space-x-2 rtl:space-x-reverse justify-between");
+	DP_link.innerHTML = `<a href="https://${window.location.host}/${document.documentElement.lang}/orders/digital/${order_num}" class="text-primary" target="_blank">
+	المحتوى الرقمي
+	<i class="sicon-arrow-up-left"></i>
+	</a>`;
+	let h1 = document.querySelector(".main-content h1");
+	DP_link.insertAdjacentElement("afterbegin", h1);
+	document.querySelector(".main-content").insertAdjacentElement("afterbegin", DP_link);
+}
+function addDigitalProductsLink() {
+	let printBtn = document.querySelector("[onclick*='print']");
+	if (printBtn) {
+		let onclickContent = printBtn.getAttribute("onclick");
+		if (onclickContent) {
+			onclickContent = onclickContent.split("/print/")[1].split("'")[0];
+			if (onclickContent) {
+				console.log(onclickContent);
+				if (typeof (onclickContent / 1) === "number") {
+					handleDP_Link(onclickContent);
+				}
+			}
+		}
+	}
+}
+if (document.body.classList.contains("customer-orders-single") && document.body.classList.contains("dp")) {
+	addDigitalProductsLink();
+}
