@@ -409,6 +409,10 @@ body:not(.line-brk).app-body .product__description {
 	background: transparent !important;
 }
 
+.mm-ocd__content {
+    overflow-y: scroll;
+}
+	
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
