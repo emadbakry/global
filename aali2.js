@@ -391,7 +391,7 @@ body.modal-is-closed salla-button#cart-submit button .s-button-loader {
 }
 
 salla-product-options[config] div[data-show-when] {
-	display: block !important;
+	/*	display: block !important; */
 }
 
 body.remove-old-slider .s-block--hero-slider.s-block--full-bg:not(.come-back) {
@@ -655,7 +655,7 @@ function addDigitalProductsLink() {
 if (document.body.classList.contains("customer-orders-single") && document.body.classList.contains("dp")) {
 	addDigitalProductsLink();
 }
-
+// fix product des that has &nbsp;
 document.querySelectorAll(".product__description").forEach((element) => {
 	element.innerHTML = element.innerHTML.replace(/&nbsp;/g, " ").trim();
 });
