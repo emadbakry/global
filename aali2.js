@@ -655,3 +655,7 @@ function addDigitalProductsLink() {
 if (document.body.classList.contains("customer-orders-single") && document.body.classList.contains("dp")) {
 	addDigitalProductsLink();
 }
+
+document.querySelectorAll(".product__description").forEach((element) => {
+	element.innerHTML = element.innerHTML.replace(/&nbsp;/g, " ").trim();
+});
