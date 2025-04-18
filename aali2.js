@@ -69,6 +69,11 @@ body:not(.cls-83) .product-block .sale-ratio {
 }
 
 
+.animated-text--subtitle {
+    line-height: normal !important;
+}
+
+
 .action-btns-small custom-salla-product-card .showPreviewBtn:not(.preview-btn-down) {
 	width: 34px;
 	height: 34px;
