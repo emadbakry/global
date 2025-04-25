@@ -422,6 +422,7 @@ body:not(.line-brk).app-body .product__description {
   margin-bottom: 0;
 }
 	
+
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
