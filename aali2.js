@@ -412,6 +412,15 @@ body:not(.line-brk).app-body .product__description {
 .mm-ocd__content {
     overflow-y: scroll;
 }
+
+
+.pc-less-spaces .product-block .product-title .title {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.pc-less-spaces .product-block .price-wrapper {
+  margin-bottom: 0;
+}
 	
 `;
 // append style element
