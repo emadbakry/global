@@ -421,7 +421,10 @@ body:not(.line-brk).app-body .product__description {
 .pc-less-spaces .product-block .price-wrapper {
   margin-bottom: 0;
 }
-	
+
+.normal-menu.desk-menu-bold .main-menu li.root-level > a {
+	font-weight: 700;
+}
 
 `;
 // append style element
