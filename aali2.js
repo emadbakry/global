@@ -425,7 +425,9 @@ body:not(.line-brk).app-body .product__description {
 .normal-menu.desk-menu-bold .main-menu li.root-level > a {
 	font-weight: 700;
 }
-
+.dark .k-about-us {
+	color: var(--dm-text-main);
+}
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
