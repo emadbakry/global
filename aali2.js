@@ -436,6 +436,11 @@ body:not(.line-brk).app-body .product__description {
 .index-inner > div.center-between {
 	margin-top: 0.5rem;
 }
+
+
+.animated-text--subtitle {
+	line-height: normal;
+}
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
