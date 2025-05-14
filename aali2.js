@@ -432,6 +432,10 @@ body:not(.line-brk).app-body .product__description {
 .aali-products-tabs salla-products-slider + .s-block__title {
 	margin-top: 1rem;
 }
+.index-inner,
+.index-inner > div.center-between {
+	margin-top: 0.5rem;
+}
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
