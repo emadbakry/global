@@ -428,6 +428,10 @@ body:not(.line-brk).app-body .product__description {
 .dark .k-about-us {
 	color: var(--dm-text-main);
 }
+
+.aali-products-tabs salla-products-slider + .s-block__title {
+	margin-top: 1rem;
+}
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
