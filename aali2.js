@@ -441,7 +441,7 @@ body:not(.line-brk).app-body .product__description {
 .product-index .banners-wrapper {
 	margin-bottom: 0.5rem;
 }
-
+ 
 .animated-text--subtitle {
 	line-height: normal;
 } 
