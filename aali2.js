@@ -432,9 +432,14 @@ body:not(.line-brk).app-body .product__description {
 .aali-products-tabs salla-products-slider + .s-block__title {
 	margin-top: 1rem;
 }
+.index-outer,
 .index-inner,
 .index-inner > div.center-between {
-	margin-top: 0.5rem;
+	margin-top: 0.25rem;
+}
+
+.product-index .banners-wrapper {
+	margin-bottom: 0.5rem;
 }
 
 
