@@ -435,16 +435,18 @@ body:not(.line-brk).app-body .product__description {
 .index-outer,
 .index-inner,
 .index-inner > div.center-between {
-	margin-top: 0.25rem;
+    margin-top: 0.25rem;
 }
 
 .product-index .banners-wrapper {
-	margin-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
 }
- 
+
+
 .animated-text--subtitle {
-	line-height: normal;
+    line-height: normal;
 } 
+
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
