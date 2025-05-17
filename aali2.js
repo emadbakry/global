@@ -446,7 +446,9 @@ body:not(.line-brk).app-body .product__description {
 .animated-text--subtitle {
     line-height: normal;
 } 
-
+#app #mc_embed_signup div#mce-responses {
+	float: unset;
+}
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
