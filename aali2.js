@@ -421,7 +421,7 @@ body:not(.line-brk).app-body .product__description {
 .pc-less-spaces .product-block .price-wrapper {
   margin-bottom: 0;
 }
-
+/* below added to theme */
 .normal-menu.desk-menu-bold .main-menu li.root-level > a {
 	font-weight: 700;
 }
@@ -448,6 +448,15 @@ body:not(.line-brk).app-body .product__description {
 } 
 #app #mc_embed_signup div#mce-responses {
 	float: unset;
+}
+/* up added to theme */
+
+
+.dark salla-installment {
+	color: var(--dm-text-main) !important;
+}
+.dark salla-installment tamara-widget[type="tamara-summary"] {
+	--inline-outlined-background-color-hover: var(--dm-bg-sec);
 }
 `;
 // append style element
