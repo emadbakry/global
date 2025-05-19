@@ -458,6 +458,9 @@ body:not(.line-brk).app-body .product__description {
 .dark salla-installment tamara-widget[type="tamara-summary"] {
 	--inline-outlined-background-color-hover: var(--dm-bg-sec);
 }
+	#app .loading-overlay {
+		display: none;
+	}
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
