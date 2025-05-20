@@ -1,17 +1,17 @@
-if (document.body.classList.contains("cart")) {
-	const removeClassInterval = setInterval(() => {
-		const form = document.querySelector('.cart .main-content form.product-form[id^="item-"]');
+// if (document.body.classList.contains("cart")) {
+// 	const removeClassInterval = setInterval(() => {
+// 		const form = document.querySelector('.cart .main-content form.product-form[id^="item-"]');
 
-		if (form) {
-			form.classList.remove("product-form");
-			clearInterval(removeClassInterval);
-			console.log('✅ تمت إزالة الكلاس "project-form" في صفحة السلة.');
-		}
-	}, 5);
-	setTimeout(() => {
-		clearInterval(removeClassInterval);
-	}, 8000);
-}
+// 		if (form) {
+// 			form.classList.remove("product-form");
+// 			clearInterval(removeClassInterval);
+// 			console.log('✅ تمت إزالة الكلاس "project-form" في صفحة السلة.');
+// 		}
+// 	}, 5);
+// 	setTimeout(() => {
+// 		clearInterval(removeClassInterval);
+// 	}, 8000);
+// }
 
 // you can use this file to fix issues directly for all theme users, great for quick fixes before salla accept fixes.
 
