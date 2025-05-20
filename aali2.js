@@ -1,3 +1,18 @@
+if (document.body.classList.contains("cart")) {
+	const removeClassInterval = setInterval(() => {
+		const form = document.querySelector('.cart .main-content form.product-form[id^="item-"]');
+
+		if (form) {
+			form.classList.remove("product-form");
+			clearInterval(removeClassInterval);
+			console.log('✅ تمت إزالة الكلاس "project-form" في صفحة السلة.');
+		}
+	}, 5);
+	setTimeout(() => {
+		clearInterval(removeClassInterval);
+	}, 8000);
+}
+
 // you can use this file to fix issues directly for all theme users, great for quick fixes before salla accept fixes.
 
 // add style element
@@ -458,9 +473,9 @@ body:not(.line-brk).app-body .product__description {
 .dark salla-installment tamara-widget[type="tamara-summary"] {
 	--inline-outlined-background-color-hover: var(--dm-bg-sec);
 }
-	#app .loading-overlay {
-		display: none;
-	}
+#app .loading-overlay {
+	display: none;
+}
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
