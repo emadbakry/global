@@ -482,6 +482,60 @@ body.footer-hide-social-title .store-footer .footer-social-item a {
 	height: 36px;
 	width: 36px;
 }
+
+
+
+/* features */
+.enhanced-features.new .s-block--features__item {
+	display: grid;
+	grid-template-columns: auto 1fr;
+	grid-template-rows: auto auto;
+	align-items: center;
+	gap: 0.75rem 1.5rem;
+	z-index: 1;
+	padding: 1rem;
+}
+.enhanced-features.new .s-block--features__item h4 {
+	grid-column: 2;
+	grid-row: 1;
+	font-size: 1.25rem;
+	text-align: start;
+	margin-bottom: 0;
+	align-self: flex-end;
+}
+
+.enhanced-features.new .s-block--features__item p {
+	grid-column: 2;
+	grid-row: 2;
+	text-align: start;
+	align-self: flex-start;
+}
+
+.enhanced-features.new .feature-icon {
+	grid-column: 1;
+	grid-row: 1 / -1;
+	margin-bottom: 0;
+	padding: 0.25rem;
+	border-radius: 1rem;
+	position: relative;
+	background-color: var(--f-bg-color);
+	border-radius: 0.75rem;
+}
+
+.enhanced-features.new .feature-icon:after {
+	content: "";
+	display: block;
+	width: 120%;
+	height: 120%;
+	background: inherit;
+	position: absolute;
+	transform: translate(-50%, -50%);
+	top: 50%;
+	left: 50%;
+	opacity: 0.55;
+	z-index: -1;
+	border-radius: inherit;
+}
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
