@@ -476,6 +476,12 @@ body:not(.line-brk).app-body .product__description {
 #app .loading-overlay {
 	display: none;
 }
+
+
+body.footer-hide-social-title .store-footer .footer-social-item a {
+	height: 36px;
+	width: 36px;
+}
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
