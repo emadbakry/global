@@ -537,7 +537,7 @@ body.footer-hide-social-title .store-footer .footer-social-item a {
 	border-radius: inherit;
 }
 
-#app.h-counter .preview__inner count-down_wrapper {
+#app.h-counter .preview__inner .count-down_wrapper {
 	display: none;
 }
 
