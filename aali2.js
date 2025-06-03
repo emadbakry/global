@@ -536,6 +536,11 @@ body.footer-hide-social-title .store-footer .footer-social-item a {
 	z-index: -1;
 	border-radius: inherit;
 }
+
+#app.h-counter .preview__inner count-down_wrapper {
+	display: none;
+}
+
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
