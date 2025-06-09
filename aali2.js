@@ -546,6 +546,7 @@ body.footer-hide-social-title .store-footer .footer-social-item a {
 /* salla-modal input,
 salla-modal select,
 salla-modal textarea, */
+.app-body form input,
 form input.s-form-control,
 form select.s-form-control,
 form select,
