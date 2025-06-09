@@ -541,6 +541,21 @@ body.footer-hide-social-title .store-footer .footer-social-item a {
 	display: none;
 }
 
+
+/* product single */
+/* salla-modal input,
+salla-modal select,
+salla-modal textarea, */
+form input.s-form-control,
+form select.s-form-control,
+form select,
+form textarea.s-form-control,
+form textarea {
+	font-size: 16px;
+}
+/* product single */
+
+
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
