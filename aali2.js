@@ -325,6 +325,7 @@ body.modal-is-closed salla-button#cart-submit button .s-button-loader {
 .product-block .s-product-options-wrapper {
 	display: none;
 }
+	
 
 @media (min-width: 640px) {
 	.sticky-product-bar .sticky-product-bar__price {
@@ -741,15 +742,15 @@ if (document.body.classList.contains("visits")) {
 // 	window.set_home_tabs(`tab-${selected}`);
 // };
 
-if (!document.body.classList.contains("options-on")) {
-	let fixOptionsInterval = setInterval(() => {
-		let options = document.querySelector("salla-product-options");
-		if (options) {
-			options.removeAttribute("config");
-			clearInterval(fixOptionsInterval);
-		}
-	}, 10);
-}
+// if (!document.body.classList.contains("options-on")) {
+// 	let fixOptionsInterval = setInterval(() => {
+// 		let options = document.querySelector("salla-product-options");
+// 		if (options) {
+// 			options.removeAttribute("config");
+// 			clearInterval(fixOptionsInterval);
+// 		}
+// 	}, 10);
+// }
 let fixQuantity = setInterval(() => {
 	let form = document.querySelector(".product-form");
 	if (form) {
