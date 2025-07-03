@@ -615,9 +615,7 @@ if (document.readyState == "complete") {
 // page visitors, works only foe stores that have noti moni app
 if (document.body.classList.contains("visits")) {
 	function getPageVisitors() {
-		const visitorsCounter = document.querySelector(
-			"body.product-single .products_visitors_counter .altumcode-products-visitors-counter-main .altumcode-products-visitors-counter-number"
-		);
+		const visitorsCounter = document.querySelector("body.product-single .products_visitors_counter .altumcode-products-visitors-counter-main .altumcode-products-visitors-counter-number");
 		if (visitorsCounter) {
 			const visitorsCount = visitorsCounter.textContent;
 			console.log(visitorsCount);
@@ -661,9 +659,7 @@ if (document.body.classList.contains("visits")) {
 	// observe it
 	let second_step = false;
 	let page_visitors_interval = setInterval(() => {
-		let counter_of_visitors = document.querySelector(
-			"body.product-single .products_visitors_counter .altumcode-products-visitors-counter-main .altumcode-products-visitors-counter-number"
-		);
+		let counter_of_visitors = document.querySelector("body.product-single .products_visitors_counter .altumcode-products-visitors-counter-main .altumcode-products-visitors-counter-number");
 		if (counter_of_visitors && !second_step) {
 			// clearInterval(page_visitors_interval);
 			getPageVisitors();
@@ -803,4 +799,26 @@ if (document.body.classList.contains("customer-orders-single") && document.body.
 // fix product des that has &nbsp;
 document.querySelectorAll(".product__description").forEach((element) => {
 	element.innerHTML = element.innerHTML.replace(/&nbsp;/g, " ").trim();
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+	let counter = 1;
+
+	// نحصل على كل عناصر faq-item في كل الأقسام
+	const allFaqInputs = document.querySelectorAll('.faq-item input[type="checkbox"]');
+
+	allFaqInputs.forEach((input) => {
+		const parent = input.closest(".faq-item");
+		const label = parent.querySelector("label");
+
+		if (label) {
+			const newId = `faq-fixed-${counter}`;
+
+			// تحديث id و for
+			input.id = newId;
+			label.setAttribute("for", newId);
+
+			counter++;
+		}
+	});
 });

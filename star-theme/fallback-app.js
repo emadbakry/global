@@ -17,3 +17,20 @@ div.swal2-container {
 }`;
 
 document.getElementsByTagName("head")[0].appendChild(style);
+
+const starCoupon = document.querySelector("star-coupons");
+
+if (starCoupon) {
+	// إضافة دالة جديدة
+	starCoupon.myCustomFunction = function () {
+		console.log("This is my custom function");
+	};
+
+	// تعديل الدالة الموجودة
+	const originalApplyCode = starCoupon.applyCode.bind(starCoupon);
+	starCoupon.applyCode = async function (button) {
+		console.log("hi - before original function");
+		await originalApplyCode(button);
+		console.log("hi - after original function");
+	};
+}
