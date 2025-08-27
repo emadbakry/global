@@ -822,3 +822,25 @@ document.addEventListener("DOMContentLoaded", function () {
 		}
 	});
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+	// Find all elements with onclick containing 'cart.deleteItem'
+	const deleteButtons = document.querySelectorAll('[onclick*="cart.deleteItem"]');
+
+	deleteButtons.forEach(function (button) {
+		// Get the current onclick attribute value
+		const currentOnclick = button.getAttribute("onclick");
+
+		// Use regex to find and replace the number parameter with string
+		// This pattern matches: deleteItem(number) and converts to deleteItem('number')
+		const updatedOnclick = currentOnclick.replace(/salla\.cart\.deleteItem\((\d+)\)/g, "salla.cart.deleteItem('$1')");
+
+		// Update the onclick attribute with the new string parameter
+		button.setAttribute("onclick", updatedOnclick);
+
+		console.log("Updated onclick from:", currentOnclick);
+		console.log("Updated onclick to:", updatedOnclick);
+	});
+
+	console.log(`Updated ${deleteButtons.length} cart delete buttons`);
+});
