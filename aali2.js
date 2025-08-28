@@ -541,7 +541,10 @@ body.footer-hide-social-title .store-footer .footer-social-item a {
 #app.h-counter .preview__inner .count-down_wrapper {
 	display: none;
 }
-
+	
+.p-card-centered .product-block .price-wrapper > div:first-of-type {
+	justify-content: center;
+}
 
 /* product single */
 /* salla-modal input,
