@@ -561,9 +561,7 @@ form textarea {
 /* product single */
 
 
-.s-comments.s-comments-product:has(.s-comments-container > salla-comment-form:empty) {
-    display: none;
-}
+
 
 `;
 // append style element
