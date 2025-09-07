@@ -561,7 +561,9 @@ form textarea {
 /* product single */
 
 
-
+body .s-comments.s-comments-product:has(salla-reviews-summary:empty) {
+    display: none;
+}
 
 `;
 // append style element
