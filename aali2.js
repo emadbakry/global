@@ -565,6 +565,10 @@ body .s-comments.s-comments-product:has(salla-reviews-summary:empty):has(.s-comm
     display: none;
 }
 
+.cart .price-2.item-price > i {
+	display: inline-block;
+}
+
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
