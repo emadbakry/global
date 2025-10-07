@@ -107,6 +107,7 @@ body:not(.cls-77) section.sq-awesome-banners.section-is-slider:not(.auto-size) .
 
 .dark #tabbyPromoWrapper [class*="styles__containerPortal"] {
     --snippetTextColor: var(--dm-text-main) !important;
+    --snippetLinkTextColor: var(--dm-text-main) !important;
 }
 
 .dark #app #tabbyPromoWrapper,
