@@ -565,7 +565,7 @@ form textarea {
 /* product single */
 
 
-body .s-comments.s-comments-product:has(salla-reviews-summary:empty):has(.s-comments-header:empty) {
+body .s-comments.s-comments-product:has(salla-reviews-summary:empty):has(.s-comments-header:empty):has(salla-comment-form:empty) {
     display: none;
 }
 
