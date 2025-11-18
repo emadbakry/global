@@ -14,6 +14,12 @@ style.innerHTML = `
 
 div.swal2-container {
   z-index: 99999;
-}`;
+}
+  
+
+#app.show-search-results-as-prod-card .s-search-product-not-available[style*="block"] {
+  filter: unset;
+}
+`;
 
 document.getElementsByTagName("head")[0].appendChild(style);
