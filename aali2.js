@@ -471,9 +471,6 @@ body:not(.line-brk).app-body .product__description {
 .dark salla-installment tamara-widget[type="tamara-summary"] {
 	--inline-outlined-background-color-hover: var(--dm-bg-sec);
 }
-#app .loading-overlay {
-	display: none;
-}
 
 
 body.footer-hide-social-title .store-footer .footer-social-item a {
