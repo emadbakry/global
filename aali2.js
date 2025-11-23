@@ -849,3 +849,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 	console.log(`Updated ${deleteButtons.length} cart delete buttons`);
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+	let footer_contact_title = document.querySelector(".footer-contact .hidden .s-contacts-title");
+	if (footer_contact_title) return;
+	footer_contact_title.innerHTML = footer_contact_title.innerHTML.split("hide-title=")[0];
+});
