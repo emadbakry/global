@@ -16,10 +16,10 @@
 // you can use this file to fix issues directly for all theme users, great for quick fixes before salla accept fixes.
 
 // add style element
-var style = document.createElement("style");
+var style = document.createElement('style');
 // add type using setAttribute
 
-style.setAttribute("type", "text/css");
+style.setAttribute('type', 'text/css');
 
 // add css content
 style.innerHTML = `
@@ -563,9 +563,32 @@ body .s-comments.s-comments-product:has(salla-reviews-summary:empty):has(.s-comm
 	display: inline-block;
 }
 
+
+
+.store-footer.icons-rounded-none .s-social-link a,
+.store-footer.icons-rounded-none .s-contacts-icon {
+	border-radius: 0;
+}
+.store-footer.icons-rounded-sm .s-social-link a,
+.store-footer.icons-rounded-sm .s-contacts-icon {
+	border-radius: 0.125rem;
+}
+.store-footer.icons-rounded-md .s-social-link a,
+.store-footer.icons-rounded-md .s-contacts-icon {
+	border-radius: 0.375rem;
+}
+.store-footer.icons-rounded-xl .s-social-link a,
+.store-footer.icons-rounded-xl .s-contacts-icon {
+	border-radius: 0.625rem;
+}
+.store-footer.icons-rounded-full .s-social-link a,
+.store-footer.icons-rounded-full .s-contacts-icon {
+	border-radius: 10rem;
+}
+
 `;
 // append style element
-document.getElementsByTagName("head")[0].appendChild(style);
+document.getElementsByTagName('head')[0].appendChild(style);
 
 // fix mobile nav, tempoo
 // function ready() {
@@ -580,26 +603,26 @@ document.getElementsByTagName("head")[0].appendChild(style);
 
 function changeATC() {
 	// if client wants to change atc text
-	if (document.body.classList.contains("atc-2")) {
+	if (document.body.classList.contains('atc-2')) {
 		// if client has set atc text using custom-title1
 		// first get custom title 1
-		let computedStyleBody = window.getComputedStyle(document.getElementById("app"));
-		let atc_word = computedStyleBody.getPropertyValue("--custom-title1");
+		let computedStyleBody = window.getComputedStyle(document.getElementById('app'));
+		let atc_word = computedStyleBody.getPropertyValue('--custom-title1');
 		if (atc_word.length > 2) {
 			// if custome title exist and has more than 2 char
-			document.body.style.setProperty("--custom-title1", `${atc_word}`);
-			document.body.classList.add("custom-atc-text");
+			document.body.style.setProperty('--custom-title1', `${atc_word}`);
+			document.body.classList.add('custom-atc-text');
 			// let atc = atc_word.slice(1, -1);
 		} else {
 			//if not
-			console.log("could not find atc text using c-data or the one came from Aali theme, make sure to type a text in (custom-title1)");
+			console.log('could not find atc text using c-data or the one came from Aali theme, make sure to type a text in (custom-title1)');
 		}
 	}
 }
-if (document.readyState == "complete") {
+if (document.readyState == 'complete') {
 	changeATC();
 } else {
-	document.addEventListener("DOMContentLoaded", changeATC);
+	document.addEventListener('DOMContentLoaded', changeATC);
 }
 
 // document.querySelectorAll(".load-img-onclick").forEach((link) => {
@@ -618,16 +641,16 @@ if (document.readyState == "complete") {
 // });
 
 // page visitors, works only foe stores that have noti moni app
-if (document.body.classList.contains("visits")) {
+if (document.body.classList.contains('visits')) {
 	function getPageVisitors() {
-		const visitorsCounter = document.querySelector("body.product-single .products_visitors_counter .altumcode-products-visitors-counter-main .altumcode-products-visitors-counter-number");
+		const visitorsCounter = document.querySelector('body.product-single .products_visitors_counter .altumcode-products-visitors-counter-main .altumcode-products-visitors-counter-number');
 		if (visitorsCounter) {
 			const visitorsCount = visitorsCounter.textContent;
 			console.log(visitorsCount);
 
 			// Create a new div to hold the visitors count
-			const newDiv = document.createElement("div");
-			newDiv.classList.add("visitors-count");
+			const newDiv = document.createElement('div');
+			newDiv.classList.add('visitors-count');
 			newDiv.innerHTML = `
 			<div class="bg-white py-2.5 mb-5 rounded-md w-full inline-flex text-sm dm-bg-sec dm-text-main">
 				<div class="visitors-count-inner px-4 text-red-400 t-red w-full">
@@ -647,16 +670,16 @@ if (document.body.classList.contains("visits")) {
     `;
 
 			// Get the "salla-installment" element and append the new div
-			const salla_installment = document.querySelector(".product-single .main-content salla-installment");
+			const salla_installment = document.querySelector('.product-single .main-content salla-installment');
 			if (salla_installment) {
-				salla_installment.insertAdjacentElement("beforebegin", newDiv);
+				salla_installment.insertAdjacentElement('beforebegin', newDiv);
 			}
 
 			// Hide the original visitors counter
-			const productsVisitorsCounter = document.querySelector(".products_visitors_counter");
+			const productsVisitorsCounter = document.querySelector('.products_visitors_counter');
 			if (productsVisitorsCounter) {
-				productsVisitorsCounter.style.display = "none !important";
-				productsVisitorsCounter.classList.add("hide-visits-aali");
+				productsVisitorsCounter.style.display = 'none !important';
+				productsVisitorsCounter.classList.add('hide-visits-aali');
 			}
 		}
 	}
@@ -664,11 +687,11 @@ if (document.body.classList.contains("visits")) {
 	// observe it
 	let second_step = false;
 	let page_visitors_interval = setInterval(() => {
-		let counter_of_visitors = document.querySelector("body.product-single .products_visitors_counter .altumcode-products-visitors-counter-main .altumcode-products-visitors-counter-number");
+		let counter_of_visitors = document.querySelector('body.product-single .products_visitors_counter .altumcode-products-visitors-counter-main .altumcode-products-visitors-counter-number');
 		if (counter_of_visitors && !second_step) {
 			// clearInterval(page_visitors_interval);
 			getPageVisitors();
-			console.log("page visitors found");
+			console.log('page visitors found');
 			second_step = true;
 		}
 		// if (second_step) {
@@ -680,7 +703,7 @@ if (document.body.classList.contains("visits")) {
 		// 		new_ele.innerHTML = counter_of_visitors.textContent;
 		// 	}
 		// }
-		if (!document.body.classList.contains("product-single")) {
+		if (!document.body.classList.contains('product-single')) {
 			clearInterval(page_visitors_interval);
 		}
 	}, 200);
@@ -753,109 +776,109 @@ if (document.body.classList.contains("visits")) {
 // 	}, 10);
 // }
 let fixQuantity = setInterval(() => {
-	let form = document.querySelector(".product-form");
+	let form = document.querySelector('.product-form');
 	if (form) {
-		form.setAttribute("onchange", "salla.product.getPrice(new FormData(event.currentTarget))");
+		form.setAttribute('onchange', 'salla.product.getPrice(new FormData(event.currentTarget))');
 		clearInterval(fixQuantity);
 	}
-	if (!document.body.classList.contains("product-single")) {
+	if (!document.body.classList.contains('product-single')) {
 		clearInterval(fixQuantity);
 	}
 }, 10);
 
 function fixFooterDes() {
-	let store_des = document.querySelector(".store-footer .max-w-sm.leading-6.mb-6 ");
+	let store_des = document.querySelector('.store-footer .max-w-sm.leading-6.mb-6 ');
 	if (store_des) {
-		if (store_des.textContent.includes("insert")) {
+		if (store_des.textContent.includes('insert')) {
 			store_des.textContent = store_des.textContent.slice(0, 10).slice(10).slice(-5).slice(5, 15);
 		}
 	}
 }
 
 function handleDP_Link(order_num) {
-	let DP_link = document.createElement("div");
-	DP_link.setAttribute("class", "flex space-x-2 rtl:space-x-reverse justify-between");
+	let DP_link = document.createElement('div');
+	DP_link.setAttribute('class', 'flex space-x-2 rtl:space-x-reverse justify-between');
 	DP_link.innerHTML = `<a href="https://${window.location.host}/${document.documentElement.lang}/orders/digital/${order_num}" class="text-primary" target="_blank">
 	المحتوى الرقمي
 	<i class="sicon-arrow-up-left"></i>
 	</a>`;
-	let h1 = document.querySelector(".main-content h1");
-	DP_link.insertAdjacentElement("afterbegin", h1);
-	document.querySelector(".main-content").insertAdjacentElement("afterbegin", DP_link);
+	let h1 = document.querySelector('.main-content h1');
+	DP_link.insertAdjacentElement('afterbegin', h1);
+	document.querySelector('.main-content').insertAdjacentElement('afterbegin', DP_link);
 }
 function addDigitalProductsLink() {
 	let printBtn = document.querySelector("[onclick*='print']");
 	if (printBtn) {
-		let onclickContent = printBtn.getAttribute("onclick");
+		let onclickContent = printBtn.getAttribute('onclick');
 		if (onclickContent) {
-			onclickContent = onclickContent.split("/print/")[1].split("'")[0];
+			onclickContent = onclickContent.split('/print/')[1].split("'")[0];
 			if (onclickContent) {
 				console.log(onclickContent);
-				if (typeof (onclickContent / 1) === "number") {
+				if (typeof (onclickContent / 1) === 'number') {
 					handleDP_Link(onclickContent);
 				}
 			}
 		}
 	}
 }
-if (document.body.classList.contains("customer-orders-single") && document.body.classList.contains("dp")) {
+if (document.body.classList.contains('customer-orders-single') && document.body.classList.contains('dp')) {
 	addDigitalProductsLink();
 }
 // fix product des that has &nbsp;
-document.querySelectorAll(".product__description").forEach((element) => {
-	element.innerHTML = element.innerHTML.replace(/&nbsp;/g, " ").trim();
+document.querySelectorAll('.product__description').forEach((element) => {
+	element.innerHTML = element.innerHTML.replace(/&nbsp;/g, ' ').trim();
 });
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener('DOMContentLoaded', function () {
 	let counter = 1;
 
 	// نحصل على كل عناصر faq-item في كل الأقسام
 	const allFaqInputs = document.querySelectorAll('.faq-item input[type="checkbox"]');
 
 	allFaqInputs.forEach((input) => {
-		const parent = input.closest(".faq-item");
-		const label = parent.querySelector("label");
+		const parent = input.closest('.faq-item');
+		const label = parent.querySelector('label');
 
 		if (label) {
 			const newId = `faq-fixed-${counter}`;
 
 			// تحديث id و for
 			input.id = newId;
-			label.setAttribute("for", newId);
+			label.setAttribute('for', newId);
 
 			counter++;
 		}
 	});
 });
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener('DOMContentLoaded', function () {
 	// Find all elements with onclick containing 'cart.deleteItem'
 	const deleteButtons = document.querySelectorAll('[onclick*="cart.deleteItem"]');
 
 	deleteButtons.forEach(function (button) {
 		// Get the current onclick attribute value
-		const currentOnclick = button.getAttribute("onclick");
+		const currentOnclick = button.getAttribute('onclick');
 
 		// Use regex to find and replace the number parameter with string
 		// This pattern matches: deleteItem(number) and converts to deleteItem('number')
 		const updatedOnclick = currentOnclick.replace(/salla\.cart\.deleteItem\((\d+)\)/g, "salla.cart.deleteItem('$1')");
 
 		// Update the onclick attribute with the new string parameter
-		button.setAttribute("onclick", updatedOnclick);
+		button.setAttribute('onclick', updatedOnclick);
 
-		console.log("Updated onclick from:", currentOnclick);
-		console.log("Updated onclick to:", updatedOnclick);
+		console.log('Updated onclick from:', currentOnclick);
+		console.log('Updated onclick to:', updatedOnclick);
 	});
 
 	console.log(`Updated ${deleteButtons.length} cart delete buttons`);
 });
 
 function fix_footer_title() {
-	let footer_contact_title = document.querySelector(".footer-contact .hidden .s-contacts-title");
+	let footer_contact_title = document.querySelector('.footer-contact .hidden .s-contacts-title');
 	if (!footer_contact_title) return;
-	footer_contact_title.innerHTML = footer_contact_title.innerHTML.split("hide-title=")[0];
+	footer_contact_title.innerHTML = footer_contact_title.innerHTML.split('hide-title=')[0];
 }
-document.addEventListener("DOMContentLoaded", fix_footer_title);
+document.addEventListener('DOMContentLoaded', fix_footer_title);
 setTimeout(() => {
 	fix_footer_title();
 }, 2000);
