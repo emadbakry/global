@@ -775,25 +775,25 @@ if (document.body.classList.contains('visits')) {
 // 		}
 // 	}, 10);
 // }
-let fixQuantity = setInterval(() => {
-	let form = document.querySelector('.product-form');
-	if (form) {
-		form.setAttribute('onchange', 'salla.product.getPrice(new FormData(event.currentTarget))');
-		clearInterval(fixQuantity);
-	}
-	if (!document.body.classList.contains('product-single')) {
-		clearInterval(fixQuantity);
-	}
-}, 10);
+// let fixQuantity = setInterval(() => {
+// 	let form = document.querySelector('.product-form');
+// 	if (form) {
+// 		form.setAttribute('onchange', 'salla.product.getPrice(new FormData(event.currentTarget))');
+// 		clearInterval(fixQuantity);
+// 	}
+// 	if (!document.body.classList.contains('product-single')) {
+// 		clearInterval(fixQuantity);
+// 	}
+// }, 10);
 
-function fixFooterDes() {
-	let store_des = document.querySelector('.store-footer .max-w-sm.leading-6.mb-6 ');
-	if (store_des) {
-		if (store_des.textContent.includes('insert')) {
-			store_des.textContent = store_des.textContent.slice(0, 10).slice(10).slice(-5).slice(5, 15);
-		}
-	}
-}
+// function fixFooterDes() {
+// 	let store_des = document.querySelector('.store-footer .max-w-sm.leading-6.mb-6 ');
+// 	if (store_des) {
+// 		if (store_des.textContent.includes('insert')) {
+// 			store_des.textContent = store_des.textContent.slice(0, 10).slice(10).slice(-5).slice(5, 15);
+// 		}
+// 	}
+// }
 
 function handleDP_Link(order_num) {
 	let DP_link = document.createElement('div');
@@ -825,53 +825,53 @@ if (document.body.classList.contains('customer-orders-single') && document.body.
 	addDigitalProductsLink();
 }
 // fix product des that has &nbsp;
-document.querySelectorAll('.product__description').forEach((element) => {
-	element.innerHTML = element.innerHTML.replace(/&nbsp;/g, ' ').trim();
-});
+// document.querySelectorAll('.product__description').forEach((element) => {
+// 	element.innerHTML = element.innerHTML.replace(/&nbsp;/g, ' ').trim();
+// });
 
-document.addEventListener('DOMContentLoaded', function () {
-	let counter = 1;
+// document.addEventListener('DOMContentLoaded', function () {
+// 	let counter = 1;
 
-	// نحصل على كل عناصر faq-item في كل الأقسام
-	const allFaqInputs = document.querySelectorAll('.faq-item input[type="checkbox"]');
+// 	// نحصل على كل عناصر faq-item في كل الأقسام
+// 	const allFaqInputs = document.querySelectorAll('.faq-item input[type="checkbox"]');
 
-	allFaqInputs.forEach((input) => {
-		const parent = input.closest('.faq-item');
-		const label = parent.querySelector('label');
+// 	allFaqInputs.forEach((input) => {
+// 		const parent = input.closest('.faq-item');
+// 		const label = parent.querySelector('label');
 
-		if (label) {
-			const newId = `faq-fixed-${counter}`;
+// 		if (label) {
+// 			const newId = `faq-fixed-${counter}`;
 
-			// تحديث id و for
-			input.id = newId;
-			label.setAttribute('for', newId);
+// 			// تحديث id و for
+// 			input.id = newId;
+// 			label.setAttribute('for', newId);
 
-			counter++;
-		}
-	});
-});
+// 			counter++;
+// 		}
+// 	});
+// });
 
-document.addEventListener('DOMContentLoaded', function () {
-	// Find all elements with onclick containing 'cart.deleteItem'
-	const deleteButtons = document.querySelectorAll('[onclick*="cart.deleteItem"]');
+// document.addEventListener('DOMContentLoaded', function () {
+// 	// Find all elements with onclick containing 'cart.deleteItem'
+// 	const deleteButtons = document.querySelectorAll('[onclick*="cart.deleteItem"]');
 
-	deleteButtons.forEach(function (button) {
-		// Get the current onclick attribute value
-		const currentOnclick = button.getAttribute('onclick');
+// 	deleteButtons.forEach(function (button) {
+// 		// Get the current onclick attribute value
+// 		const currentOnclick = button.getAttribute('onclick');
 
-		// Use regex to find and replace the number parameter with string
-		// This pattern matches: deleteItem(number) and converts to deleteItem('number')
-		const updatedOnclick = currentOnclick.replace(/salla\.cart\.deleteItem\((\d+)\)/g, "salla.cart.deleteItem('$1')");
+// 		// Use regex to find and replace the number parameter with string
+// 		// This pattern matches: deleteItem(number) and converts to deleteItem('number')
+// 		const updatedOnclick = currentOnclick.replace(/salla\.cart\.deleteItem\((\d+)\)/g, "salla.cart.deleteItem('$1')");
 
-		// Update the onclick attribute with the new string parameter
-		button.setAttribute('onclick', updatedOnclick);
+// 		// Update the onclick attribute with the new string parameter
+// 		button.setAttribute('onclick', updatedOnclick);
 
-		console.log('Updated onclick from:', currentOnclick);
-		console.log('Updated onclick to:', updatedOnclick);
-	});
+// 		console.log('Updated onclick from:', currentOnclick);
+// 		console.log('Updated onclick to:', updatedOnclick);
+// 	});
 
-	console.log(`Updated ${deleteButtons.length} cart delete buttons`);
-});
+// 	console.log(`Updated ${deleteButtons.length} cart delete buttons`);
+// });
 
 function fix_footer_title() {
 	let footer_contact_title = document.querySelector('.footer-contact .hidden .s-contacts-title');
