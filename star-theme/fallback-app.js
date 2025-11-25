@@ -1,7 +1,7 @@
 // hi!, this i fallback script file to fix problems of theme directly when URGANT!
-console.log("hi!");
+console.log('hi!');
 
-let style = document.createElement("style");
+let style = document.createElement('style');
 
 style.innerHTML = `
 .mm-ocd__content:has(.brands-menu) {
@@ -20,6 +20,12 @@ div.swal2-container {
 #app.show-search-results-as-prod-card .s-search-product-not-available[style*="block"] {
   filter: unset;
 }
+.store-footer .contact-social ul {
+  justify-content: center;
+}
+.gov-details-section {
+  flex-wrap: wrap;
+}
 `;
 
-document.getElementsByTagName("head")[0].appendChild(style);
+document.getElementsByTagName('head')[0].appendChild(style);
