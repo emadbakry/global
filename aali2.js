@@ -586,6 +586,12 @@ body .s-comments.s-comments-product:has(salla-reviews-summary:empty):has(.s-comm
 	border-radius: 10rem;
 }
 
+
+salla-modal .s-comments-item-images-slider {
+    max-height: 70vh;
+    overflow-y: scroll;
+}
+
 `;
 // append style element
 document.getElementsByTagName('head')[0].appendChild(style);
