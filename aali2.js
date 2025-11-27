@@ -591,7 +591,15 @@ salla-modal .s-comments-item-images-slider {
     max-height: 70vh;
     overflow-y: scroll;
 }
-
+salla-trust-badges {
+	margin-top: 0.5rem;
+	margin-bottom: 0.5rem;
+}
+@media (max-width: 1024px) {
+	salla-trust-badges {
+	justify-content: center !important;
+	}
+}
 `;
 // append style element
 document.getElementsByTagName('head')[0].appendChild(style);
