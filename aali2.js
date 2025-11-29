@@ -600,6 +600,11 @@ salla-trust-badges {
 	justify-content: center !important;
 	}
 }
+
+
+.hdr-rad .app-inner:not(#splash-screen-2 ~ .app-inner) #mainnav:not(.fixed-pinned) {
+	border-radius: var(--header-rad);
+}
 `;
 // append style element
 document.getElementsByTagName('head')[0].appendChild(style);
