@@ -602,7 +602,7 @@ salla-trust-badges {
 }
 
 
-.hdr-rad .app-inner:not(#splash-screen-2 ~ .app-inner) #mainnav:not(.fixed-pinned) {
+.hdr-rad.hdr-small .app-inner:not(#splash-screen-2 ~ .app-inner) #mainnav:not(.fixed-pinned) {
 	border-radius: var(--header-rad);
 }
 `;
