@@ -605,6 +605,11 @@ salla-trust-badges {
 .hdr-rad.hdr-small .app-inner:not(#splash-screen-2 ~ .app-inner) #mainnav:not(.fixed-pinned) {
 	border-radius: var(--header-rad);
 }
+	.categs_slider.grid {
+		display: flex;
+	}
+
+
 `;
 // append style element
 document.getElementsByTagName('head')[0].appendChild(style);
