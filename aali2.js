@@ -609,6 +609,9 @@ salla-trust-badges {
 		display: flex;
 	}
 
+	.hrz-pc--no-bg .s-product-card-image {
+		background: transparent;
+	}
 
 `;
 // append style element
