@@ -26,6 +26,10 @@ div.swal2-container {
 .gov-details-section {
   flex-wrap: wrap;
 }
+
+.quick-categ-item img {
+  width: 100%;
+}
 `;
 
 document.getElementsByTagName('head')[0].appendChild(style);
