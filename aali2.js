@@ -613,6 +613,8 @@ salla-trust-badges {
 		background: transparent;
 	}
 
+.footer-social-outer {margin-top: 4px;}
+
 `;
 // append style element
 document.getElementsByTagName('head')[0].appendChild(style);
