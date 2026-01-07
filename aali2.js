@@ -612,9 +612,11 @@ salla-trust-badges {
 	.hrz-pc--no-bg .s-product-card-image {
 		background: transparent;
 	}
-
-.footer-social-outer {margin-top: 8px;}
-
+	 .footer-social-outer {margin-top: 8px;}
+ 
+	.my-lazy:not(.my-loaded) {
+		max-height: 200px;
+	}
 `;
 // append style element
 document.getElementsByTagName('head')[0].appendChild(style);
