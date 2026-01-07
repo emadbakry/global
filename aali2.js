@@ -615,7 +615,7 @@ salla-trust-badges {
 }
 
 .my-lazy:not(.my-loaded) { 
-	max-height: 200px;
+	max-height: 100px;
 }
 
 .s-quantity-input-input, .salla-input-quantity-pp .s-quantity-input-input {
