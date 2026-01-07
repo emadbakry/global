@@ -601,22 +601,22 @@ salla-trust-badges {
 	}
 }
 
-
 .hdr-rad.hdr-small .app-inner:not(#splash-screen-2 ~ .app-inner) #mainnav:not(.fixed-pinned) {
 	border-radius: var(--header-rad);
 }
-	.categs_slider.grid {
-		display: flex;
-	}
+.categs_slider.grid {
+	display: flex;
+}
+.hrz-pc--no-bg .s-product-card-image {
+	background: transparent;
+}
+@media (max-width: 492px) {
+	.footer-social-outer {margin-top: 4px;}
+}
 
-	.hrz-pc--no-bg .s-product-card-image {
-		background: transparent;
-	}
-	 .footer-social-outer {margin-top: 8px;}
- 
-	.my-lazy:not(.my-loaded) {
-		max-height: 200px;
-	}
+.my-lazy:not(.my-loaded) { 
+	max-height: 200px;
+}
 `;
 // append style element
 document.getElementsByTagName('head')[0].appendChild(style);
