@@ -617,6 +617,10 @@ salla-trust-badges {
 .my-lazy:not(.my-loaded) { 
 	max-height: 200px;
 }
+
+.s-quantity-input-input, .salla-input-quantity-pp .s-quantity-input-input {
+	border-radius: 0;
+}
 `;
 // append style element
 document.getElementsByTagName('head')[0].appendChild(style);
