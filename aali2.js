@@ -622,6 +622,7 @@ salla-trust-badges {
 .s-quantity-input-input, .salla-input-quantity-pp .s-quantity-input-input {
 	border-radius: 0;
 }
+.dark .s-reviews-summary-recommendation-percentage {color: var(--dm-text-main) !important}
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
