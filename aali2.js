@@ -623,6 +623,7 @@ salla-trust-badges {
 	border-radius: 0;
 }
 .dark .s-reviews-summary-recommendation-percentage {color: var(--dm-text-main) !important}
+.dark .s-comments-item-user-info-name-with-margin {color: var(--dm-text-main) !important}
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
