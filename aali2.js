@@ -624,6 +624,7 @@ salla-trust-badges {
 }
 .dark .s-reviews-summary-recommendation-percentage {color: var(--dm-text-main) !important}
 .dark .s-comments-item-user-info-name-with-margin {color: var(--dm-text-main) !important}
+.dark .s-cart-item-offers-regular-price, .dark .s-cart-item-offers-free-label, .dark .s-cart-item-offers-line{color: var(--dm-text-main) !important}
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
