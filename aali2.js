@@ -655,6 +655,9 @@ salla-trust-badges {
 #app .s-gifting-filepond-placeholder-text {
 	color: var(--color-primary);
 }
+#app .main-content.blog-category {
+	background-color: var(--lm-bg-sec);
+}
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
