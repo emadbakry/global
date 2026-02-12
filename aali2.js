@@ -655,6 +655,8 @@ salla-trust-badges {
 #app .s-gifting-filepond-placeholder-text {
 	color: var(--color-primary);
 }
+#app.cart .loyalty_points-wrapper,
+#app.cart .s-list-tile-item,
 #app .main-content.blog-category {
 	background-color: var(--lm-bg-sec);
 }
