@@ -625,6 +625,23 @@ salla-trust-badges {
 .dark .s-reviews-summary-recommendation-percentage {color: var(--dm-text-main) !important}
 .dark .s-comments-item-user-info-name-with-margin {color: var(--dm-text-main) !important}
 .dark .s-cart-item-offers-regular-price, .dark .s-cart-item-offers-free-label, .dark .s-cart-item-offers-line{color: var(--dm-text-main) !important}
+
+#app .points-ways__list .way-item {
+	background-color: var(--lm-bg-sec);
+}
+#app .points-ways__list .way-item__content p {
+	color: var(--color-primary);
+}
+.loyalty .loyalty__banner,
+.loyalty .product-entry {
+	background-color: var(--lm-bg-sec);
+}
+.loyalty__banner-content .info p {
+	color: var(--color-primary);
+}
+#app .s-gifting-widget .s-list-tile-item {
+	background-color: var(--lm-bg-sec);
+}
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
@@ -683,7 +700,7 @@ if (document.readyState == "complete") {
 if (document.body.classList.contains("visits")) {
 	function getPageVisitors() {
 		const visitorsCounter = document.querySelector(
-			"body.product-single .products_visitors_counter .altumcode-products-visitors-counter-main .altumcode-products-visitors-counter-number"
+			"body.product-single .products_visitors_counter .altumcode-products-visitors-counter-main .altumcode-products-visitors-counter-number",
 		);
 		if (visitorsCounter) {
 			const visitorsCount = visitorsCounter.textContent;
@@ -729,7 +746,7 @@ if (document.body.classList.contains("visits")) {
 	let second_step = false;
 	let page_visitors_interval = setInterval(() => {
 		let counter_of_visitors = document.querySelector(
-			"body.product-single .products_visitors_counter .altumcode-products-visitors-counter-main .altumcode-products-visitors-counter-number"
+			"body.product-single .products_visitors_counter .altumcode-products-visitors-counter-main .altumcode-products-visitors-counter-number",
 		);
 		if (counter_of_visitors && !second_step) {
 			// clearInterval(page_visitors_interval);
