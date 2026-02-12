@@ -642,6 +642,19 @@ salla-trust-badges {
 #app .s-gifting-widget .s-list-tile-item {
 	background-color: var(--lm-bg-sec);
 }
+#app .s-gifting-modal .s-modal-body {
+	background-color: var(--lm-bg-sec);
+}
+#app .s-gifting-modal .s-modal-close {
+	background-color: var(--lm-bg-sec);
+}
+#app .s-file-upload-wrapper .filepond--drop-label,
+#app .s-gifting-modal .s-form-control {
+	background: var(--lm-bg-color);
+}
+#app .s-gifting-filepond-placeholder-text {
+	color: var(--color-primary);
+}
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
