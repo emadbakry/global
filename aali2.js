@@ -660,6 +660,11 @@ salla-trust-badges {
 #app .main-content.blog-category {
 	background-color: var(--lm-bg-sec);
 }
+
+/* tempo style to hide arrows when images length is 1 only */
+.product-single .details-slider [tabindex="-1"] {
+	display: none !important;
+}
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
