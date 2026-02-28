@@ -665,6 +665,10 @@ salla-trust-badges {
 .product-single .details-slider [tabindex="-1"] {
 	display: none !important;
 }
+
+.no-ratings-arrows .s-block-special-testimonials .s-slider-nav-arrow {
+	display: none !important;
+}
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
