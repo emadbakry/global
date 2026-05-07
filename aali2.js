@@ -672,6 +672,28 @@ salla-trust-badges {
 body .brand-logo {
 	min-width: 50px;
 }
+
+salla-conditional-offer.s-conditional-offer-container {
+	background: var(--lm-bg-sec);
+}
+salla-conditional-offer.s-conditional-offer-container .s-conditional-offer-progress-line-inactive {
+	background: var(--color-primary) !important;
+    opacity: 0.2 !important;
+}
+.dark salla-conditional-offer.s-conditional-offer-container {
+	background: var(--dm-bg-sec) !important;
+	color: var(--dm-text-main) !important;
+}
+.dark salla-conditional-offer.s-conditional-offer-container .s-conditional-offer-progress-line-inactive {
+	background: var(--dm-text-main) !important;
+    opacity: 0.2 !important;
+}
+.dark salla-conditional-offer.s-conditional-offer-container .s-conditional-offer-progress-line-active {
+		background: var(--dm-text-main) !important;
+}
+.dark salla-conditional-offer.s-conditional-offer-container .s-conditional-offer-title,
+.dark salla-conditional-offer.s-conditional-offer-container .s-conditional-offer-checkpoint-label {
+	color: var(--dm-text-main) !important;}
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
