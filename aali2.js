@@ -694,6 +694,14 @@ salla-conditional-offer.s-conditional-offer-container .s-conditional-offer-progr
 .dark salla-conditional-offer.s-conditional-offer-container .s-conditional-offer-title,
 .dark salla-conditional-offer.s-conditional-offer-container .s-conditional-offer-checkpoint-label {
 	color: var(--dm-text-main) !important;}
+
+
+.dark .s-breadcrumb-arrow svg {
+	fill: var(--dm-text-main) !important;
+}
+.dark salla-breadcrumb {
+	color: var(--dm-text-main) !important;
+}
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
