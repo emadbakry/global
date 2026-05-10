@@ -697,11 +697,29 @@ salla-conditional-offer.s-conditional-offer-container .s-conditional-offer-progr
 
 
 .dark .s-breadcrumb-arrow svg {
-	fill: var(--dm-text-main) !important;
+	fill: var(--dm-text-sec) !important;
 }
 .dark salla-breadcrumb {
-	color: var(--dm-text-main) !important;
+	color: var(--dm-text-sec) !important;
 }
+
+.dark .s-loyalty-program-banner-container {
+	border-width: 0;
+	color: var(--dm-text-main) !important;
+	background-color: var(--dm-bg-sec) !important; 
+}
+.dark .s-loyalty-program-banner-container-banner-subtitle,
+.dark .s-loyalty-program-banner-container-banner-title {
+		color: var(--dm-text-sec) !important;
+}
+.dark .s-loyalty-program-banner-container button {
+	background-color: var(--dm-bg-main) !important;
+	color: var(--dm-text-main) !important;
+	border-width:0;
+}
+
+
+
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
