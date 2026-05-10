@@ -726,6 +726,18 @@ salla-conditional-offer.s-conditional-offer-container .s-conditional-offer-progr
 	bottom: calc(var(--mobile-nav-height, 0) - 0.6rem) !important;
 }
 
+.header-mob-localization-btn {
+	width: 2.5rem;
+	min-width: 2.5rem;
+}
+
+[dir="ltr"] .mburger {
+	margin-right: 0.25rem;
+}
+[dir="rtl"] .mburger {
+	margin-left: 0.25rem;
+}
+
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
