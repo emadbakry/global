@@ -719,7 +719,11 @@ salla-conditional-offer.s-conditional-offer-container .s-conditional-offer-progr
 }
 
 .s-cookies-bar {
-	bottom: calc(var(--mobile-nav-height, 0) + 0rem) !important;
+	bottom: 0 !important;
+	transition: bottom 0.3s ease-in-out !important;
+}
+.fixed-pinned-cls .s-cookies-bar {
+	bottom: calc(var(--mobile-nav-height, 0) - 0.6rem) !important;
 }
 
 `;
