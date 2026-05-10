@@ -732,10 +732,10 @@ salla-conditional-offer.s-conditional-offer-container .s-conditional-offer-progr
 }
 
 [dir="ltr"] .mburger {
-	margin-right: 0.25rem;
+	margin-right: 0.5rem;
 }
 [dir="rtl"] .mburger {
-	margin-left: 0.25rem;
+	margin-left: 0.5rem;
 }
 
 `;
