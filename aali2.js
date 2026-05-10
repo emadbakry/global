@@ -718,7 +718,9 @@ salla-conditional-offer.s-conditional-offer-container .s-conditional-offer-progr
 	border-width:0;
 }
 
-
+.s-cookies-bar {
+	bottom: calc(var(--mobile-nav-height, 0) + 0rem) !important;
+}
 
 `;
 // append style element
