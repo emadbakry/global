@@ -738,6 +738,10 @@ salla-conditional-offer.s-conditional-offer-container .s-conditional-offer-progr
 	margin-left: 0.5rem;
 }
 
+.brands-single header.flex-col > img {
+	background-color: var(--lm-bg-sec);
+}
+
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
