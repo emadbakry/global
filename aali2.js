@@ -639,7 +639,7 @@ salla-trust-badges {
 .loyalty__banner-content .info p {
 	color: var(--color-primary);
 }
-#app .s-gifting-widget .s-list-tile-item {
+body .s-gifting-widget .s-list-tile-item {
 	background-color: var(--lm-bg-sec);
 }
 #app .s-gifting-modal .s-modal-body {
@@ -654,6 +654,10 @@ salla-trust-badges {
 }
 #app .s-gifting-filepond-placeholder-text {
 	color: var(--color-primary);
+}
+.dark .s-button-primary-outline {
+	fill: var(--dm-text-main) !important;
+	color: var(--dm-text-main) !important;
 }
 #app.cart .loyalty_points-wrapper,
 #app.cart .s-list-tile-item,
