@@ -750,6 +750,15 @@ salla-conditional-offer.s-conditional-offer-container .s-conditional-offer-progr
 	background-color: var(--lm-bg-sec);
 }
 
+
+.s-conditional-offer-checkpoint {
+	border-color: var(--dm-text-sec) !important;
+	border-width: 1px !important;
+}
+.dark .s-conditional-offer-active-checkpoint {
+	border-color: var(--dm-text-main) !important;
+	border-width: 2px !important;
+}
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
