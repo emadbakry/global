@@ -764,10 +764,19 @@ salla-conditional-offer.s-conditional-offer-container .s-conditional-offer-progr
 body .s-bought-together-entry {
 	background-color: var(--lm-bg-sec);
 }
-	body .s-bought-together-subtitle {
+body .s-bought-together-subtitle {
 	color: var(--color-primary);
 	opacity: 0.8;
-	}
+}
+.dark body .s-bought-together-entry {
+	background-color: var(--dm-bg-sec) !important;
+	color: var(--dm-text-main) !important;
+}
+.dark body .s-bought-together-subtitle {
+	color: var(--dm-text-sec) !important;
+}
+.dark .s-bought-together-title {
+	color: var(--dm-text-main) !important;}
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
