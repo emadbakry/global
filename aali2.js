@@ -777,6 +777,15 @@ body .s-bought-together-subtitle {
 }
 .dark .s-bought-together-title {
 	color: var(--dm-text-main) !important;}
+
+
+body .s-loyalty-program-banner-container {
+	background-color: var(--lm-bg-sec);
+}
+body .s-loyalty-program-banner-container-banner-subtitle {
+	color: var(--color-primary);
+	opacity: 0.8;
+}
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
