@@ -759,6 +759,15 @@ salla-conditional-offer.s-conditional-offer-container .s-conditional-offer-progr
 	border-color: var(--dm-text-main) !important;
 	border-width: 2px !important;
 }
+
+
+body .s-bought-together-entry {
+	background-color: var(--lm-bg-sec);
+}
+	body .s-bought-together-subtitle {
+	color: var(--color-primary);
+	opacity: 0.8;
+	}
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
