@@ -786,6 +786,14 @@ body .s-loyalty-program-banner-container-banner-subtitle {
 	color: var(--color-primary);
 	opacity: 0.8;
 }
+
+
+.s-installment-mispay-wrapper, .s-installment-madfu-wrapper, .s-installment-emkan-wrapper, .s-installment-rajehi-wrapper {
+	background-color: var(--lm-bg-sec);
+}
+.dark .s-installment-mispay-wrapper, .dark .s-installment-madfu-wrapper, .dark .s-installment-emkan-wrapper, .dark .s-installment-rajehi-wrapper {
+	background-color: var(--dm-bg-sec) !important;
+}
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
