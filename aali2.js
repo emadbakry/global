@@ -821,6 +821,10 @@ body .s-loyalty-program-panel-exchange-wrapper {
 	background-color: var(--dm-bg-sec) !important;
 }
 
+.s-gifting-widget-vertical .s-list-tile-item-subtitle {
+	color: var(--color-primary);
+	opacity: 0.8;
+}
 .dark .s-gifting-widget-vertical .s-list-tile-item-subtitle,
 .dark .s-gifting-widget-vertical .s-list-tile-item-title svg {
 	fill: var(--dm-text-main) !important;
