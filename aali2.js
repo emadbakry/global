@@ -795,10 +795,12 @@ body .s-loyalty-program-banner-container-banner-subtitle {
 	background-color: var(--dm-bg-sec) !important;
 }
 
+.dark .s-loyalty-points-banner-container,
 .dark .s-cashback-banner-container {
 	background-color: var(--dm-bg-sec) !important;
 	color: var(--dm-text-main) !important;
 }
+.dark .s-loyalty-points-banner-description,
 .dark .s-cashback-banner-value {
 	color: var(--dm-text-main) !important;
 	opacity: 0.9;
