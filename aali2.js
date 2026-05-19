@@ -805,6 +805,28 @@ body .s-loyalty-program-banner-container-banner-subtitle {
 	color: var(--dm-text-main) !important;
 	opacity: 0.9;
 }
+
+body .s-loyalty-program-panel-exchange-wrapper {
+	background-color: transparent;
+	box-shadow: none;
+}
+.dark .s-loyalty-program-panel-exchange-wrapper {
+	background-color: var(--dm-bg-sec) !important;
+}
+.dark .s-loyalty-program-panel-exchange-wrapper .s-button-primary-link {
+	color: var(--dm-text-main) !important;
+}
+
+.dark .s-list-tile-item {
+	background-color: var(--dm-bg-sec) !important;
+}
+
+.dark .s-gifting-widget-vertical .s-list-tile-item-subtitle,
+.dark .s-gifting-widget-vertical .s-list-tile-item-title svg {
+	fill: var(--dm-text-main) !important;
+	color: var(--dm-text-main) !important;
+}
+
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
