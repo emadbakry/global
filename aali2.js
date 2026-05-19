@@ -794,6 +794,15 @@ body .s-loyalty-program-banner-container-banner-subtitle {
 .dark .s-installment-mispay-wrapper, .dark .s-installment-madfu-wrapper, .dark .s-installment-emkan-wrapper, .dark .s-installment-rajehi-wrapper {
 	background-color: var(--dm-bg-sec) !important;
 }
+
+.dark .s-cashback-banner-container {
+	background-color: var(--dm-bg-sec) !important;
+	color: var(--dm-text-main) !important;
+}
+.dark .s-cashback-banner-value {
+	color: var(--dm-text-main) !important;
+	opacity: 0.9;
+}
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
