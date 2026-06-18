@@ -831,6 +831,10 @@ body .s-loyalty-program-panel-exchange-wrapper {
 	color: var(--dm-text-main) !important;
 }
 
+body .product-entry__image {
+	background-color: transparent;
+}
+
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
