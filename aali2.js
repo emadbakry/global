@@ -727,7 +727,7 @@ salla-conditional-offer.s-conditional-offer-container .s-conditional-offer-progr
 	transition: bottom 0.3s ease-in-out !important;
 	bottom: calc(var(--mobile-nav-height, 0) - 0.6rem) !important;
 }
-	
+
 .fixed-pinned-cls .s-cookies-bar {
 	bottom: calc(var(--mobile-nav-height, 0) - 0.6rem) !important;
 }
@@ -844,11 +844,24 @@ body .s-orders-table-tbody-tr {
     color: var(--color-primary) !important;
 }
 
-
+.order-details-table .single-order-header-item .text-primary,
 body .s-orders-status-container,
 body .s-orders-mobile-title {
 	color: var(--color-primary-light) !important;
 }
+
+
+#app .s-order-totals-card-panel {
+	background-color: var(--lm-bg-sec) !important;
+    color: var(--color-primary-light) !important;
+}
+#app .s-order-totals-card-label,
+#app .s-order-totals-card-row-inner,
+#app .s-order-totals-card-total,
+#app .s-order-totals-card-list, .dark #app .s-order-totals-card-label {
+	color: var(--color-primary) !important;
+}
+
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
