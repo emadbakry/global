@@ -725,7 +725,9 @@ salla-conditional-offer.s-conditional-offer-container .s-conditional-offer-progr
 .s-cookies-bar {
 	bottom: 0 !important;
 	transition: bottom 0.3s ease-in-out !important;
+	bottom: calc(var(--mobile-nav-height, 0) - 0.6rem) !important;
 }
+	
 .fixed-pinned-cls .s-cookies-bar {
 	bottom: calc(var(--mobile-nav-height, 0) - 0.6rem) !important;
 }
@@ -835,6 +837,18 @@ body .product-entry__image {
 	background-color: transparent;
 }
 
+
+body .s-orders-table-tbody-tr {
+    background-color: var(--lm-bg-sec) !important;
+    border-color: var(--lm-bg-color) !important;
+    color: var(--color-primary) !important;
+}
+
+
+body .s-orders-status-container,
+body .s-orders-mobile-title {
+	color: var(--color-primary-light) !important;
+}
 `;
 // append style element
 document.getElementsByTagName("head")[0].appendChild(style);
