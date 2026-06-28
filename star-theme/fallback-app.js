@@ -1,16 +1,4 @@
 // hi!, this i fallback script file to fix problems of theme directly when URGANT!
-
-(function () {
-	if (window.__starCustomElementsDefinePatched) return;
-	window.__starCustomElementsDefinePatched = true;
-
-	const nativeDefine = customElements.define.bind(customElements);
-	customElements.define = function (name, constructor, options) {
-		if (customElements.get(name)) return;
-		return nativeDefine(name, constructor, options);
-	};
-})();
-
 console.log('hi!');
 
 let style = document.createElement('style');
