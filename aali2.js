@@ -445,6 +445,10 @@ body:not(.line-brk).app-body .product__description {
 .aali-products-tabs salla-products-slider + .s-block__title {
 	margin-top: 1rem;
 }
+
+.aali-products-tabs .tabs.hide-scroll {
+	justify-content: flex-start;
+}
 .index-outer,
 .index-inner,
 .index-inner > div.center-between {
