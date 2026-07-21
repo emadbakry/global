@@ -30,6 +30,12 @@ div.swal2-container {
 .quick-categ-item img {
   width: 100%;
 }
+
+/* Homepage only: don't force square on store categories */
+body.index#app .aali-categs .aali-categ-image-wrapper,
+body.index#app .aali-categs .aali-categ-image-wrapper img {
+  aspect-ratio: unset !important;
+}
 `;
 
 document.getElementsByTagName('head')[0].appendChild(style);
