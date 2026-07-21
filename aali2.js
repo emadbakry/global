@@ -449,6 +449,12 @@ body:not(.line-brk).app-body .product__description {
 .aali-products-tabs .tabs.hide-scroll {
 	justify-content: flex-start;
 }
+
+/* Homepage only: don't force square on store categories */
+body.index#app .aali-categs .aali-categ-image-wrapper,
+body.index#app .aali-categs .aali-categ-image-wrapper img {
+	aspect-ratio: unset !important;
+}
 .index-outer,
 .index-inner,
 .index-inner > div.center-between {
