@@ -1189,6 +1189,32 @@ setTimeout(() => {
 		document.head.appendChild(style);
 	}
 
+	var lastFabOffset = 0;
+	var suppressShrinkUntil = 0;
+	var remeasureTimer;
+
+	function getCartCardHeight(card) {
+		if (!card) return 0;
+
+		var height = Math.max(card.offsetHeight, card.getBoundingClientRect().height, 0);
+		var inner = card.querySelector('.s-cart-summary-card');
+
+		if (!inner && card.shadowRoot) {
+			inner = card.shadowRoot.querySelector('.s-cart-summary-card');
+		}
+
+		if (inner) {
+			height = Math.max(
+				height,
+				inner.offsetHeight,
+				inner.getBoundingClientRect().height,
+				0,
+			);
+		}
+
+		return height;
+	}
+
 	function setCartFabOffset() {
 		var nav =
 			document.querySelector('.mobile-nav-inner') ||
@@ -1202,27 +1228,83 @@ setTimeout(() => {
 		var navOnly = nav.offsetHeight + buffer;
 		var fabOffset = navOnly;
 		var card = document.querySelector('salla-cart-summary-card');
-		if (card) fabOffset += card.offsetHeight;
 
+		if (card) {
+			fabOffset += getCartCardHeight(card);
+		}
+
+		// Ignore mid-animation dips when the card is expanding/collapsing
+		if (Date.now() < suppressShrinkUntil && fabOffset < lastFabOffset) {
+			return;
+		}
+
+		lastFabOffset = fabOffset;
 		document.body.style.setProperty('--mobile-nav-inner-height', navOnly + 'px');
 		document.body.style.setProperty('--mobile-nav-height', fabOffset + 'px');
 	}
 
+	function scheduleCartFabRemeasure() {
+		clearTimeout(remeasureTimer);
+		[100, 250, 400, 600, 800, 1000].forEach(function (delay) {
+			setTimeout(setCartFabOffset, delay);
+		});
+		remeasureTimer = setTimeout(setCartFabOffset, 1200);
+	}
+
+	function bindCartCardObserver(card) {
+		if (!card || card.__aaliCartFabObserved) return;
+		card.__aaliCartFabObserved = true;
+
+		if (typeof ResizeObserver !== 'undefined') {
+			var resizeObserver = new ResizeObserver(function () {
+				setCartFabOffset();
+			});
+			resizeObserver.observe(card);
+
+			var inner = card.querySelector('.s-cart-summary-card');
+			if (!inner && card.shadowRoot) {
+				inner = card.shadowRoot.querySelector('.s-cart-summary-card');
+			}
+			if (inner) resizeObserver.observe(inner);
+		}
+
+		card.addEventListener('transitionend', setCartFabOffset);
+	}
+
+	function watchForCartCard() {
+		var card = document.querySelector('salla-cart-summary-card');
+		if (card) {
+			bindCartCardObserver(card);
+			setCartFabOffset();
+			return;
+		}
+
+		if (typeof MutationObserver === 'undefined') return;
+
+		var observer = new MutationObserver(function () {
+			var found = document.querySelector('salla-cart-summary-card');
+			if (!found) return;
+			bindCartCardObserver(found);
+			setCartFabOffset();
+			observer.disconnect();
+		});
+
+		observer.observe(document.body, { childList: true, subtree: true });
+	}
+
 	setCartFabOffset();
-	document.addEventListener('DOMContentLoaded', setCartFabOffset);
+	watchForCartCard();
+	document.addEventListener('DOMContentLoaded', watchForCartCard);
 	window.addEventListener('load', function () {
-		setCartFabOffset();
-		setTimeout(setCartFabOffset, 100);
-		setTimeout(setCartFabOffset, 500);
+		watchForCartCard();
+		scheduleCartFabRemeasure();
 	});
 	window.addEventListener('resize', setCartFabOffset);
 
-	// Remeasure when the summary expands/collapses (no scroll listener)
+	// Remeasure after expand/collapse toggle (avoid immediate rAF — catches animation dip)
 	document.addEventListener('click', function (e) {
 		if (!e.target.closest('salla-cart-summary-card')) return;
-		requestAnimationFrame(function () {
-			setCartFabOffset();
-			setTimeout(setCartFabOffset, 350);
-		});
+		suppressShrinkUntil = Date.now() + 1000;
+		scheduleCartFabRemeasure();
 	});
 })();
