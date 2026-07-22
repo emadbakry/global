@@ -1307,3 +1307,58 @@ setTimeout(() => {
 		scheduleCartFabRemeasure();
 	});
 })();
+
+(function () {
+	function resolveDesc(raw) {
+		if (!raw) return '';
+		if (typeof raw === 'string') return raw.trim();
+		if (typeof raw === 'object') {
+			var lang = 'ar';
+			try {
+				lang = salla.config.get('user.language_code') || 'ar';
+			} catch (e) {}
+			return String(raw[lang] || raw.ar || raw.en || Object.values(raw)[0] || '').trim();
+		}
+		return '';
+	}
+
+	function getDescription() {
+		try {
+			return resolveDesc(salla.config.get('store.description'));
+		} catch (e) {
+			return '';
+		}
+	}
+
+	function inject() {
+		var footerTop = document.querySelector('.store-footer .footer_top');
+		if (!footerTop) return;
+		if (footerTop.querySelector('.aali-temp-store-desc')) return;
+
+		var existing = footerTop.querySelector('p.max-w-sm.leading-6');
+		if (existing && existing.textContent.trim()) return;
+
+		var desc = getDescription();
+		if (!desc) return;
+
+		var p = document.createElement('p');
+		p.className = 'max-w-sm leading-6 mb-6 aali-temp-store-desc';
+		p.innerHTML = desc;
+
+		var social = footerTop.querySelector('.footer-social-outer');
+		if (social) footerTop.insertBefore(p, social);
+		else footerTop.appendChild(p);
+	}
+
+	function run() {
+		if (window.salla && salla.onReady) {
+			salla.onReady(inject);
+		} else {
+			inject();
+		}
+	}
+
+	run();
+	document.addEventListener('DOMContentLoaded', run);
+	window.addEventListener('load', run);
+})();
