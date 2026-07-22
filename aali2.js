@@ -1172,3 +1172,57 @@ document.addEventListener("DOMContentLoaded", fix_footer_title);
 setTimeout(() => {
 	fix_footer_title();
 }, 2000);
+
+(function () {
+	if (!document.body.classList.contains('cart')) return;
+
+	// Keep the summary card on the nav while FABs use the inflated --mobile-nav-height
+	if (!document.getElementById('aali-cart-fab-offset-style')) {
+		var style = document.createElement('style');
+		style.id = 'aali-cart-fab-offset-style';
+		style.textContent =
+			'@media (max-width: 1023px) {' +
+			'#app salla-cart-summary-card.s-cart-summary-card {' +
+			'bottom: calc(var(--mobile-nav-inner-height, var(--mobile-nav-height)) - 10px) !important;' +
+			'}' +
+			'}';
+		document.head.appendChild(style);
+	}
+
+	function setCartFabOffset() {
+		var nav =
+			document.querySelector('.mobile-nav-inner') ||
+			document.querySelector('#mobile-nav');
+		if (!nav) return;
+
+		var buffer =
+			typeof window.mob_height_related_val === 'number'
+				? window.mob_height_related_val
+				: 10;
+		var navOnly = nav.offsetHeight + buffer;
+		var fabOffset = navOnly;
+		var card = document.querySelector('salla-cart-summary-card');
+		if (card) fabOffset += card.offsetHeight;
+
+		document.body.style.setProperty('--mobile-nav-inner-height', navOnly + 'px');
+		document.body.style.setProperty('--mobile-nav-height', fabOffset + 'px');
+	}
+
+	setCartFabOffset();
+	document.addEventListener('DOMContentLoaded', setCartFabOffset);
+	window.addEventListener('load', function () {
+		setCartFabOffset();
+		setTimeout(setCartFabOffset, 100);
+		setTimeout(setCartFabOffset, 500);
+	});
+	window.addEventListener('resize', setCartFabOffset);
+
+	// Remeasure when the summary expands/collapses (no scroll listener)
+	document.addEventListener('click', function (e) {
+		if (!e.target.closest('salla-cart-summary-card')) return;
+		requestAnimationFrame(function () {
+			setCartFabOffset();
+			setTimeout(setCartFabOffset, 350);
+		});
+	});
+})();
