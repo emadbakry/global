@@ -1192,27 +1192,33 @@ setTimeout(() => {
 	var lastFabOffset = 0;
 	var suppressShrinkUntil = 0;
 	var remeasureTimer;
+	var fabBuffer = 10;
 
-	function getCartCardHeight(card) {
-		if (!card) return 0;
+	function queryInCartCard(card, selector) {
+		var el = card.querySelector(selector);
+		if (!el && card.shadowRoot) {
+			el = card.shadowRoot.querySelector(selector);
+		}
+		return el;
+	}
 
-		var height = Math.max(card.offsetHeight, card.getBoundingClientRect().height, 0);
-		var inner = card.querySelector('.s-cart-summary-card');
+	function getCartFabOffset(card, navOnly) {
+		if (!card) return navOnly;
 
-		if (!inner && card.shadowRoot) {
-			inner = card.shadowRoot.querySelector('.s-cart-summary-card');
+		var cardRect = card.getBoundingClientRect();
+		var topEdge = cardRect.top;
+		var sheetWrap = queryInCartCard(card, '.s-cart-summary-card-sheet-wrap');
+
+		if (sheetWrap) {
+			var sheetRect = sheetWrap.getBoundingClientRect();
+			// Sheet expands above the bar; use its top when visible
+			if (sheetRect.height > 0) {
+				topEdge = Math.min(topEdge, sheetRect.top);
+			}
 		}
 
-		if (inner) {
-			height = Math.max(
-				height,
-				inner.offsetHeight,
-				inner.getBoundingClientRect().height,
-				0,
-			);
-		}
-
-		return height;
+		// Viewport bottom → top of cart UI, plus breathing room for FABs
+		return Math.max(navOnly, window.innerHeight - topEdge + fabBuffer);
 	}
 
 	function setCartFabOffset() {
@@ -1226,12 +1232,8 @@ setTimeout(() => {
 				? window.mob_height_related_val
 				: 10;
 		var navOnly = nav.offsetHeight + buffer;
-		var fabOffset = navOnly;
 		var card = document.querySelector('salla-cart-summary-card');
-
-		if (card) {
-			fabOffset += getCartCardHeight(card);
-		}
+		var fabOffset = getCartFabOffset(card, navOnly);
 
 		// Ignore mid-animation dips when the card is expanding/collapsing
 		if (Date.now() < suppressShrinkUntil && fabOffset < lastFabOffset) {
@@ -1261,11 +1263,8 @@ setTimeout(() => {
 			});
 			resizeObserver.observe(card);
 
-			var inner = card.querySelector('.s-cart-summary-card');
-			if (!inner && card.shadowRoot) {
-				inner = card.shadowRoot.querySelector('.s-cart-summary-card');
-			}
-			if (inner) resizeObserver.observe(inner);
+			var sheetWrap = queryInCartCard(card, '.s-cart-summary-card-sheet-wrap');
+			if (sheetWrap) resizeObserver.observe(sheetWrap);
 		}
 
 		card.addEventListener('transitionend', setCartFabOffset);
