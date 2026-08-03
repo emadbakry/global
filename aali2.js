@@ -280,6 +280,10 @@ body#app.hide-img-btm-rad.p-border-on:not(.cls-8734gb) custom-salla-product-card
 	color: var(--dm-text-sec) !important;
 }
 
+.dark .s-product-options-thumbnails-wrapper div p {
+	color: var(--dm-text-sec) !important;
+}
+
 body.modal-is-closed salla-button#cart-submit button,
 body.modal-is-closed salla-button#cart-submit {
 	pointer-events: auto;
