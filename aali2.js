@@ -63,6 +63,12 @@ body:not(.cls-80b) img.lazy.loaded {
 	padding-bottom: var(--aali-mobile-nav-pad, 0px);
 }
 
+@media (min-width: 1024px) {
+	#app salla-cart-summary-card.s-cart-summary-card {
+		padding-bottom: 1.25rem;
+	}
+}
+
 #app.cart .wa-widget,
 #app.cart .scroll-progress-wrapper.active {
 	bottom: var(--aali-cart-fab-bottom, 16px);
