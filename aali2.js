@@ -57,21 +57,15 @@ body:not(.cls-80b) img.lazy.loaded {
 
 	/* later */
 
-body#app {
-	--mobile-nav-height: 70px !important;
-}
-
+/* Cart sticky summary: pad only when a mobile nav exists (set by JS) */
 #app salla-cart-summary-card.s-cart-summary-card {
 	bottom: 0 !important;
-	padding-bottom: 70px;
+	padding-bottom: var(--aali-mobile-nav-pad, 0px);
 }
 
-#app.cart .wa-widget {
-	bottom: 290px;
-}
-
+#app.cart .wa-widget,
 #app.cart .scroll-progress-wrapper.active {
-	bottom: 290px;
+	bottom: var(--aali-cart-fab-bottom, 16px);
 }
 
 @media only screen and (max-width: 640px) {
@@ -1153,3 +1147,129 @@ document.addEventListener("DOMContentLoaded", fix_footer_title);
 setTimeout(() => {
 	fix_footer_title();
 }, 2000);
+
+(function () {
+	if (!document.body.classList.contains("cart")) return;
+
+	var fabBuffer = 10;
+
+	function getMobileNav() {
+		return (
+			document.querySelector(".mobile-nav-inner") ||
+			document.querySelector("#mobile-nav") ||
+			document.querySelector(".mobile-nav-outer") ||
+			document.querySelector(".mobile-nav")
+		);
+	}
+
+	function isVisible(el) {
+		if (!el) return false;
+		var style = window.getComputedStyle(el);
+		if (style.display === "none" || style.visibility === "hidden" || style.opacity === "0") {
+			return false;
+		}
+		var rect = el.getBoundingClientRect();
+		return rect.width > 0 && rect.height > 0;
+	}
+
+	function getMobileNavHeight() {
+		// Desktop / no mobile nav → 0
+		if (window.innerWidth > 1023) return 0;
+
+		var nav = getMobileNav();
+		if (!nav || !isVisible(nav)) return 0;
+
+		var height = nav.offsetHeight || Math.round(nav.getBoundingClientRect().height) || 0;
+		if (height < 8) return 0;
+
+		var buffer =
+			typeof window.mob_height_related_val === "number" ? window.mob_height_related_val : 0;
+		return height + buffer;
+	}
+
+	function queryInCartCard(card, selector) {
+		var el = card.querySelector(selector);
+		if (!el && card.shadowRoot) el = card.shadowRoot.querySelector(selector);
+		return el;
+	}
+
+	function getCartFabBottom(card, navPad) {
+		if (!card) return Math.max(navPad, fabBuffer);
+
+		var cardRect = card.getBoundingClientRect();
+		var topEdge = cardRect.top;
+		var sheetWrap = queryInCartCard(card, ".s-cart-summary-card-sheet-wrap");
+
+		if (sheetWrap) {
+			var sheetRect = sheetWrap.getBoundingClientRect();
+			if (sheetRect.height > 0) topEdge = Math.min(topEdge, sheetRect.top);
+		}
+
+		return Math.max(navPad, window.innerHeight - topEdge + fabBuffer);
+	}
+
+	function setCartMobileNavPad() {
+		var navPad = getMobileNavHeight();
+		var card = document.querySelector("salla-cart-summary-card");
+		var fabBottom = getCartFabBottom(card, navPad);
+
+		document.body.style.setProperty("--aali-mobile-nav-pad", navPad + "px");
+		document.body.style.setProperty("--aali-cart-fab-bottom", fabBottom + "px");
+		// Keep theme consumers in sync; 0 when no mobile menu
+		document.body.style.setProperty("--mobile-nav-height", navPad + "px");
+	}
+
+	function schedule() {
+		setCartMobileNavPad();
+		[100, 300, 600, 1000].forEach(function (delay) {
+			setTimeout(setCartMobileNavPad, delay);
+		});
+	}
+
+	function bindCard(card) {
+		if (!card || card.__aaliCartNavPadBound) return;
+		card.__aaliCartNavPadBound = true;
+
+		if (typeof ResizeObserver !== "undefined") {
+			var ro = new ResizeObserver(setCartMobileNavPad);
+			ro.observe(card);
+			var sheetWrap = queryInCartCard(card, ".s-cart-summary-card-sheet-wrap");
+			if (sheetWrap) ro.observe(sheetWrap);
+		}
+
+		card.addEventListener("transitionend", setCartMobileNavPad);
+	}
+
+	function watchCard() {
+		var card = document.querySelector("salla-cart-summary-card");
+		if (card) {
+			bindCard(card);
+			setCartMobileNavPad();
+			return;
+		}
+		if (typeof MutationObserver === "undefined") return;
+
+		var observer = new MutationObserver(function () {
+			var found = document.querySelector("salla-cart-summary-card");
+			if (!found) return;
+			bindCard(found);
+			setCartMobileNavPad();
+			observer.disconnect();
+		});
+		observer.observe(document.body, { childList: true, subtree: true });
+	}
+
+	schedule();
+	watchCard();
+	document.addEventListener("DOMContentLoaded", function () {
+		watchCard();
+		schedule();
+	});
+	window.addEventListener("load", schedule);
+	window.addEventListener("resize", setCartMobileNavPad);
+
+	document.addEventListener("click", function (e) {
+		if (!e.target.closest("salla-cart-summary-card")) return;
+		schedule();
+	});
+})();
