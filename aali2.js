@@ -1280,9 +1280,9 @@ setTimeout(() => {
 	});
 })();
 
-/* TEMP: remove after 2026-08-10 18:00 (Arabia) — product card options hotfix */
+/* TEMP: remove after 2026-08-11 23:30 (Arabia) — product card options hotfix */
 (function () {
-	var expiresAt = new Date("2026-08-10T18:00:00+03:00");
+	var expiresAt = new Date("2026-08-11T23:30:00+03:00");
 	if (Date.now() >= expiresAt.getTime()) return;
 
 	window.run_product_card = function (card) {
