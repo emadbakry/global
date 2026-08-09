@@ -61,6 +61,11 @@ body#app {
 	--mobile-nav-height: 70px !important;
 }
 
+#app salla-cart-summary-card.s-cart-summary-card {
+	bottom: 0 !important;
+	padding-bottom: 70px;
+}
+
 #app.cart .wa-widget {
 	bottom: 290px;
 }
