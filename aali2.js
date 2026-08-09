@@ -1279,3 +1279,43 @@ setTimeout(() => {
 		schedule();
 	});
 })();
+
+/* TEMP: remove after 2026-08-10 18:00 (Arabia) — product card options hotfix */
+(function () {
+	var expiresAt = new Date("2026-08-10T18:00:00+03:00");
+	if (Date.now() >= expiresAt.getTime()) return;
+
+	window.run_product_card = function (card) {
+		var on =
+			window.product_options_in_pc === true ||
+			window.product_options_in_pc === 1 ||
+			window.product_options_in_pc === "1" ||
+			window.product_options_in_pc === "true";
+
+		if (on || card.dataset.pcFixed) return;
+		card.dataset.pcFixed = "1";
+
+		// 1) remove options
+		card.querySelectorAll("salla-product-options").forEach(function (el) {
+			el.remove();
+		});
+
+		// 2) move ATC outside the form
+		var form = card.querySelector("form.product-form");
+		var oldBtn = card.querySelector(".btn--add-to-cart");
+		if (!form || !oldBtn || !card.product) return;
+
+		oldBtn.remove();
+
+		var wrap = document.createElement("div");
+		wrap.className = "btn btn--floated btn--add-to-cart";
+		wrap.innerHTML =
+			'<salla-add-product-button class="w-full aaliicon-add-to-cart-outer" product-id="' +
+			card.product.id +
+			'" product-type="' +
+			(card.product.type || "") +
+			'" loader-position="end"></salla-add-product-button>';
+
+		form.insertAdjacentElement("afterend", wrap);
+	};
+})();
