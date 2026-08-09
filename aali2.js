@@ -58,7 +58,8 @@ body:not(.cls-80b) img.lazy.loaded {
 	/* later */
 
 body#app {
-	--mobile-nav-height: 70px !important;
+	--mobile-nav-height: 0 !important;
+	padding-bottom: 70px;
 }
 
 #app.cart .wa-widget {
