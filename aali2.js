@@ -1319,3 +1319,37 @@ setTimeout(() => {
 		form.insertAdjacentElement("afterend", wrap);
 	};
 })();
+
+(function () {
+	function hideLoginIfLoggedIn() {
+		var loggedIn =
+			(window.salla && salla.config && typeof salla.config.isGuest === "function" && !salla.config.isGuest()) ||
+			!!document.querySelector("salla-user-menu .s-user-menu-trigger");
+
+		if (!loggedIn) return;
+
+		document
+			.querySelectorAll("salla-user-menu .header-signInBtn, salla-user-menu .s-user-menu-login-btn")
+			.forEach(function (el) {
+				el.remove();
+			});
+	}
+
+	function run() {
+		hideLoginIfLoggedIn();
+		setTimeout(hideLoginIfLoggedIn, 500);
+		setTimeout(hideLoginIfLoggedIn, 1500);
+	}
+
+	if (document.readyState === "loading") {
+		document.addEventListener("DOMContentLoaded", run);
+	} else {
+		run();
+	}
+
+	// after login modal without full reload
+	if (window.salla && salla.event && salla.event.on) {
+		salla.event.on("auth::login", hideLoginIfLoggedIn);
+		salla.event.on("profile::info.fetched", hideLoginIfLoggedIn);
+	}
+})();
