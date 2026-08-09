@@ -70,6 +70,10 @@ body#app {
 	bottom: 290px;
 }
 
+#app.cart .scroll-progress-wrapper.active {
+	bottom: 290px;
+}
+
 @media only screen and (max-width: 640px) {
 	body#app #wa-widget-send-button  {
         bottom:calc(var(--mobile-nav-height) + 7rem) !important;
