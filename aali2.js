@@ -61,6 +61,10 @@ body#app {
 	--mobile-nav-height: 70px !important;
 }
 
+#app.cart .wa-widget {
+	bottom: 290px;
+}
+
 @media only screen and (max-width: 640px) {
 	body#app #wa-widget-send-button  {
         bottom:calc(var(--mobile-nav-height) + 7rem) !important;
