@@ -35,6 +35,7 @@ div.swal2-container {
 document.getElementsByTagName('head')[0].appendChild(style);
 
 (function () {
+	// Star: guest login uses [slot="login-btn"] (+ .s-user-menu-login-btn)
 	function isLoggedIn() {
 		try {
 			if (window.salla && salla.config && typeof salla.config.isGuest === "function" && !salla.config.isGuest()) {
@@ -42,43 +43,26 @@ document.getElementsByTagName('head')[0].appendChild(style);
 			}
 		} catch (e) {}
 
-		return !!(
-			document.querySelector("salla-user-menu .s-user-menu-trigger") ||
-			document.querySelector("salla-user-menu .s-user-menu-avatar") ||
-			document.querySelector("salla-user-menu .s-user-menu-dropdown")
-		);
+		return !!document.querySelector("salla-user-menu .s-user-menu-trigger");
 	}
 
 	function hideLoginIfLoggedIn() {
 		if (!isLoggedIn()) return;
 
 		// Hide guest sign-in only — keep .s-user-menu-trigger (account avatar)
-		var selectors = [
-			'salla-user-menu [slot="login-btn"]',
-			"salla-user-menu .header-signInBtn",
-			"salla-user-menu .s-user-menu-login-btn",
-			"salla-user-menu .s-user-menu-login",
-			".header-signInBtn",
-			".s-user-menu-login-btn",
-		];
-
-		document.querySelectorAll(selectors.join(",")).forEach(function (el) {
-			if (el.closest(".s-user-menu-trigger")) return;
-			el.style.display = "none";
-		});
-
-		document.querySelectorAll("salla-user-menu a, salla-user-menu button, salla-user-menu .s-button").forEach(function (el) {
-			if (el.closest(".s-user-menu-trigger") || el.closest(".s-user-menu-dropdown")) return;
-			var text = (el.textContent || "").replace(/\s+/g, " ").trim();
-			if (text === "تسجيل الدخول" || text === "Login" || text === "Sign in" || text === "Sign In") {
+		document
+			.querySelectorAll(
+				'salla-user-menu [slot="login-btn"], salla-user-menu .s-user-menu-login-btn'
+			)
+			.forEach(function (el) {
+				if (el.closest(".s-user-menu-trigger")) return;
 				el.style.display = "none";
-			}
-		});
+			});
 	}
 
 	function run() {
 		hideLoginIfLoggedIn();
-		[300, 800, 1500, 3000, 5000].forEach(function (delay) {
+		[500, 1500, 3000].forEach(function (delay) {
 			setTimeout(hideLoginIfLoggedIn, delay);
 		});
 	}
