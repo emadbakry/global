@@ -1319,39 +1319,3 @@ setTimeout(() => {
 		form.insertAdjacentElement("afterend", wrap);
 	};
 })();
-
-(function () {
-	function hideLoginIfLoggedIn() {
-		var loggedIn =
-			(window.salla && salla.config && typeof salla.config.isGuest === "function" && !salla.config.isGuest()) ||
-			!!document.querySelector("salla-user-menu .s-user-menu-trigger");
-
-		if (!loggedIn) return;
-
-		// Hide guest sign-in only — keep .s-user-menu-trigger (account avatar)
-		document
-			.querySelectorAll(
-				'salla-user-menu [slot="login-btn"], salla-user-menu .s-user-menu-login-btn'
-			)
-			.forEach(function (el) {
-				el.style.display = "none";
-			});
-	}
-
-	function run() {
-		hideLoginIfLoggedIn();
-		setTimeout(hideLoginIfLoggedIn, 500);
-		setTimeout(hideLoginIfLoggedIn, 1500);
-	}
-
-	if (document.readyState === "loading") {
-		document.addEventListener("DOMContentLoaded", run);
-	} else {
-		run();
-	}
-
-	if (window.salla && salla.event && salla.event.on) {
-		salla.event.on("auth::login", hideLoginIfLoggedIn);
-		salla.event.on("profile::info.fetched", hideLoginIfLoggedIn);
-	}
-})();
