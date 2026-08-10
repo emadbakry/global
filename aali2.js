@@ -1328,10 +1328,13 @@ setTimeout(() => {
 
 		if (!loggedIn) return;
 
+		// Hide guest sign-in only — keep .s-user-menu-trigger (account avatar)
 		document
-			.querySelectorAll("salla-user-menu .header-signInBtn, salla-user-menu .s-user-menu-login-btn")
+			.querySelectorAll(
+				'salla-user-menu [slot="login-btn"], salla-user-menu .s-user-menu-login-btn'
+			)
 			.forEach(function (el) {
-				el.remove();
+				el.style.display = "none";
 			});
 	}
 
@@ -1347,7 +1350,6 @@ setTimeout(() => {
 		run();
 	}
 
-	// after login modal without full reload
 	if (window.salla && salla.event && salla.event.on) {
 		salla.event.on("auth::login", hideLoginIfLoggedIn);
 		salla.event.on("profile::info.fetched", hideLoginIfLoggedIn);
