@@ -30,6 +30,10 @@ div.swal2-container {
 .quick-categ-item img {
   width: 100%;
 }
+
+.s-search-modal .s-modal-body {
+  overflow: visible !important;
+}
 `;
 
 document.getElementsByTagName('head')[0].appendChild(style);

@@ -25,6 +25,10 @@ aali_style.setAttribute("type", "text/css");
 aali_style.innerHTML = `
 /* hi */
 
+.s-search-modal .s-modal-body {
+	overflow: visible !important;
+}
+
 [dir="rtl"] .header-innerLeft .text-xl + salla-cart-summary {
 	margin-right: 0.3rem;
 }
