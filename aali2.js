@@ -16,13 +16,13 @@
 // you can use this file to fix issues directly for all theme users, great for quick fixes before salla accept fixes.
 
 // add style element
-var style = document.createElement("style");
+var aali_style = document.createElement("style");
 // add type using setAttribute
 
-style.setAttribute("type", "text/css");
+aali_style.setAttribute("type", "text/css");
 
 // add css content
-style.innerHTML = `
+aali_style.innerHTML = `
 /* hi */
 
 [dir="rtl"] .header-innerLeft .text-xl + salla-cart-summary {
@@ -855,7 +855,7 @@ body .s-orders-mobile-title {
 
 `;
 // append style element
-document.getElementsByTagName("head")[0].appendChild(style);
+document.getElementsByTagName("head")[0].appendChild(aali_style);
 
 // fix mobile nav, tempoo
 // function ready() {
@@ -1170,8 +1170,8 @@ setTimeout(() => {
 
 	function isVisible(el) {
 		if (!el) return false;
-		var style = window.getComputedStyle(el);
-		if (style.display === "none" || style.visibility === "hidden" || style.opacity === "0") {
+		var aali_style = window.getComputedStyle(el);
+		if (aali_style.display === "none" || aali_style.visibility === "hidden" || aali_style.opacity === "0") {
 			return false;
 		}
 		var rect = el.getBoundingClientRect();
