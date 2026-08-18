@@ -31,6 +31,12 @@ div.swal2-container {
   width: 100%;
 }
 
+@media only screen and (min-width: 1024px) {
+  .main-menu .sub-menu {
+    z-index: 25;
+  }
+}
+
 .s-search-modal .s-modal-body {
   overflow: visible !important;
 }
