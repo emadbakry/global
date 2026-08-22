@@ -773,6 +773,30 @@ body .s-bought-together-subtitle {
 	color: var(--color-primary);
 	opacity: 0.8;
 }
+
+salla-basket-gap.s-basket-gap-entry,
+.s-basket-gap-entry {
+	background-color: var(--lm-bg-sec) !important;
+}
+
+.s-basket-gap-title {
+	color: var(--color-primary);
+}
+
+.s-basket-gap-card-name,
+.s-basket-gap-card-name a {
+	color: var(--color-primary);
+}
+
+.s-basket-gap-card-sale-price del {
+	color: var(--color-primary);
+	opacity: 0.6;
+}
+
+.s-basket-gap-card-offer span {
+	color: var(--color-primary);
+}
+
 .dark body .s-bought-together-entry {
 	background-color: var(--dm-bg-sec) !important;
 	color: var(--dm-text-main) !important;
