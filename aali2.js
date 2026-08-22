@@ -78,13 +78,6 @@ body:not(.cls-80b) img.lazy.loaded {
 	bottom: var(--aali-cart-fab-bottom, 16px);
 }
 
-@media (min-width: 1024px) {
-	#app .wa-widget,
-	#app .scroll-progress-wrapper.active {
-		bottom: 1.25rem !important;
-	}
-}
-
 @media only screen and (max-width: 640px) {
 	body#app #wa-widget-send-button  {
         bottom:calc(var(--mobile-nav-height) + 7rem) !important;
@@ -1226,14 +1219,6 @@ setTimeout(() => {
 	}
 
 	function setCartMobileNavPad() {
-		// Desktop: don't tie FAB offsets to sticky cart card height
-		if (window.innerWidth > 1023) {
-			document.body.style.setProperty("--aali-mobile-nav-pad", "0px");
-			document.body.style.removeProperty("--aali-cart-fab-bottom");
-			document.body.style.setProperty("--mobile-nav-height", "0px");
-			return;
-		}
-
 		var navPad = getMobileNavHeight();
 		var card = document.querySelector("salla-cart-summary-card");
 		var fabBottom = getCartFabBottom(card, navPad);
