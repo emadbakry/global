@@ -819,6 +819,10 @@ body .s-bought-together-subtitle {
 	border: 1px solid var(--dm-text-sec) !important;
 }
 
+.dark .s-basket-gap-card-offer span {
+	color: var(--dm-text-main) !important;
+}
+
 .dark .s-basket-gap-card-offer i {
 	color: var(--dm-text-main) !important;
 }
