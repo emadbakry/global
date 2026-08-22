@@ -78,6 +78,14 @@ body:not(.cls-80b) img.lazy.loaded {
 	bottom: var(--aali-cart-fab-bottom, 16px);
 }
 
+/* Aali only: keep FABs at viewport bottom on desktop, ignore cart height vars */
+@media (min-width: 1024px) {
+	#app .wa-widget,
+	#app .scroll-progress-wrapper.active {
+		bottom: 1.25rem !important;
+	}
+}
+
 @media only screen and (max-width: 640px) {
 	body#app #wa-widget-send-button  {
         bottom:calc(var(--mobile-nav-height) + 7rem) !important;
