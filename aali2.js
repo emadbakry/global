@@ -781,7 +781,47 @@ body .s-bought-together-subtitle {
 	color: var(--dm-text-sec) !important;
 }
 .dark .s-bought-together-title {
-	color: var(--dm-text-main) !important;}
+	color: var(--dm-text-main) !important;
+}
+
+.dark salla-basket-gap.s-basket-gap-entry,
+.dark .s-basket-gap-entry {
+	background-color: var(--dm-bg-sec) !important;
+	color: var(--dm-text-main) !important;
+	border-color: var(--dm-text-sec) !important;
+}
+
+.dark .s-basket-gap-title {
+	color: var(--dm-text-main) !important;
+}
+
+.dark .s-basket-gap-card {
+	background-color: transparent !important;
+	border-color: var(--dm-text-sec) !important;
+}
+
+.dark .s-basket-gap-card-name,
+.dark .s-basket-gap-card-name a {
+	color: var(--dm-text-main) !important;
+}
+
+.dark .s-basket-gap-card-sale-price span {
+	color: var(--red-color, #f87171) !important;
+}
+
+.dark .s-basket-gap-card-sale-price del {
+	color: var(--dm-text-sec) !important;
+}
+
+.dark .s-basket-gap-card-offer {
+	background-color: rgba(255, 255, 255, 0.06) !important;
+	color: var(--dm-text-sec) !important;
+	border: 1px solid var(--dm-text-sec) !important;
+}
+
+.dark .s-basket-gap-card-offer i {
+	color: var(--dm-text-main) !important;
+}
 
 
 body .s-loyalty-program-banner-container {
