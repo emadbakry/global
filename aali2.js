@@ -1459,3 +1459,83 @@ setTimeout(() => {
 		observer.observe(document.documentElement, { childList: true, subtree: true });
 	}
 })();
+
+/* TEMP: delete after Salla accepts the theme update — expires 2026-08-26 23:30 Arabia */
+(() => {
+	var expiresAt = new Date("2026-08-26T23:30:00+03:00");
+	if (Date.now() >= expiresAt.getTime()) return;
+
+	if (window.__aaliDonationHotfix) return;
+	window.__aaliDonationHotfix = true;
+
+	const amountEmpty = () => {
+		const form = document.querySelector("form.product-form");
+		if (!form) return false;
+		const amount = form.querySelector('[name="donation_amount"]');
+		return !!amount && !String(amount.value || "").trim();
+	};
+
+	const bodyHasEmptyDonation = (body) => {
+		if (!body) return false;
+		if (body instanceof FormData) {
+			if (!body.has("donating_option") && !body.has("donation_amount")) return false;
+			return !String(body.get("donation_amount") || "").trim();
+		}
+		if (typeof body === "string") {
+			if (!/donation_amount|donating_option/.test(body)) return false;
+			const match = body.match(/(?:^|&)donation_amount=([^&]*)/);
+			return match ? !decodeURIComponent(match[1].replace(/\+/g, " ")).trim() : true;
+		}
+		return false;
+	};
+
+	const isPriceUrl = (url) => /\/products\/.+\/price/.test(String(url || ""));
+
+	document.addEventListener(
+		"changed",
+		(e) => {
+			if (amountEmpty()) e.stopPropagation();
+		},
+		true,
+	);
+
+	document.addEventListener(
+		"change",
+		(e) => {
+			if (e.target && e.target.name === "donation_amount" && amountEmpty()) {
+				e.stopPropagation();
+			}
+		},
+		true,
+	);
+
+	const origFetch = window.fetch;
+	window.fetch = function (...args) {
+		try {
+			const url = typeof args[0] === "string" ? args[0] : args[0] && args[0].url;
+			const body = args[1] && args[1].body;
+			if (isPriceUrl(url) && bodyHasEmptyDonation(body)) {
+				return Promise.resolve(
+					new Response("{}", {
+						status: 200,
+						headers: { "Content-Type": "application/json" },
+					}),
+				);
+			}
+		} catch (e) {}
+		return origFetch.apply(this, args);
+	};
+
+	const origOpen = XMLHttpRequest.prototype.open;
+	const origSend = XMLHttpRequest.prototype.send;
+	XMLHttpRequest.prototype.open = function (method, url, ...rest) {
+		this.__aaliDonationUrl = url;
+		return origOpen.call(this, method, url, ...rest);
+	};
+	XMLHttpRequest.prototype.send = function (body) {
+		try {
+			if (isPriceUrl(this.__aaliDonationUrl) && bodyHasEmptyDonation(body)) return;
+		} catch (e) {}
+		return origSend.call(this, body);
+	};
+})();
