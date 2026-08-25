@@ -29,6 +29,13 @@ aali_style.innerHTML = `
 	overflow: visible !important;
 }
 
+/* FAQ home subtitle: primary color with softer opacity (light mode only) */
+html:not(.dark) .s-block-faqs-home .faqs-title > p,
+html:not(.dark) .faqs-section .faqs-title > p {
+	color: var(--color-primary) !important;
+	opacity: 0.65 !important;
+}
+
 [dir="rtl"] .header-innerLeft .text-xl + salla-cart-summary {
 	margin-right: 0.3rem;
 }
