@@ -424,6 +424,11 @@ body.modal-is-closed salla-button#cart-submit button .s-button-loader {
 	border-color: var(--dm-text-main) !important;
 }
 
+.dark .s-infinite-scroll-last.infinite-scroll-last,
+.dark .s-infinite-scroll-last {
+	color: var(--dm-text-sec) !important;
+}
+
 
 
 .dark .s-comments-count-label {
