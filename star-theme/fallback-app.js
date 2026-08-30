@@ -41,6 +41,11 @@ div.swal2-container {
   overflow: visible !important;
 }
 
+a.wa-s-n {
+  top: 200px !important;
+  bottom: auto !important;
+}
+
 .rating-header .s-button-element:not(.btn--delete):not(.normal-btn) {
   color: var(--main-buttons_text) !important;
 }

@@ -29,6 +29,11 @@ aali_style.innerHTML = `
 	overflow: visible !important;
 }
 
+a.wa-s-n {
+	top: 200px !important;
+	bottom: auto !important;
+}
+
 /* FAQ home subtitle: primary color with softer opacity (light mode only) */
 html:not(.dark) .s-block-faqs-home .faqs-title > p,
 html:not(.dark) .faqs-section .faqs-title > p {
