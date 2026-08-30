@@ -40,6 +40,10 @@ div.swal2-container {
 .s-search-modal .s-modal-body {
   overflow: visible !important;
 }
+
+.rating-header .s-button-element:not(.btn--delete):not(.normal-btn) {
+  color: var(--main-buttons_text) !important;
+}
 `;
 
 document.getElementsByTagName('head')[0].appendChild(style);
