@@ -42,8 +42,7 @@ div.swal2-container {
 }
 
 a.wa-s-n {
-  top: 200px !important;
-  bottom: auto !important;
+  bottom: 200px !important;
 }
 
 .rating-header .s-button-element:not(.btn--delete):not(.normal-btn) {

@@ -30,8 +30,7 @@ aali_style.innerHTML = `
 }
 
 a.wa-s-n {
-	top: 200px !important;
-	bottom: auto !important;
+	bottom: 200px !important;
 }
 
 /* FAQ home subtitle: primary color with softer opacity (light mode only) */
