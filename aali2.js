@@ -25,6 +25,10 @@ aali_style.setAttribute("type", "text/css");
 aali_style.innerHTML = `
 /* hi */
 
+header salla-wishlist-summary {
+	display: none !important;
+}
+
 .s-search-modal .s-modal-body {
 	overflow: visible !important;
 }
