@@ -39,7 +39,8 @@ header salla-wishlist-summary {
 	color: var(--dm-text-main) !important;
 }
 
-.dark .s-search-product-card-out-of-stock-label {
+.dark .s-search-product-card-out-of-stock-label,
+.dark .s-search-product-card-starting-price {
 	color: var(--dm-text-sec) !important;
 }
 
