@@ -29,6 +29,24 @@ header salla-wishlist-summary {
 	display: none !important;
 }
 
+/* Search results dark mode */
+.dark .s-search-product-card-content-title a {
+	color: var(--dm-text-main) !important;
+}
+
+.dark .s-search-product-card-price-value,
+.dark .s-search-product-card-sale-price span {
+	color: var(--dm-text-main) !important;
+}
+
+.dark .s-search-product-card-out-of-stock-label {
+	color: var(--dm-text-sec) !important;
+}
+
+.dark .s-search-grid-item:hover {
+	background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
 .s-search-modal .s-modal-body {
 	overflow: visible !important;
 }
