@@ -24,6 +24,9 @@ aali_style.setAttribute("type", "text/css");
 // add css content
 aali_style.innerHTML = `
 /* hi */
+body {
+	opacity: 1;
+}
 
 header salla-wishlist-summary {
 	display: none !important;
