@@ -24,6 +24,7 @@ aali_style.setAttribute("type", "text/css");
 // add css content
 aali_style.innerHTML = `
 /* hi */
+/* hi */
 body {
 	opacity: 1;
 }
