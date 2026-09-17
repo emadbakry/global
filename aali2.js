@@ -24,8 +24,7 @@ aali_style.setAttribute("type", "text/css");
 // add css content
 aali_style.innerHTML = `
 /* hi */
-/* hi */
-/* hi */
+/* Test PR(Pull Request) */
 body {
 	opacity: 1;
 }
