@@ -658,7 +658,10 @@ salla-trust-badges {
 }
 .footer-social-outer {margin-top: 8px;}
 @media (max-width: 492px) {
-	.footer-social-outer {margin-top: 12px;}
+	.footer-social-outer {
+		width: fit-content;
+    margin: 12px auto 16px;
+	}
 }
 
 .my-lazy:not(.my-loaded) { 
