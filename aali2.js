@@ -1506,11 +1506,11 @@ setTimeout(() => {
 	}
 })();
 
-/* TEMP: delete after Salla accepts the theme update — expires 2026-08-26 23:30 Arabia */
+/*
+ * TEMP: Block empty donation price requests/events.
+ * Remove after Salla accepts the theme update.
+ */
 (() => {
-	var expiresAt = new Date("2026-08-26T23:30:00+03:00");
-	if (Date.now() >= expiresAt.getTime()) return;
-
 	if (window.__aaliDonationHotfix) return;
 	window.__aaliDonationHotfix = true;
 
