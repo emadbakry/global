@@ -1507,7 +1507,7 @@ setTimeout(() => {
 })();
 
 /*
- * TEMP: Block empty donation price requests/events.
+ * TEMP: Block empty donation price requests/events + hide related Swal toasts.
  * Remove after Salla accepts the theme update.
  */
 (() => {
@@ -1527,8 +1527,19 @@ setTimeout(() => {
 			if (!body.has("donating_option") && !body.has("donation_amount")) return false;
 			return !String(body.get("donation_amount") || "").trim();
 		}
+		if (typeof URLSearchParams !== "undefined" && body instanceof URLSearchParams) {
+			if (!body.has("donating_option") && !body.has("donation_amount")) return false;
+			return !String(body.get("donation_amount") || "").trim();
+		}
 		if (typeof body === "string") {
 			if (!/donation_amount|donating_option/.test(body)) return false;
+			try {
+				const json = JSON.parse(body);
+				if (json && typeof json === "object") {
+					if (!("donation_amount" in json) && !("donating_option" in json)) return false;
+					return !String(json.donation_amount || "").trim();
+				}
+			} catch (e) {}
 			const match = body.match(/(?:^|&)donation_amount=([^&]*)/);
 			return match ? !decodeURIComponent(match[1].replace(/\+/g, " ")).trim() : true;
 		}
@@ -1536,6 +1547,136 @@ setTimeout(() => {
 	};
 
 	const isPriceUrl = (url) => /\/products\/.+\/price/.test(String(url || ""));
+
+	const isDonationAmountRequiredMsg = (text) => {
+		const t = String(text || "");
+		if (!/donation[\s_]?amount/i.test(t)) return false;
+		return /مطلوب|required/i.test(t);
+	};
+
+	const extractSwalText = (args) => {
+		if (!args || !args.length) return "";
+		const first = args[0];
+		if (typeof first === "string") return [first, args[1], args[2]].filter(Boolean).join(" ");
+		if (first && typeof first === "object") {
+			return [first.title, first.html, first.text, first.footer].filter(Boolean).join(" ");
+		}
+		return "";
+	};
+
+	const removeDonationToasts = (root) => {
+		const scope = root && root.querySelectorAll ? root : document;
+		const nodes =
+			root && root.matches && root.matches(".swal2-popup, .swal2-container")
+				? [root]
+				: scope.querySelectorAll(".swal2-popup, .swal2-container");
+
+		nodes.forEach((node) => {
+			const popup = node.classList.contains("swal2-popup")
+				? node
+				: node.querySelector(".swal2-popup");
+			if (!popup) return;
+			const title = popup.querySelector("#swal2-title, .swal2-title");
+			const html = popup.querySelector("#swal2-html-container, .swal2-html-container");
+			const text = [(title && title.textContent) || "", (html && html.textContent) || ""].join(" ");
+			if (!isDonationAmountRequiredMsg(text)) return;
+			const container = popup.closest(".swal2-container") || popup;
+			container.style.cssText =
+				"display:none!important;visibility:hidden!important;opacity:0!important;pointer-events:none!important;";
+			container.remove();
+			try {
+				if (window.Swal && typeof window.Swal.close === "function") window.Swal.close();
+			} catch (e) {}
+		});
+	};
+
+	const patchSwalInstance = (Swal) => {
+		if (!Swal || Swal.__aaliDonationPatched) return;
+		Swal.__aaliDonationPatched = true;
+
+		const wrapFire = (orig) =>
+			function (...args) {
+				if (isDonationAmountRequiredMsg(extractSwalText(args))) {
+					return Promise.resolve({
+						isConfirmed: false,
+						isDenied: false,
+						isDismissed: true,
+						dismiss: "aali-donation-block",
+					});
+				}
+				return orig.apply(this, args);
+			};
+
+		if (typeof Swal.fire === "function") {
+			Swal.fire = wrapFire(Swal.fire.bind(Swal));
+		}
+
+		if (typeof Swal.mixin === "function") {
+			const origMixin = Swal.mixin.bind(Swal);
+			Swal.mixin = function (...mixinArgs) {
+				const instance = origMixin(...mixinArgs);
+				if (instance && typeof instance.fire === "function" && !instance.__aaliDonationPatched) {
+					instance.__aaliDonationPatched = true;
+					instance.fire = wrapFire(instance.fire.bind(instance));
+				}
+				return instance;
+			};
+		}
+	};
+
+	const installSwalPatch = () => {
+		patchSwalInstance(window.Swal);
+		patchSwalInstance(window.swal);
+		if (window.Sweetalert2) patchSwalInstance(window.Sweetalert2);
+	};
+
+	installSwalPatch();
+	let swalPatchTries = 0;
+	const swalPatchTimer = setInterval(() => {
+		installSwalPatch();
+		if ((window.Swal && window.Swal.__aaliDonationPatched) || ++swalPatchTries > 40) {
+			clearInterval(swalPatchTimer);
+		}
+	}, 250);
+
+	if (typeof MutationObserver !== "undefined") {
+		let toastScanQueued = false;
+		const queueToastScan = () => {
+			if (toastScanQueued) return;
+			toastScanQueued = true;
+			requestAnimationFrame(() => {
+				toastScanQueued = false;
+				removeDonationToasts(document);
+			});
+		};
+		const toastObserver = new MutationObserver((mutations) => {
+			for (const m of mutations) {
+				if (m.type === "characterData") {
+					queueToastScan();
+					break;
+				}
+				for (const node of m.addedNodes) {
+					if (node.nodeType !== 1) continue;
+					if (
+						(node.classList &&
+							(node.classList.contains("swal2-container") ||
+								node.classList.contains("swal2-popup"))) ||
+						(node.querySelector && node.querySelector(".swal2-popup, .swal2-container"))
+					) {
+						removeDonationToasts(node);
+						queueToastScan();
+						break;
+					}
+				}
+			}
+		});
+		toastObserver.observe(document.documentElement, {
+			childList: true,
+			subtree: true,
+			characterData: true,
+		});
+	}
+	removeDonationToasts(document);
 
 	document.addEventListener(
 		"changed",
@@ -1558,8 +1699,10 @@ setTimeout(() => {
 	const origFetch = window.fetch;
 	window.fetch = function (...args) {
 		try {
-			const url = typeof args[0] === "string" ? args[0] : args[0] && args[0].url;
-			const body = args[1] && args[1].body;
+			const input = args[0];
+			const init = args[1] || {};
+			const url = typeof input === "string" ? input : input && input.url;
+			const body = init.body;
 			if (isPriceUrl(url) && bodyHasEmptyDonation(body)) {
 				return Promise.resolve(
 					new Response("{}", {
@@ -1569,7 +1712,30 @@ setTimeout(() => {
 				);
 			}
 		} catch (e) {}
-		return origFetch.apply(this, args);
+		return origFetch.apply(this, args).then((res) => {
+			try {
+				if (!isPriceUrl(typeof args[0] === "string" ? args[0] : args[0] && args[0].url)) {
+					return res;
+				}
+				const clone = res.clone();
+				clone
+					.json()
+					.then((data) => {
+						const msg =
+							(data && (data.message || data.error || data.description)) ||
+							(data && data.data && data.data.message) ||
+							"";
+						if (isDonationAmountRequiredMsg(msg)) {
+							queueMicrotask(() => removeDonationToasts(document));
+							setTimeout(() => removeDonationToasts(document), 0);
+							setTimeout(() => removeDonationToasts(document), 50);
+							setTimeout(() => removeDonationToasts(document), 200);
+						}
+					})
+					.catch(() => {});
+			} catch (e) {}
+			return res;
+		});
 	};
 
 	const origOpen = XMLHttpRequest.prototype.open;
@@ -1582,6 +1748,46 @@ setTimeout(() => {
 		try {
 			if (isPriceUrl(this.__aaliDonationUrl) && bodyHasEmptyDonation(body)) return;
 		} catch (e) {}
+		if (isPriceUrl(this.__aaliDonationUrl)) {
+			this.addEventListener("load", () => {
+				try {
+					const msg = String(this.responseText || "");
+					if (isDonationAmountRequiredMsg(msg)) {
+						queueMicrotask(() => removeDonationToasts(document));
+						setTimeout(() => removeDonationToasts(document), 0);
+						setTimeout(() => removeDonationToasts(document), 50);
+						setTimeout(() => removeDonationToasts(document), 200);
+					}
+				} catch (e) {}
+			});
+		}
 		return origSend.call(this, body);
 	};
+
+	const patchSallaNotify = () => {
+		try {
+			if (!window.salla || !salla.notify || salla.notify.__aaliDonationPatched) return;
+			salla.notify.__aaliDonationPatched = true;
+			["error", "warning", "info", "success", "show"].forEach((key) => {
+				if (typeof salla.notify[key] !== "function") return;
+				const orig = salla.notify[key].bind(salla.notify);
+				salla.notify[key] = function (...args) {
+					const text = args
+						.map((a) => (typeof a === "string" ? a : a && (a.message || a.title || a.text)))
+						.filter(Boolean)
+						.join(" ");
+					if (isDonationAmountRequiredMsg(text)) return;
+					return orig(...args);
+				};
+			});
+		} catch (e) {}
+	};
+	patchSallaNotify();
+	let sallaTries = 0;
+	const sallaTimer = setInterval(() => {
+		patchSallaNotify();
+		if ((window.salla && salla.notify && salla.notify.__aaliDonationPatched) || ++sallaTries > 40) {
+			clearInterval(sallaTimer);
+		}
+	}, 250);
 })();
