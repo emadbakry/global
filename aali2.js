@@ -1,4 +1,4 @@
-// if (document.body.classList.contains("cart")) {
+﻿// if (document.body.classList.contains("cart")) {
 // 	const removeClassInterval = setInterval(() => {
 // 		const form = document.querySelector('.cart .main-content form.product-form[id^="item-"]');
 
@@ -1506,61 +1506,248 @@ setTimeout(() => {
 	}
 })();
 
-/*
- * TEMP: Block empty donation price requests/events.
- * Remove after Salla accepts the theme update.
- */
-(() => {
+/* TEMP: donation_amount empty /price toast — remove after Salla fix */
+(function () {
 	if (window.__aaliDonationHotfix) return;
 	window.__aaliDonationHotfix = true;
+	console.log("--- donation hotfix v2 ---");
 
-	const amountEmpty = () => {
-		const form = document.querySelector("form.product-form");
+	function getForm() {
+		return document.querySelector("form.product-form");
+	}
+
+	function parseDefaultAmount(form) {
+		var el = form && form.querySelector("salla-product-options");
+		if (!el) return "";
+		var raw = el.getAttribute("options");
+		if (!raw) return "";
+		try {
+			var options = JSON.parse(raw);
+			for (var i = 0; i < options.length; i++) {
+				var opt = options[i];
+				if (!opt || opt.type !== "donation" || !opt.details || !opt.details.length) continue;
+				for (var j = 0; j < opt.details.length; j++) {
+					var d = opt.details[j];
+					if (d && (d.is_selected || d.is_default)) {
+						return String(d.option_value || d.name || d.additional_price || "");
+					}
+				}
+				var first = opt.details[0];
+				return String(first.option_value || first.name || first.additional_price || "");
+			}
+		} catch (e) {
+			console.log("[donation] options parse error", e);
+		}
+		return "";
+	}
+
+	function findRadio(form, amount) {
+		if (!form || !amount) return null;
+		var radios = form.querySelectorAll('input[name="donating_option"]');
+		for (var i = 0; i < radios.length; i++) {
+			if (String(radios[i].value) === String(amount)) return radios[i];
+		}
+		return null;
+	}
+
+	function syncDonation(form, reason) {
+		form = form || getForm();
 		if (!form) return false;
-		const amount = form.querySelector('[name="donation_amount"]');
-		return !!amount && !String(amount.value || "").trim();
-	};
+		var input = form.querySelector('[name="donation_amount"]');
+		if (!input) return false;
 
-	const bodyHasEmptyDonation = (body) => {
-		if (!body) return false;
+		var current = String(input.value || "").trim();
+		var checked = form.querySelector('input[name="donating_option"]:checked');
+		if (current && checked) return true;
+
+		var amount = current || parseDefaultAmount(form);
+		if (!amount) {
+			console.log("[donation] sync skip (no amount)", reason);
+			return false;
+		}
+
+		var radio = findRadio(form, amount);
+		console.log("[donation] sync", reason, {
+			amount: amount,
+			hadValue: !!current,
+			hadChecked: !!checked,
+			radioFound: !!radio,
+			radioChecked: !!(radio && radio.checked),
+		});
+
+		// Set value first so any getPrice triggered by click already has amount
+		if (!String(input.value || "").trim()) {
+			input.value = amount;
+		}
+
+		if (radio && !radio.checked) {
+			try {
+				radio.click();
+			} catch (e1) {
+				radio.checked = true;
+				try {
+					radio.dispatchEvent(new Event("input", { bubbles: true }));
+					radio.dispatchEvent(new Event("change", { bubbles: true }));
+				} catch (e2) {}
+			}
+		}
+
+		if (!String(input.value || "").trim()) {
+			input.value = amount;
+			try {
+				input.dispatchEvent(new Event("input", { bubbles: true }));
+				input.dispatchEvent(new Event("change", { bubbles: true }));
+			} catch (e3) {}
+		}
+
+		var ok = !!String(input.value || "").trim();
+		console.log("[donation] sync result", reason, { ok: ok, value: input.value, checked: !!(form.querySelector('input[name="donating_option"]:checked')) });
+		return ok;
+	}
+
+	function fillFormData(body, form) {
+		if (!(body instanceof FormData)) return body;
+		form = form || getForm();
+		syncDonation(form, "fillFormData");
+
+		var amount = "";
+		var input = form && form.querySelector('[name="donation_amount"]');
+		if (input) amount = String(input.value || "").trim();
+		if (!amount) amount = parseDefaultAmount(form);
+		if (!amount) return body;
+
+		if (!body.has("id") && form) {
+			var idInput = form.querySelector('[name="id"]');
+			if (idInput && idInput.value) body.set("id", idInput.value);
+		}
+
+		if (!String(body.get("donation_amount") || "").trim()) {
+			body.set("donation_amount", amount);
+		}
+
+		var option = String(body.get("donating_option") || "").trim();
+		if (!option) {
+			var checked = form && form.querySelector('input[name="donating_option"]:checked');
+			body.set("donating_option", checked ? checked.value : amount);
+		}
+
+		var dump = [];
+		body.forEach(function (v, k) {
+			if (k === "donation_amount" || k === "donating_option" || k === "id") dump.push(k + "=" + v);
+		});
+		console.log("[donation] FormData after fill", dump.join("&"));
+		return body;
+	}
+
+	function isDonationProduct(form) {
+		form = form || getForm();
+		return !!(form && form.querySelector('[name="donation_amount"]'));
+	}
+
+	function bodyHasEmptyDonation(body) {
+		if (!body) {
+			return isDonationProduct();
+		}
 		if (body instanceof FormData) {
-			if (!body.has("donating_option") && !body.has("donation_amount")) return false;
+			var hasDonationKeys = body.has("donation_amount") || body.has("donating_option");
+			if (!hasDonationKeys) {
+				// Empty/incomplete FormData on a donation product still hits required validation
+				return isDonationProduct();
+			}
 			return !String(body.get("donation_amount") || "").trim();
 		}
 		if (typeof body === "string") {
-			if (!/donation_amount|donating_option/.test(body)) return false;
-			const match = body.match(/(?:^|&)donation_amount=([^&]*)/);
+			if (!/donation_amount|donating_option/.test(body)) {
+				return isDonationProduct();
+			}
+			var match = body.match(/(?:^|&)donation_amount=([^&]*)/);
 			return match ? !decodeURIComponent(match[1].replace(/\+/g, " ")).trim() : true;
 		}
 		return false;
-	};
+	}
 
-	const isPriceUrl = (url) => /\/products\/.+\/price/.test(String(url || ""));
+	function isPriceUrl(url) {
+		return /\/products\/.+\/price/.test(String(url || ""));
+	}
 
-	document.addEventListener(
-		"changed",
-		(e) => {
-			if (amountEmpty()) e.stopPropagation();
-		},
-		true,
-	);
+	function guardPrice(url, body, where) {
+		if (!isPriceUrl(url)) return { block: false, body: body };
 
-	document.addEventListener(
-		"change",
-		(e) => {
-			if (e.target && e.target.name === "donation_amount" && amountEmpty()) {
-				e.stopPropagation();
+		var form = getForm();
+		syncDonation(form, "guard:" + where);
+
+		if (body instanceof FormData) {
+			body = fillFormData(body, form);
+		} else if (!body && form && isDonationProduct(form)) {
+			body = fillFormData(new FormData(form), form);
+		}
+
+		var empty = bodyHasEmptyDonation(body);
+		console.log("[donation] guard", where, { url: String(url).slice(-40), empty: empty, bodyType: body && body.constructor && body.constructor.name });
+
+		if (empty) {
+			console.log("[donation] BLOCK price", where);
+			return { block: true, body: body };
+		}
+		return { block: false, body: body };
+	}
+
+	function patchGetPrice() {
+		if (!window.salla || !salla.product || typeof salla.product.getPrice !== "function") return false;
+		if (salla.product.getPrice.__aaliPatched) return true;
+
+		var orig = salla.product.getPrice.bind(salla.product);
+		salla.product.getPrice = function (data) {
+			var form = getForm();
+			console.log("[donation] getPrice()", {
+				isFormData: data instanceof FormData,
+				type: data == null ? "null" : typeof data,
+			});
+			syncDonation(form, "getPrice");
+
+			if (data instanceof FormData) {
+				data = fillFormData(data, form);
+			} else if (!data && form) {
+				data = fillFormData(new FormData(form), form);
 			}
-		},
-		true,
-	);
 
-	const origFetch = window.fetch;
-	window.fetch = function (...args) {
+			if (bodyHasEmptyDonation(data)) {
+				syncDonation(form, "getPrice-retry");
+				if (data instanceof FormData) data = fillFormData(data, form);
+				else if (form) data = fillFormData(new FormData(form), form);
+			}
+
+			if (bodyHasEmptyDonation(data)) {
+				console.log("[donation] getPrice SKIPPED (empty donation)");
+				return Promise.resolve({});
+			}
+			return orig(data);
+		};
+		salla.product.getPrice.__aaliPatched = true;
+		console.log("[donation] getPrice patched");
+		return true;
+	}
+
+	if (!patchGetPrice()) {
+		var tries = 0;
+		var t = setInterval(function () {
+			tries++;
+			if (patchGetPrice() || tries > 120) clearInterval(t);
+		}, 40);
+	}
+
+	var origFetch = window.fetch;
+	window.fetch = function (input, init) {
 		try {
-			const url = typeof args[0] === "string" ? args[0] : args[0] && args[0].url;
-			const body = args[1] && args[1].body;
-			if (isPriceUrl(url) && bodyHasEmptyDonation(body)) {
+			var url = typeof input === "string" ? input : input && input.url;
+			var body = init && init.body;
+			// Request may carry body when init is omitted
+			if (body == null && input && typeof Request !== "undefined" && input instanceof Request) {
+				// cannot clone/read body sync reliably; rely on getPrice patch + DOM sync
+				url = input.url;
+			}
+			var g = guardPrice(url, body, "fetch");
+			if (g.block) {
 				return Promise.resolve(
 					new Response("{}", {
 						status: 200,
@@ -1568,20 +1755,93 @@ setTimeout(() => {
 					}),
 				);
 			}
-		} catch (e) {}
-		return origFetch.apply(this, args);
+			if (init && g.body !== body) init.body = g.body;
+		} catch (e) {
+			console.log("[donation] fetch guard error", e);
+		}
+		return origFetch.apply(this, arguments);
 	};
 
-	const origOpen = XMLHttpRequest.prototype.open;
-	const origSend = XMLHttpRequest.prototype.send;
-	XMLHttpRequest.prototype.open = function (method, url, ...rest) {
+	var origOpen = XMLHttpRequest.prototype.open;
+	var origSend = XMLHttpRequest.prototype.send;
+	XMLHttpRequest.prototype.open = function (method, url) {
 		this.__aaliDonationUrl = url;
-		return origOpen.call(this, method, url, ...rest);
+		return origOpen.apply(this, arguments);
 	};
 	XMLHttpRequest.prototype.send = function (body) {
 		try {
-			if (isPriceUrl(this.__aaliDonationUrl) && bodyHasEmptyDonation(body)) return;
+			var g = guardPrice(this.__aaliDonationUrl, body, "xhr");
+			if (g.block) return;
+			body = g.body;
 		} catch (e) {}
 		return origSend.call(this, body);
 	};
+
+	document.addEventListener(
+		"change",
+		function (e) {
+			var t = e.target;
+			if (!t || t.name !== "donation_amount") return;
+			if (!String(t.value || "").trim()) {
+				console.log("[donation] stopPropagation empty donation_amount change");
+				e.stopPropagation();
+			}
+		},
+		true,
+	);
+
+	document.addEventListener(
+		"changed",
+		function (e) {
+			if (!isDonationProduct()) return;
+			var input = getForm().querySelector('[name="donation_amount"]');
+			if (input && !String(input.value || "").trim()) {
+				console.log("[donation] stopPropagation empty changed");
+				e.stopPropagation();
+			}
+		},
+		true,
+	);
+
+	var n = 0;
+	var syncTimer = setInterval(function () {
+		n++;
+		var form = getForm();
+		if (form && form.querySelector('[name="donation_amount"]')) {
+			syncDonation(form, "tick-" + n);
+			var input = form.querySelector('[name="donation_amount"]');
+			var checked = form.querySelector('input[name="donating_option"]:checked');
+			if (input && String(input.value || "").trim() && checked) {
+				console.log("[donation] stable sync at tick", n, input.value);
+				clearInterval(syncTimer);
+			}
+		}
+		if (n > 100) clearInterval(syncTimer);
+	}, 40);
+
+	if (typeof MutationObserver !== "undefined") {
+		var scheduled = false;
+		var mo = new MutationObserver(function () {
+			if (scheduled) return;
+			scheduled = true;
+			requestAnimationFrame(function () {
+				scheduled = false;
+				syncDonation(getForm(), "mo");
+			});
+		});
+		mo.observe(document.documentElement, { childList: true, subtree: true });
+		setTimeout(function () {
+			mo.disconnect();
+		}, 12000);
+	}
+
+	function boot() {
+		syncDonation(getForm(), "boot");
+	}
+	if (document.readyState === "loading") {
+		document.addEventListener("DOMContentLoaded", boot);
+	} else {
+		boot();
+	}
+	window.addEventListener("load", boot);
 })();
