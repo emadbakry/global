@@ -29,6 +29,10 @@ body {
 	opacity: 1;
 }
 
+.s-search-modal * {
+	pointer-events: all !important;
+}
+
 header salla-wishlist-summary {
 	display: none !important;
 }
