@@ -966,9 +966,13 @@ body .s-orders-table-tbody-tr {
 }
 
 .order-details-table .single-order-header-item .text-primary,
-body .s-orders-status-container,
 body .s-orders-mobile-title {
 	color: var(--color-primary-light) !important;
+}
+
+.s-orders-status-container {
+	margin-right: unset !important;
+	margin-left: unset !important;
 }
 
 
