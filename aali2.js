@@ -23,8 +23,7 @@ aali_style.setAttribute("type", "text/css");
 
 // add css content
 aali_style.innerHTML = `
-/* hi */
-/* Test PR(Pull Request) again */
+/* Aali theme fixes - styles */
 body {
 	opacity: 1;
 }
@@ -958,6 +957,9 @@ body .product-entry__image {
 	background-color: transparent;
 }
 
+.dark #app .main-content .s-orders-filters .s-button-light-outline {
+	color: inherit !important;
+}
 
 body .s-orders-table-tbody-tr {
     background-color: var(--lm-bg-sec) !important;
