@@ -25,14 +25,14 @@ aali_style.setAttribute("type", "text/css");
 aali_style.innerHTML = `
 /* Aali theme fixes - styles */
 
-// Start: Remove this code in next publish theme
+/* Start: Remove this code in next publish theme */
 #app .mobile-menu .close-mobile-menu {
 	display: block !important;
 }
 #app.mm-ocd-opened .mobile-menu .close-mobile-menu {
 	display: block !important;
 }
-// End: Remove this code in next publish theme
+/* End: Remove this code in next publish theme */
 
 .product-page-main .similar-products {
 	margin-inline: auto !important;
