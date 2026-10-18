@@ -34,6 +34,10 @@ aali_style.innerHTML = `
 }
 // End: Remove this code in next publish theme
 
+.product-page-main .similar-products {
+	margin-inline: auto !important;
+}
+
 body {
 	opacity: 1;
 }
