@@ -27,7 +27,7 @@ aali_style.innerHTML = `
 
 /* Start: Remove this code in next publish theme */
 #app .mobile-menu .close-mobile-menu {
-	display: block !important;
+	display: none !important;
 }
 #app.mm-ocd-opened .mobile-menu .close-mobile-menu {
 	display: block !important;
