@@ -1007,6 +1007,21 @@ body .s-orders-mobile-title {
 // append style element
 document.getElementsByTagName("head")[0].appendChild(aali_style);
 
+/**
+ * @desc Temporarily adds a search placeholder to the search element.
+ * @note Temporary workaround; to be removed in the next update.
+ */
+document.addEventListener('DOMContentLoaded', function () {
+  const label = document.querySelector(
+    'button.hdr-srch.aali-search-trigger span.aali-search-trigger__label'
+  );
+
+  if (label) {
+    label.innerHTML =
+      salla.lang.messages['ar.trans'].blocks.header.search_placeholder;
+  }
+});
+
 // fix mobile nav, tempoo
 // function ready() {
 // 	document.body.classList.add("mobile-nav-is-on");
