@@ -34,6 +34,12 @@ aali_style.innerHTML = `
 }
 /* End: Remove this code in next publish theme */
 
+/* Start: Handle summary-card-submit color in dark mode, and in gradient | Remove it in the next update */
+.dark #app.btns-gradient salla-cart-summary-card #s-cart-summary-card-submit .s-button-text {
+	color: var(--dm-text-main) !important;
+}
+/* End: Handle summary-card-submit color in dark mode, and in gradient | Remove it in the next update */
+
 .product-page-main .similar-products {
 	margin-inline: auto !important;
 }
