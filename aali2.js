@@ -992,6 +992,16 @@ body .s-orders-mobile-title {
 }
 
 
+html:not(.dark) .app-body .s-wallet-balance-card,
+html:not(.dark) .app-body .s-gift-card-panel {
+	background-color: var(--lm-bg-sec);
+}
+
+html:not(.dark) .s-wallet-balance-label,
+html:not(.dark) .s-gift-card-subtitle {
+	color: var(--color-primary-l);
+}
+
 #app .s-order-totals-card-panel {
 	background-color: var(--lm-bg-sec) !important;
     color: var(--color-primary-light) !important;
